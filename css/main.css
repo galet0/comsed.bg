@@ -10,36 +10,35 @@ body {
     background-color: #d3fbff;
 }
 
-.container {
+.header {
     max-width: 1200px;
     width: 100%;
-    margin: 100px;
+    padding: 20px 10px;
+    margin:10px;
 }
 
 .logo{
-    position: relative;
-    top: 60px;
-    left: 40px;
     width: 200px;
     height: 60px;
 }
-
+.reg-cart{
+   float:right;
+   padding:20px;
+}
 .reg-cart ul{
     list-style-type: none;
     margin: 0;
     padding: 0;
-    position: relative;
 }
 
 .reg-cart ul li{
     display: inline-block;
-    float: left;
 }
 
 .reg-cart li a{
     color: #FFFFFF;
     text-decoration: none;
-    padding: 20px 30px;
+    padding: 15px 20px;
     border-radius: 6px;
 }
 
@@ -51,6 +50,19 @@ body {
 .cart-btn a {
     font-size: 13px;
     background-color: lightcoral;
+}
+
+.navbar-header{
+    padding: 0;
+}
+
+.navbar-header a{
+    text-decoration: none;
+    text-align: center;
+    width: 270px;
+    color: white;
+    background: red;
+    float: left;
 }
 
 nav {
@@ -82,6 +94,119 @@ nav a {
 nav li:hover>a{
     background: #82ebff;
     color: ivory;
+}
+.multi-menu{
+    clear: both;
+    width: 270px;
+    float: left;
+    background-color: white;
+}
+
+.multi-menu .input-group{
+    padding: 8px 8px 0 8px;
+    width: 100%;
+}
+
+.multi-menu .input-group input{
+    height: 36px;
+    padding: 0 10px;
+    font-size: 13px;
+    color: lightgray;
+    transition: none;
+    box-shadow: none;
+    border-radius: 8px;
+    border: 1px solid #e7e7e7;
+}
+
+.multi-menu>ul{
+    margin: 0;
+    padding: 0;
+}
+
+.multi-menu>ul>li>a{
+    display: block;
+    text-decoration: none;
+    padding: 15px 30px;
+    font-size: 17px;
+    color: midnightblue;
+}
+
+.multi-menu a:hover{
+    background-color: lightgray;
+}
+
+.multi-menu h3{
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+/*
+Това е под въпрос дали ще остава
+ */
+.title-listing{
+    position: relative;
+    overflow: hidden;
+}
+.title-listing .title:after, .title-listing .title a:after{
+    content: '';
+    position: absolute;
+    margin-left: 10px;
+    top: 50%;
+    width: 100%;
+    height: 2px;
+    background-color: red;
+}
+
+.title-listing .title, .title-listing .title a{
+    display: inline-block;
+    padding-right: 10px;
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+.title-listing .green-title h2:after{
+    background: green;
+}
+
+.title-listing .green-title h2{
+    color: green;
+}
+/*
+До тук
+ */
+
+/*
+Пак нагласяне да е посредата
+ */
+.new-products-btn{
+    clear: both;
+    position: relative;
+    background-color: #FFFFFF;
+    border-radius: 30px;
+    width: 300px;
+}
+
+.new-products-btn a{
+    text-decoration: none;
+    font-family: Arial sans-serif;
+    font-size: 20px;
+    text-align: center;
+    display: block;
+    padding: 5px 30px;
+    color: lightgreen;
+}
+
+.stage-outer{
+    position: relative;
+    overflow: hidden;
+    background-color: #FFFFFF;
+}
+
+.stage{
+
+}
+
+.item{
+
 }
 
 
