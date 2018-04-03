@@ -7,8 +7,8 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
-        <div class="container">
+    <div class="container">
+        <div class="header">
             <img class="logo" src="../images/comsed_logo.png">
             <div class="reg-cart">
                 <ul>
@@ -17,34 +17,19 @@
                 </ul>
             </div>
         </div>
-    </header>
-    <main>
-        <div class="container">
-            <nav>
-                <div class="navbar-header">
-                    <a href="#">Детайлни филтри</a>
-                </div>
-                <div>
-                    <ul>
-                        <li><a href="#">Начало</a></li>
-                        <li><a href="#">За нас</a></li>
-                        <li><a href="#">Новини</a></li>
-                        <li><a href="#">Промоции</a></li>
-                        <li><a href="#">Контакти</a></li>
-                    </ul>
-                </div>
-            </nav>
+
+        <div class="topnav">
+            <a href="#">Начало</a>
+            <a href="#">За нас</a>
+            <a href="#">Новини</a>
+            <a href="#">Промоции</a>
+            <a href="#">Контакти</a>
         </div>
-        <section>
-            <div class="multi-menu">
+
+        <div class="row">
+            <div class="column-left">
                 <div class="input-group">
                     <input type="text" placeholder="Търси по ключова дума">
-                    <!--<span class="input-group-btn">-->
-                        <!--<button class="search-icon">-->
-                            <!--<i class="fas fa-search"></i>-->
-                        <!--</button>-->
-
-                    <!--</span>-->
                 </div>
                 <h3>Търси в:</h3>
                 <ul>
@@ -60,25 +45,50 @@
                     </li>
                 </ul>
             </div>
-        </section>
-        <div class="new-products-btn">
-            <a href="#">Нови продукти</a>
-        </div>
-        <div class="title-listing green-title">
-            <h2 class="title">Нови модели LEGO</h2>
-        </div>
-        <div class="stage-outer">
-            <div class="stage">
-                <div class="item">
-                    <div class="product-info">
-                        <span class="new-product"></span>
-                    </div>
-                </div>
+            <div class="column-right">
             </div>
         </div>
-    </main>
-    <footer>
 
-    </footer>
+        <div class="row row-slider">
+            <div class="img-column">
+                <a href="#">
+                    <img src="../images/Lego1.jpg">
+                </a>
+                <h3>Име на играчката</h3>
+                <p>Filtri kartinki</p>
+                <h2>Cena</h2>
+                <button>Купи</button>
+            </div>
+            <div class="img-column">
+                <a href="#">
+                    <img src="../images/Lego2.jpg">
+                </a>
+                <h3>Име на играчката</h3>
+                <p>Filtri kartinki</p>
+                <h2>Cena</h2>
+                <button>Купи</button>
+            </div>
+            <div class="img-column">
+                <a href="#">
+                    <img src="../images/Lego3.jpg">
+                </a>
+                <h3>Име на играчката</h3>
+                <p>Filtri kartinki</p>
+                <h2>Cena</h2>
+                <button>Купи</button>
+            </div>
+            <div class="img-column">
+                <a href="#">
+                    <img src="../images/Lego4.jpg">
+                </a>
+                <h3>Име на играчката</h3>
+                <p>Filtri kartinki</p>
+                <h2>Cena</h2>
+                <button>Купи</button>
+            </div>
+        </div>
+
+    </div>
+
 </body>
 </html>
