@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>КОМСЕД</title>
+    <link rel="stylesheet" type="text/css" href="../css/register.css"/>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img class="logo" src="../images/wonderland.png">
+            <div class="reg-cart">
+                <ul>
+                    <li class="login-btn"><a href="#"><i class="fas fa-sign-in-alt"></i>Вход/Регистрация</a></li>
+                    <li class="cart-btn"><a href="#"><i class="fas fa-cart-arrow-down"></i>Количка</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="topnav">
+            <a href="#">Начало</a>
+            <a href="#">За нас</a>
+            <a href="#">Новини</a>
+            <a href="#">Промоции</a>
+            <a href="#">Контакти</a>
+        </div>
+        <main>
+        <div class="register">
+            <p class="require">Създаване на профил</p>
+            <p>Ако вече имате профил, можете направо да влезете с него от страницата за <a href=auth.html>Вход в системата</a>.</p>
+            <form action="" method="post" class="register-form">
+                <div class="error"></div>
+                <fieldset>
+                    <legend>Личните ви данни</legend>
+                    <label for="name"> Име <span class="require"> * </span></label><input type="text" name="firstName" id="name" placeholder="Въведете име">
+                    <label for="lastname"> Фамилия <span class="require"> * </span></label><input type="text" name="lastName" id="lastname" placeholder="Въведете фамилия">
+                    <label for="email"> Е-поща <span class="require"> * </span></label><input type="email" name="email" id="email" placeholder="Въведете е-поща">
+                    <label for="phone"> Телефон <span class="require"> * </span></label><input type="tel" name="phone"id="phone" placeholder="">
+                </fieldset>
+                <fieldset>
+                    <legend>Вашият адрес</legend>
+                    <label for="address"> Адрес <span class="require"> * </span></label><input type="text" name="address" id="address" placeholder="Въведете адрес">
+                    <label for="address"> Допълнение към адреса</label><input type="text" name="additionalAddress" id="additionalAddress" placeholder="Допълнение към адреса">
+                    <label for="town"> Населено място <span class="require"> * </span></label><input type="text" name="town" id="town" placeholder="Въведете град">
+                    <label for="postcode"> Пощенски код</label><input type="text" name="postcode" id="postcode" placeholder="">
+                    <label for="county"> Област<span class="require">*</span></label><select name="county" id = "county">
+                            <option value = "1">Благоевград</option>
+                            <option value = "2">Бургас</option>
+                            <option value = "3">Варна</option>
+                            <option value = "4">Велико Търново</option>
+                            <option value = "5">Враца</option>
+                            <option value = "6">Гарбово</option>
+                            <option value = "7">Добрич</option>
+                            <option value = "8">Кърджали</option>
+                            <option value = "9">Кюстендил</option>
+                            <option value = "10">Ловеч</option>
+                            <option value = "11">Монтана</option>
+                            <option value = "12"> Пазарджик</option>
+                            <option value = "13"> Перник</option>
+                            <option value = "14"> Плевен</option>
+                            <option value = "15"> Пловдив</option>
+                            <option value = "16">Разград</option>
+                            <option value = "17"> Русе</option>
+                            <option value = "18"> Силистра</option>
+                            <option value = "19"> Сливен</option>
+                            <option value = "20"> Смолян</option>
+                            <option value = "21"> София - област</option>
+                            <option value = "22"> София - град</option>
+                            <option value = "23"> Стара Загора</option>
+                            <option value = "24"> Търговище</option>
+                            <option value = "25"> Хасково</option>
+                            <option value = "26"> Шумен</option>
+                            <option value = "27"> Ямбол</option>
+                          </select>
+                    <label for="country">Държава</label><input type="text" name="country" id="country" value="България" disabled>
+                </fieldset>
+                <fieldset>
+                    <legend> Вашата парола</legend>
+                    <label for="pass"> Парола<span class="require"> * </span></label><input type="password" name="password" id="pass" placeholder="*******">
+                    <label for="pass2"> Потвърдете парола<span class="require"> * </span></label><input name=" passwordConfirm" type="password" id="pass2" placeholder="*******">
+                </fieldset>
+                <fieldset>
+                    <legend>Бюлетин</legend>
+                    <label for="news"> Записване</label><input type="radio" name="subscribe" id="news"value="news">Да<input type="radio" id="news" name="subscribe" value="news">Не
+                </fieldset>
+                <input type="submit" value="Продължи" class="register-btn">
+            </form>
+        </div>
+        
+</main>
+    </div>
+    <script src="../js/handlebars.min.js"></script>
+    <script src="../js/AuthController.js"></script>
+    <script src="../js/UserModel.js"></script>
+</body>
+</html>
