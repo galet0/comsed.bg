@@ -5,6 +5,7 @@ var UserModel = (function(){
         this.lastName = lastName;
         this.password = password;
     }
+
     User.prototype.nextID = 1;
 
     var UserStorage = {
@@ -31,7 +32,7 @@ var UserModel = (function(){
     return {
         register: function(email, password) {
             if (!UserStorage.hasUser(email)) {
-                return UserStorage.register(firstName, lastName, email,password);
+                return UserStorage.register(firstName, lastName, email, password);
             }
         },
         login: UserStorage.login

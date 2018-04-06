@@ -186,6 +186,25 @@ input, select{
     background-color: lightcoral
 }
 
+.register textarea{
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 10px;
+    width: 500px;
+    height: 150px;
+    resize: none;
+    overflow: auto;
+}
+
+.contacts-btn{
+    width: 120px;
+    padding: 15px 20px;
+    position: relative;
+    background-color: lightcoral
+}
+
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
 @media screen and (max-width:600px) {
     .column {

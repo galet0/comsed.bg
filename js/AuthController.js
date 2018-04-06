@@ -21,9 +21,9 @@ var pageElement = document.querySelector('.container'),
                         if(user = UserModel.register(email.value,password.value)){
                             console.log('register confirm')
                         }else{
-                            username.value = '';
+                            firstName.value = '';
                             password.value = '';
-                            passwordAgain.value = '';
+                            passwordConfirm.value = '';
                             error.textContent = 'That user already exists!';
                             error.style.display = 'block';
                         }
