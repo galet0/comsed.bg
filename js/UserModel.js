@@ -1,17 +1,26 @@
 var UserModel = (function(){
-    function User(firstName, lastName, email,password){
+
+    function User(firstName, lastName, email, phone, address, town, county, password){
         this.userID = User.prototype.nextID++;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.email = email;
+        this.phone = phone;
+        this.address = address;
+        this.town = town;
+        this.county = county;
         this.password = password;
     }
 
     User.prototype.nextID = 1;
 
+    var users = JSON.parse(window.localStorage.getItem('users')) || [];
+
     var UserStorage = {
-        register: function(firstName, lastName,email, password) {
-            var user = new User(firstName,lastName, email, password);
+        register: function(firstName, lastName, email, phone, address, town, county, password) {
+            var user = new User(firstName, lastName, email, phone, address, town, county, password);
             users.push(user);
+            window.localStorage.setItem('users', JSON.stringify(users));
             return user;
         },
         login: function(email, password) {
@@ -25,14 +34,10 @@ var UserModel = (function(){
             });
         }
     };
-    var users = [];
-
-    users.push(new User('ivan', '123456'));
-
     return {
-        register: function(email, password) {
+        register: function(firstName, lastName, email, phone, address, town, county, password) {
             if (!UserStorage.hasUser(email)) {
-                return UserStorage.register(firstName, lastName, email, password);
+                return UserStorage.register(firstName, lastName, email, phone, address, town, county,  password);
             }
         },
         login: UserStorage.login

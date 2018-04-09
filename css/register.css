@@ -115,6 +115,9 @@ body {
     background-color: #ddd;
     color: black;
 }
+.hidden{
+    display: none;
+}
 /* Register form*/
 .register{
     background-color: white;
@@ -140,12 +143,12 @@ body {
     font-weight: bold;
 }
 /* take off the default values of fieldset */
-fieldset{
+.register fieldset{
     padding: 0;
     margin: 0;
     border: 0;
 }
-legend{
+.register legend{
     display: block;
     width: 100%;
     padding-top: 40px;
@@ -155,12 +158,12 @@ legend{
     border: 0;
     border-bottom: 1px solid #e5e5e5;
 }
-label{
+.register label{
     display: inline-block;
     width:20%;
     text-align: right;
 }
-input, select{
+.register input, select{
     display: inline-block;
     width: 70%;
     padding: 12px;
@@ -203,6 +206,73 @@ input, select{
     padding: 15px 20px;
     position: relative;
     background-color: lightcoral
+}
+
+
+.enter-title{
+    background-color:white;
+    border:2px solid white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.enter-title > p{
+    color:rgba(204, 9, 9, 0.87);
+    font-weight: bold;
+    margin:0 10px;
+    padding:20px 0 0;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+    background-color:white;
+    color:#333;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+.column{
+    flex: 1;
+    margin:20px 10px 0;
+    border: 2px solid lightcoral;
+    padding: 20px;
+    border-radius: 5px;
+}
+.left-clm a{
+    display:inline-block;
+    margin-top:20px;
+    font-size: 13px;
+    background-color: lightcoral;
+    color: #FFFFFF;
+    padding: 10px 15px;
+    border-radius: 3px;
+    text-decoration: none;
+}
+.column p:fi{
+    font-weight: bold;
+}
+.right-clm input{
+    display: block;
+    width:100%;
+    margin-bottom: 14px;
+    padding:7px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+.right-clm label{
+    font-weight:bold;
+}
+.right-clm a{
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+    color:rgb(139, 203, 224);
+}
+.right-clm button{
+    font-size: 13px;
+    background-color: lightcoral;
+    color: #FFFFFF;
+    padding: 10px 15px;
+    border-radius: 3px;
+    border:none;
 }
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */

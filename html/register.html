@@ -2,17 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>КОМСЕД</title>
+    <title>КОМСЕД Регистрация</title>
     <link rel="stylesheet" type="text/css" href="../css/register.css"/>
     <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 </head>
 <body>
-    <div class="container">
+    <div class="container page">
         <div class="header">
             <img class="logo" src="../images/wonderland.png">
             <div class="reg-cart">
                 <ul>
-                    <li class="login-btn"><a href="#"><i class="fas fa-sign-in-alt"></i>Вход/Регистрация</a></li>
+                    <li class="login-btn"><a href="auth.html"><i class="fas fa-sign-in-alt"></i>Вход/Регистрация</a></li>
                     <li class="cart-btn"><a href="#"><i class="fas fa-cart-arrow-down"></i>Количка</a></li>
                 </ul>
             </div>
@@ -24,11 +25,12 @@
             <a href="#">Промоции</a>
             <a href="#">Контакти</a>
         </div>
+        <div class="hidden"><a href ="register.html" class="current"></a></div>
         <main>
         <div class="register">
             <p class="require">Създаване на профил</p>
             <p>Ако вече имате профил, можете направо да влезете с него от страницата за <a href=auth.html>Вход в системата</a>.</p>
-            <form action="" method="post" class="register-form">
+            <form action="" method="POST" id="formSubmit" class="register-form">
                 <div class="error"></div>
                 <fieldset>
                     <legend>Личните ви данни</legend>
@@ -77,20 +79,21 @@
                 <fieldset>
                     <legend> Вашата парола</legend>
                     <label for="pass"> Парола<span class="require"> * </span></label><input type="password" name="password" id="pass" placeholder="*******">
-                    <label for="pass2"> Потвърдете парола<span class="require"> * </span></label><input name=" passwordConfirm" type="password" id="pass2" placeholder="*******">
+                    <label for="pass2"> Потвърдете парола<span class="require"> * </span></label><input name="passwordConfirm" type="password" id="pass2" placeholder="*******">
                 </fieldset>
                 <fieldset>
                     <legend>Бюлетин</legend>
-                    <label for="news"> Записване</label><input type="radio" name="subscribe" id="news"value="news">Да<input type="radio" id="news" name="subscribe" value="news">Не
+                    <label for="news"> Записване</label><input type="radio" name="subscribe" value="yes">Да<input type="radio" name="subscribe" value="no">Не
                 </fieldset>
-                <input type="submit" value="Продължи" class="register-btn">
+                <button class="register-btn">Продължи </button>
             </form>
         </div>
         
 </main>
     </div>
-    <script src="../js/handlebars.min.js"></script>
-    <script src="../js/AuthController.js"></script>
+    
+    <script src="../js/AuthController.js"></script>    
+    <script src="../js/AppController.js"></script>
     <script src="../js/UserModel.js"></script>
 </body>
 </html>

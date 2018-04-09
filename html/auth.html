@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>КОМСЕД</title>
-    <link rel="stylesheet" type="text/css" href="../css/auth.css"/>
+    <title>КОМСЕД Вход/Регистрация</title>
+    <link rel="stylesheet" type="text/css" href="../css/register.css"/>
     <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="container">
+    <div class="container page auth ">
         <div class="header">
             <img class="logo" src="../images/wonderland.png">
             <div class="reg-cart">
                 <ul>
-                    <li class="login-btn"><a href="#"><i class="fas fa-sign-in-alt"></i>Вход/Регистрация</a></li>
+                    <li class="login-btn"><a href="auth.html" class="current"><i class="fas fa-sign-in-alt"></i>Вход/Регистрация</a></li>
                     <li class="cart-btn"><a href="#"><i class="fas fa-cart-arrow-down"></i>Количка</a></li>
                 </ul>
             </div>
@@ -25,30 +25,35 @@
             <a href="#">Промоции</a>
             <a href="#">Контакти</a>
         </div>
-        <div class="enter-title">
-            <p>Вход в системата</p> 
-        
-           <div class="row">
-                <div class="column left-clm">
-                    <h1> Нов клиент</h1>
-                    <p>Създаване на профил</p> 
-                    <p>Създавайки профил, вие ще можете да пазарувате по-бързо, да следите състоянието и историята на поръчките си и да се възползвате от редица бонуси, достъпни само за регистрираните ни потребители.</p>
-                    <a href="register.html">Продължи</a>
-                </div>
-                <div class="column right-clm">
-                    <h1>Регистриран клиент</h1>
-                    <p> Аз съм регистриран клиент</p>
-                    <form method="POST">
-                        <label for="email">Адрес на е-поща</label>
-                        <input type="text" name="email" placeholder="Въведете е-поща">
-                        <label for="pass"> Парола</label>
-                        <input type="password" name="pass" placeholder="******">
-                        <a href=#>Забравена парола</a>
-                        <button>Вход</button>
+        <main>
+            <div class="enter-title">
+                <p>Вход в системата</p> 
+                <div class="row">
+                    <div class="column left-clm">
+                        <h1> Нов клиент</h1>
+                        <p>Създаване на профил</p> 
+                        <p>Създавайки профил, вие ще можете да пазарувате по-бързо, да следите състоянието и историята на поръчките си и да се възползвате от редица бонуси, достъпни само за регистрираните ни потребители.</p>
+                        <a href="register.html">Продължи</a>
+                    </div>
+                    <div class="column right-clm">
+                        <h1>Регистриран клиент</h1>
+                        <p> Аз съм регистриран клиент</p>
+                        <div class='error'></div>
+                        <form method="POST" class='login'>
+                            <label for="email">Адрес на е-поща</label>
+                            <input type="text" name="email" placeholder="Въведете е-поща">
+                            <label for="pass"> Парола</label>
+                            <input type="password" name="password" placeholder="******">
+                            <a href=#>Забравена парола</a>
+                        <button class="login-button" >Вход</button>
                     </form>
                 </div>
             </div>
+        </main>
         </div>
     </div>
+    <script src="../js/LoginController.js"></script>
+    <script src="../js/AppController.js"></script>
+    <script src="../js/UserModel.js"></script>
 </body>
 </html>
