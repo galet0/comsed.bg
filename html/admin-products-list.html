@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Продукти</title>
+    <link rel="stylesheet" type="text/css" href="../css/admin.css"/>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="topnav">
+            <a href="#">Добре дошли, име админ! <small>Администратор</small></a>
+            <a href="logout.html">Изход</a>
+        </div>
+    </div>
+</header>
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="column-left">
+                <ul>
+                    <li>
+                        <a href="dashboard.html">Табло</a>
+                        <a href="categories.html">Категории</a>
+                        <a href="products.html">Продукти</a>
+                        <a href="users.html">Потребители</a>
+                        <a href="promotions.html">Промоции</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="column-right">
+                <div class="page-header">
+                    <div class="container-fluid">
+                        <div class="pull-right">
+                            <h1>Продукти</h1>
+                            <a href="../html/admin-add-products.html" id="addBtn" class="btn btn-primary"><i class="fas fa-plus"></i></a>
+                            <button class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="panel-title">
+                                <i class="fa fa-list" aria-hidden="true"></i>
+                                Списък продукти:
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <table class="table table-bordered table-hover">
+                                <thead>
+                                <tr>
+                                    <td class="table-data text-center">
+                                        <input type="checkbox">
+                                    </td>
+                                    <td class="text-left">
+                                        Картинка
+                                    </td>
+                                    <td class="text-left">
+                                        Име на продукт
+                                    </td>
+                                    <td class="text-left">
+                                        Цена
+                                    </td>
+                                    <td class="text-left">
+                                        Количество
+                                    </td>
+                                    <td class="text-right">
+                                        Действие
+                                    </td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<script src="../js/handlebars.min.js"></script>
+<!--Темплейт за редактиране на продукт!-->
+<script id="editProduct_tmpl" type="text/x-handlebars-template">
+    <div class="container">
+        <div class="row">
+            <div class="column-left">
+                <ul>
+                    <li>
+                        <a href="dashboard.html">Табло</a>
+                        <a href="categories.html">Категории</a>
+                        <a href="products.html">Продукти</a>
+                        <a href="users.html">Потребители</a>
+                        <a href="promotions.html">Промоции</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="column-right">
+                <div>
+                    <div class="panel panel-default">
+                        <div class="pull-right panel-heading">
+                            <div class="panel-title">
+                                Редактирай продукт:
+                            </div>
+                            <a href="#" class="btn btn-primary"><i class="far fa-save"></i></a>
+                            <button class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+                        </div>
+                        <div class="panel-body">
+                            <form action="#" method="post" class="form-horizontal">
+                                <div class="form-group">
+                                    <label for="parent" class="col-sm-2 control-label">Име на продукт</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" id="parent" placeholder="Име на продукт" class="form-control"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="product-name" class="col-sm-2 control-label">Подкатегория:</label>
+                                    <div class="col-sm-10">
+                                        <input id="product-name" type="text" placeholder="Име на подкатегория" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="description" class="col-sm-2 control-label">Описание</label>
+                                    <div class="col-sm-10">
+                                        <textarea id="description" class="form-control summernote"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="price" class="col-sm-2 control-label">Цена:</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" id="price" placeholder="Цена" class="form-control"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="brand" class="col-sm-2 control-label">Марка</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" id="brand" placeholder="Марка" class="form-control"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="quantity" class="col-sm-2 control-label">Количество</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" id="quantity" placeholder="Количество" class="form-control"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="age-min" class="col-sm-2 control-label">Възраст от:</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" id="age-min" placeholder="Възраст от" class="form-control"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="age-max" class="col-sm-2 control-label">Възраст до:</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" id="age-max" placeholder="Възраст до" class="form-control"/>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</script>
+<!--Темплейт за добавяне на продукт-->
+<script id="addProduct_tmpl" type="text/x-handlebars-template">
+    <div class="container">
+        <div class="row">
+            <div class="column-left">
+                <ul>
+                    <li>
+                        <a href="dashboard.html">Табло</a>
+                        <a href="categories.html">Категории</a>
+                        <a href="products.html">Продукти</a>
+                        <a href="users.html">Потребители</a>
+                        <a href="promotions.html">Промоции</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="column-right">
+                <div>
+                    <div class="panel panel-default">
+                        <div class="pull-right panel-heading">
+                            <div class="panel-title">
+                                Добави продукт:
+                            </div>
+                            <a href="#" id="saveBtn" class="btn btn-primary"><i class="far fa-save"></i></a>
+                            <button class="btn btn-danger"><i class="fa fa-times" aria-hidden="true"></i></button>
+                        </div>
+                        <div class="panel-body">
+                            <form action="#" method="post" class="form-horizontal">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Име на продукт</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="name" placeholder="Име на продукт" class="form-control"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Снимка:</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="image" placeholder="Снимка:" class="form-control"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Подкатегория:</label>
+                                    <div class="col-sm-10">
+                                        <input name="type" type="text" placeholder="Име на подкатегория" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="description" class="col-sm-2 control-label">Описание</label>
+                                    <div class="col-sm-10">
+                                        <textarea name="description" class="form-control summernote"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="price" class="col-sm-2 control-label">Цена:</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="price" placeholder="Цена" class="form-control"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="brand" class="col-sm-2 control-label">Марка</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="brand" placeholder="Марка" class="form-control"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="quantity" class="col-sm-2 control-label">Количество</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="quantity" placeholder="Количество" class="form-control"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Възраст от:</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="minAge" placeholder="Възраст от" class="form-control"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Възраст до:</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="maxAge" placeholder="Възраст до" class="form-control"/>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+<!--Темплейт за обновяване на списъка с продукти -->
+<script id="updateProdList_tmpl" type="text/x-handlebars-template">
+    {{#each product}}
+    <tr>
+        <td class="text-center">
+            <input type="checkbox" value="{{id}}">
+        </td>
+        <td class="text-center">
+            <img class="img-thumbnail" src="../images/Lego1.jpg"/>
+        </td>
+        <td class="text-left">
+            {{name}}
+        </td>
+        <td class="text-right">
+            {{price}}
+        </td>
+        <td class="text-right">
+            {{quantity}}
+        </td>
+        <td class="text-right">
+            <a href="#" id="editBtn" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
+            <a href="#" id="deleteBtn" class="btn btn-danger"><i class="far fa-trash-alt"></i></a>
+        </td>
+    </tr>
+    {{/each}}
+</script>
+<script src="../js/AppController.js"></script>
+<script src="../js/CategoryModel.js"></script>
+<script src="../js/ProductModel.js"></script>
+<script src="../js/TypeModel.js"></script>
+<script src="../js/AdminProductController.js"></script>
+</body>
+</html>
