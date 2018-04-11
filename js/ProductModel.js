@@ -1,10 +1,10 @@
 var ProductModule = (function () {
 
     var products = JSON.parse(window.localStorage.getItem('products')) || [];
-    Product.prototype.productID = 1;
+    var productID = 1;
 
     function Product(image, name, price, description, brand, typeID, quantity, minAge, maxAge) {
-        this.id = Product.prototype.productID++;
+        this.id = productID++;
         this.image = image;
         this.name = name;
         this.price = price;
@@ -16,8 +16,6 @@ var ProductModule = (function () {
         this.maxAge = maxAge;
         this.hasPromo = false;
     }
-
-
 
     Product.prototype.updateProductsList = function () {
         window.localStorage.setItem('products', products);
@@ -52,6 +50,7 @@ var ProductModule = (function () {
                 window.localStorage.setItem('products', JSON.stringify(products));
                 var type = TypeModule.findByTypeID(typeID);
                 type.products.push(product);
+                console.log(product.id);
                 return product.id;
             } else {
                 console.log('Вече съществува продукт с това име!');

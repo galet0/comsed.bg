@@ -77,6 +77,3 @@ var TypeModule = (function () {
         }
     }
 })();
-
-var type1 = TypeModule.addType(1, 'type1', 'type1 description');
-var type2 = TypeModule.addType(1, 'type2', 'type2 description');

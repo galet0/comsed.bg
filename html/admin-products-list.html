@@ -11,78 +11,12 @@
     <div class="container">
         <div class="topnav">
             <a href="#">Добре дошли, име админ! <small>Администратор</small></a>
-            <a href="logout.html">Изход</a>
+            <a href="#">Изход</a>
         </div>
     </div>
 </header>
 <main>
-    <div class="container">
-        <div class="row">
-            <div class="column-left">
-                <ul>
-                    <li>
-                        <a href="dashboard.html">Табло</a>
-                        <a href="categories.html">Категории</a>
-                        <a href="products.html">Продукти</a>
-                        <a href="users.html">Потребители</a>
-                        <a href="promotions.html">Промоции</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="column-right">
-                <div class="page-header">
-                    <div class="container-fluid">
-                        <div class="pull-right">
-                            <h1>Продукти</h1>
-                            <a href="../html/admin-add-products.html" id="addBtn" class="btn btn-primary"><i class="fas fa-plus"></i></a>
-                            <button class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <div class="panel-title">
-                                <i class="fa fa-list" aria-hidden="true"></i>
-                                Списък продукти:
-                            </div>
-                        </div>
-                        <div class="panel-body">
-                            <table class="table table-bordered table-hover">
-                                <thead>
-                                <tr>
-                                    <td class="table-data text-center">
-                                        <input type="checkbox">
-                                    </td>
-                                    <td class="text-left">
-                                        Картинка
-                                    </td>
-                                    <td class="text-left">
-                                        Име на продукт
-                                    </td>
-                                    <td class="text-left">
-                                        Цена
-                                    </td>
-                                    <td class="text-left">
-                                        Количество
-                                    </td>
-                                    <td class="text-right">
-                                        Действие
-                                    </td>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
 
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </main>
 <script src="../js/handlebars.min.js"></script>
 <!--Темплейт за редактиране на продукт!-->
@@ -259,35 +193,87 @@
     </div>
 </script>
 <!--Темплейт за обновяване на списъка с продукти -->
-<script id="updateProdList_tmpl" type="text/x-handlebars-template">
-    {{#each product}}
-    <tr>
-        <td class="text-center">
-            <input type="checkbox" value="{{id}}">
-        </td>
-        <td class="text-center">
-            <img class="img-thumbnail" src="../images/Lego1.jpg"/>
-        </td>
-        <td class="text-left">
-            {{name}}
-        </td>
-        <td class="text-right">
-            {{price}}
-        </td>
-        <td class="text-right">
-            {{quantity}}
-        </td>
-        <td class="text-right">
-            <a href="#" id="editBtn" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
-            <a href="#" id="deleteBtn" class="btn btn-danger"><i class="far fa-trash-alt"></i></a>
-        </td>
-    </tr>
-    {{/each}}
+<script id="updateProdList_tmpl" type="text/x-handlebars-template"><div class="container">
+    <div class="row">
+        <div class="column-right">
+            <div class="page-header">
+                <div class="container-fluid">
+                    <div class="pull-right">
+                        <h1>Продукти</h1>
+                        <a href="../html/admin-add-products.html" id="addBtn" class="btn btn-primary current"><i class="fas fa-plus"></i></a>
+                        <button class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <i class="fa fa-list" aria-hidden="true"></i>
+                            Списък продукти:
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                            <tr>
+                                <td class="table-data text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-left">
+                                    Картинка
+                                </td>
+                                <td class="text-left">
+                                    Име на продукт
+                                </td>
+                                <td class="text-left">
+                                    Цена
+                                </td>
+                                <td class="text-left">
+                                    Количество
+                                </td>
+                                <td class="text-right">
+                                    Действие
+                                </td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                {{#each products}}
+                                <tr>
+                                    <td class="text-center">
+                                        <input type="checkbox" value="{{id}}">
+                                    </td>
+                                    <td class="text-center">
+                                        <img class="img-thumbnail" src="../images/Lego1.jpg"/>
+                                    </td>
+                                    <td class="text-left">
+                                        {{name}}
+                                    </td>
+                                    <td class="text-right">
+                                        {{price}}
+                                    </td>
+                                    <td class="text-right">
+                                        {{quantity}}
+                                    </td>
+                                    <td class="text-right">
+                                        <a href="#" class="btn btn-primary btn-edit"><i class="fas fa-pencil-alt"></i></a>
+                                        <a href="#" class="btn btn-danger btn-delete"><i class="far fa-trash-alt"></i></a>
+                                    </td>
+                                </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </script>
 <script src="../js/AppController.js"></script>
 <script src="../js/CategoryModel.js"></script>
 <script src="../js/ProductModel.js"></script>
 <script src="../js/TypeModel.js"></script>
-<script src="../js/AdminProductController.js"></script>
+<script src="../js/adminControllers/AdminProductController.js"></script>
 </body>
 </html>
