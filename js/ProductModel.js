@@ -59,7 +59,7 @@ var ProductModule = (function () {
 
         deleteProduct: function (productID, typeID) {
             var prodIndex = this.findProductById(productID);
-            if(prodIndex !== 0){
+            if(prodIndex !== -1){
                 var type = TypeModule.findByTypeID(typeID);
                 products.splice(prodIndex, 1);
                 type.products.splice(prodIndex, 1);
