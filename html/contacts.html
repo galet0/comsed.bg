@@ -3,7 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>За нас</title>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
     <link rel="stylesheet" type="text/css" href="../css/register.css"/>
+
     <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -30,6 +37,7 @@
 </header>
 <main>
     <div class="container">
+        <div id="map"></div>
         <div class="register">
             <h3>Контакти:</h3>
             <form action="" method="post" class="register-form">
@@ -44,6 +52,66 @@
 <footer>
 
 </footer>
+<script>
+    function initMap() {
+        var uluru = {lat: 42.496526, lng: 27.470109};
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 17,
+            center: uluru
+        });
+        var marker = new google.maps.Marker({
+            position: uluru,
+            map: map
+        });
+    }
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBfic-CYt3lGO1lTxhJZjOdZRHaA2sJ-o&callback=initMap">
+</script>
+<!--<script>-->
+    <!--// Note: This example requires that you consent to location sharing when-->
+    <!--// prompted by your browser. If you see the error "The Geolocation service-->
+    <!--// failed.", it means you probably did not give permission for the browser to-->
+    <!--// locate you.-->
+    <!--var map, infoWindow;-->
+    <!--function initMap() {-->
+        <!--map = new google.maps.Map(document.getElementById('map'), {-->
+            <!--center: {lat: 42.4964979, lng: 27.4685833},-->
+            <!--zoom: 16-->
+        <!--});-->
+        <!--infoWindow = new google.maps.InfoWindow;-->
 
+        <!--// Try HTML5 geolocation.-->
+        <!--if (navigator.geolocation) {-->
+            <!--navigator.geolocation.getCurrentPosition(function(position) {-->
+                <!--var pos = {-->
+                    <!--lat: position.coords.latitude,-->
+                    <!--lng: position.coords.longitude-->
+                <!--};-->
+
+                <!--infoWindow.setPosition(pos);-->
+                <!--infoWindow.setContent('Location found.');-->
+                <!--infoWindow.open(map);-->
+                <!--map.setCenter(pos);-->
+            <!--}, function() {-->
+                <!--handleLocationError(true, infoWindow, map.getCenter());-->
+            <!--});-->
+        <!--} else {-->
+            <!--// Browser doesn't support Geolocation-->
+            <!--handleLocationError(false, infoWindow, map.getCenter());-->
+        <!--}-->
+    <!--}-->
+
+    <!--function handleLocationError(browserHasGeolocation, infoWindow, pos) {-->
+        <!--infoWindow.setPosition(pos);-->
+        <!--infoWindow.setContent(browserHasGeolocation ?-->
+            <!--'Error: The Geolocation service failed.' :-->
+            <!--'Error: Your browser doesn\'t support geolocation.');-->
+        <!--infoWindow.open(map);-->
+    <!--}-->
+<!--</script>-->
+<!--<script async defer-->
+        <!--src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBfic-CYt3lGO1lTxhJZjOdZRHaA2sJ-o&callback=initMap">-->
+<!--</script>-->
 </body>
 </html>

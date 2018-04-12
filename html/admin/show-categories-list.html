@@ -4,84 +4,140 @@
     <meta charset="UTF-8">
     <title>Списък категории</title>
     <link rel="stylesheet" type="text/css" href="../../css/admin.css"/>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"
+            integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
+            crossorigin="anonymous"></script>
 </head>
 <body>
-<header>
-    <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="show-product-list.html">Продукти</a>
-        <a href="show-categories-list.html">Категории</a>
-        <a href="#">Потребители</a>
-        <a href="#">Продажби</a>
-    </div>
-</header>
-<main>
-
-</main>
-<script>
-    function openNav() {
-        document.getElementById("mySidenav").style.width = "250px";
-        document.getElementById("main").style.marginLeft = "250px";
-    }
-
-    function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-        document.getElementById("main").style.marginLeft= "0";
-    }
-</script>
-<script id="showCategoriesList_tmpl" type="text/x-handlebars-template">
-    <div id="main">
-        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Dashboard</span>
-        <div class="pull-right">
-            <h1>Категории</h1>
-            <a id="addBtn" class="btn btn-primary current"><i class="fas fa-plus"></i></a>
-            <button class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+<div class="page categories">
+    <header>
+        <div class="sidenav">
+            <div>
+                <a>Добре дошли, име админ!
+                    <small>Администратор</small>
+                </a>
+                <a href="../admin/admin-index.html">Табло</a>
+                <a href="../admin/show-categories-list.html">Категории</a>
+                <a href="../admin/show-product-list.html">Продукти</a>
+                <a href="../admin/show-user-list.html">Потребители</a>
+                <a href="../admin/show-sales.html">Продажби</a>
+            </div>
         </div>
-        <div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <div class="panel-title">
-                        <i class="fa fa-list" aria-hidden="true"></i>
-                        Списък категории:
+    </header>
+    <main>
+        <div class="main">
+            <div class="pull-right top-background">
+                <h1>Категории</h1>
+                <a class="btn btn-primary btn-add"><i class="fas fa-plus"></i></a>
+                <button class="btn btn-danger btn-delete"><i class="far fa-trash-alt"></i></button>
+            </div>
+            <div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <i class="fa fa-list" aria-hidden="true"></i>
+                            Списък категории:
+                        </div>
                     </div>
                 </div>
-                <div class="panel-body">
-                    <table class="table table-bordered table-hover">
-                        <thead>
-                        <tr>
-                            <td class="table-data text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-left">
-                                Име на категория&nbsp;&nbsp;>&nbsp;&nbsp;Подкатегория
-                            </td>
-                            <td class="text-right">
-                                Действие
-                            </td>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {{#each types}}
-                        <tr>
-                            <td class="text-center">
-                                <input type="checkbox" value="{{id}}">
-                            </td>
-                            <td class="text-center">
-                                <img class="img-thumbnail" src="../../images/Lego1.jpg"/>
-                            </td>
-                            <td class="text-left">
-                                {{category.name}}&nbsp;&nbsp;>&nbsp;&nbsp;{{type.name}}
-                            </td>
-                            <td class="text-right">
-                                <a href="#" class="btn btn-primary btn-edit"><i class="fas fa-pencil-alt"></i></a>
-                                <a href="#" class="btn btn-danger btn-delete"><i class="far fa-trash-alt"></i></a>
-                            </td>
-                        </tr>
-                        {{/each}}
-                        </tbody>
-                    </table>
+            </div>
+        </div>
+    </main>
+</div>
+
+<script id="showCategoriesList_tmpl" type="text/x-handlebars-template">
+    <!--<div class="pull-right top-background">-->
+        <!--<h1>Категории</h1>-->
+        <!--<a class="btn btn-primary btn-add"><i class="fas fa-plus"></i></a>-->
+        <!--<button class="btn btn-danger btn-delete"><i class="far fa-trash-alt"></i></button>-->
+    <!--</div>-->
+    <!--<div>-->
+        <!--<div class="panel panel-default">-->
+            <!--<div class="panel-heading">-->
+                <!--<div class="panel-title">-->
+                    <!--<i class="fa fa-list" aria-hidden="true"></i>-->
+                    <!--Списък категории:-->
+                <!--</div>-->
+            <!--</div>-->
+            <div class="panel-body">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                    <tr>
+                        <td class="table-data text-center">
+                            <input type="checkbox">
+                        </td>
+                        <td class="text-left">
+                            Категория>Подкатегория
+                        </td>
+                        <td class="text-right">
+                            Действие
+                        </td>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    {{#each categories}}
+                    <tr>
+                        <td class="text-center">
+                            <input type="checkbox" value="{{id}}">
+                        </td>
+                        <td class="text-left">
+                            {{name}}
+                        </td>
+                        <td class="text-right">
+                            <a href="#" class="btn btn-primary btn-edit"><i
+                                    class="fas fa-pencil-alt"></i></a>
+                            <a href="#" class="btn btn-danger btn-delete"><i
+                                    class="far fa-trash-alt"></i></a>
+                        </td>
+                    </tr>
+                    {{/each}}
+                    </tbody>
+
+                </table>
+            </div>
+        <!--</div>-->
+    <!--</div>-->
+</script>
+<script id="addCategory_tmpl" type="text/x-handlebars-template">
+    <div class="main">
+        <div class="panel panel-default">
+            <div class="pull-right panel-heading">
+                <div class="panel-title">
+                    Добави категория:
                 </div>
+                <a href="#" id="saveBtn" class="btn btn-primary"><i class="far fa-save"></i></a>
+                <button class="btn btn-danger"><i class="fa fa-times" aria-hidden="true"></i></button>
+            </div>
+            <div class="panel-body">
+                <form action="#" method="post" class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Категория</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="parent" placeholder="Име на категория" class="form-control"/>
+                            <ul class="dropdown-menu">
+                                <!--<li>Igracjki</li>-->
+                                <!--<li>Igracjki</li>-->
+                                <!--<li>Igracjki</li>-->
+                                <!--<li>Igracjki</li>-->
+                                <!--<li>Igracjki</li>-->
+                            </ul>
+                            <input type="hidden" name="parent_id" value="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Подкатегория:</label>
+                        <div class="col-sm-10">
+                            <input name="categoryName" type="text" placeholder="Име на подкатегория" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Описание</label>
+                        <div class="col-sm-10">
+                            <textarea name="description" class="form-control summernote"></textarea>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -91,5 +147,6 @@
 <script src="../../js/CategoryModel.js"></script>
 <script src="../../js/TypeModel.js"></script>
 <script src="../../js/adminControllers/AdminCategoriesController.js"></script>
+<script src="../../js/adminControllers/ShowCategoryListController.js"></script>
 </body>
 </html>

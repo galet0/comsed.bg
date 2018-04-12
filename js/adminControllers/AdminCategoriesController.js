@@ -1,11 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
-    var main = document.querySelector('main');
 
-    function showCategories() {
-
-    }
-
-    document.querySelector('#addBtn').addEventListener('click', function (event) {
+    document.querySelector('.btn-add').addEventListener('click', function (event) {
         event.preventDefault();
 
         var addCategoryTmpl = getTemplate('addCategory');
@@ -13,28 +8,22 @@ document.addEventListener('DOMContentLoaded', function () {
             main.innerHTML = addCategoryTmpl;
         }
 
-
-
-        document.querySelector('#saveBtn').addEventListener('click', function () {
+        document.querySelector('.btn-save').addEventListener('click', function () {
             var form = document.querySelector('form'),
                 parentName = form.querySelector('input[name="parent"]').value,
                 categoryName = form.querySelector('input[name="categoryName"]').value,
                 description = form.querySelector('textarea[name="description"]').value;
             if(parentName){//if it has category name
                 var category = CategoryModule.findByCategoryName(parentName);
-                TypeModule.addType(category.id, categoryName, description);
+                TypeModule.addType(categoryName, description, category.id);
             } else {
                 CategoryModule.addCategory(categoryName, description);
             }
 
-            showCategories();
+            window.location = "../../html/admin/show-categories-list.html";
         })
     });
 
-
-    document.querySelector('#editBtn').addEventListener('click',function (event) {
-        event.preventDefault();
-
-    })
+    var main = document.querySelector('main');
 
 });

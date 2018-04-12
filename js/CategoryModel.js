@@ -1,14 +1,13 @@
 var CategoryModule = (function () {
     var categories = JSON.parse(window.localStorage.getItem('categories')) || [];
+    var categoryID = 0;
 
     function Category(name, description) {
-        this.id = ++Category.prototype.categoryID;
+        this.id = ++categoryID;
         this.name = name;
         this.description = description;
         this.types = [];
     }
-
-    Category.prototype.categoryID = 1;
 
     return{
         findByCategoryName: function (name) {
@@ -24,8 +23,8 @@ var CategoryModule = (function () {
         },
 
         getAllCategories: function () {
-            return categories.map(function (category) {
-                return category.id;
+            return categories.forEach(function (category) {
+                return category.name;
             })
         },
 
@@ -55,7 +54,7 @@ var CategoryModule = (function () {
             }
         },
 
-        updateCategory: function (categoryID, name, description) {
+        editCategory: function (categoryID, name, description) {
             var category = this.findByCategoryID(categoryID);
             if(category !== -1){
                 var category = categories.slice(category, 1)[0];
