@@ -15,5 +15,5 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log(template);
     var temp = template(categories);
     console.log(temp);
-    document.querySelector('.tbody').innerHTML = temp;
+    document.querySelector('.panel-body').innerHTML = temp;
 });
