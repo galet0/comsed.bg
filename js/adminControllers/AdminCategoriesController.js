@@ -1,16 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    function showCategories() {
-        var categories = CategoryModule.getAllCategories();
-        console.log(categories);
-        var types = TypeModule.getAllTypes();
-        console.log(types);
-        var categoriesTmpl = getTemplate('showCategoriesList');
-        if(categoriesTmpl){
-            main.innerHTML = categoriesTmpl;
-        }
-    }
-
     document.querySelector('.btn-add').addEventListener('click', function (event) {
         event.preventDefault();
 
@@ -31,16 +20,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 CategoryModule.addCategory(categoryName, description);
             }
 
-            showCategories();
+            window.location = "../../html/admin/show-categories-list.html";
         })
     });
 
-    document.querySelector('.btn-edit').addEventListener('click',function (event) {
-        event.preventDefault();
-
-    });
-
     var main = document.querySelector('main');
-    showCategories();
 
 });

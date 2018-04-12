@@ -12,109 +12,103 @@ body {
     background-repeat: no-repeat;
     color:#4c4242;
 }
-.sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-}
 
-.sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-}
-
-.sidenav a:hover {
-    color: #f1f1f1;
-}
-
-.sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-}
-
-.main {
-    transition: margin-left .5s;
-    padding: 16px;
-}
-
-@media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-}
 .container {
     max-width: 1200px;
     width: 100%;
     margin:0 auto;
 }
 
-/* Style the top navigation bar */
-.topnav {
-    display: flex;
-    flex-direction: row;
-    overflow: hidden;
-    background-color: #585858;
+.sidenav {
+    height: 100%;
+    width: 300px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
 }
 
-/* Style the topnav links */
-.topnav a {
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    font-size: 18px;
-    padding: 15px 30px;
+.sidenav a {
+    padding: 6px 6px 6px 32px;
     text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
 }
 
-.topnav>a>small{
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+.sidenav a small{
     font-size: 12px;
+    font-style: italic;
+}
+.main {
+    margin-left: 300px; /* Same as the width of the sidenav */
 }
 
-/* Change color on hover */
-.topnav a:hover {
-    background-color: #40403f;
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
 }
+
+/*!* Style the top navigation bar *!*/
+/*.topnav {*/
+    /*display: flex;*/
+    /*flex-direction: row;*/
+    /*overflow: hidden;*/
+    /*background-color: #585858;*/
+/*}*/
+
+/*!* Style the topnav links *!*/
+/*.topnav a {*/
+    /*display: block;*/
+    /*color: #f2f2f2;*/
+    /*text-align: center;*/
+    /*font-size: 18px;*/
+    /*padding: 15px 30px;*/
+    /*text-decoration: none;*/
+/*}*/
+
+/*.topnav>a>small{*/
+    /*font-size: 12px;*/
+/*}*/
+
+/*!* Change color on hover *!*/
+/*.topnav a:hover {*/
+    /*background-color: #40403f;*/
+/*}*/
 
 .row{
     display: flex;
     flex-direction: row;
 }
 
-.column-left>ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
+/*.column-left>ul{*/
+    /*list-style-type: none;*/
+    /*margin: 0;*/
+    /*padding: 0;*/
+/*}*/
 
-.column-left>ul>li>a{
-    display: block;
-    text-decoration: none;
-    padding: 15px 30px;
-    font-size: 18px;
-    color: #f2f2f2;
-    background-color: #585858;
-}
+/*.column-left>ul>li>a{*/
+    /*display: block;*/
+    /*text-decoration: none;*/
+    /*padding: 15px 30px;*/
+    /*font-size: 18px;*/
+    /*color: #f2f2f2;*/
+    /*background-color: #585858;*/
+/*}*/
 
-.column-left>ul>li>a:hover{
-    background-color: #40403f;
-}
+/*.column-left>ul>li>a:hover{*/
+    /*background-color: #40403f;*/
+/*}*/
 
-.column-right{
-    width: 100%;
-}
+/*.column-right{*/
+    /*width: 100%;*/
+/*}*/
 .column-right h3{
     margin-left: 20px;
     font-size: 25px;
@@ -132,8 +126,8 @@ body {
 
 .col-sm{
     background-color: #279FE0;
-    padding: 5px;
-    width: 300px;
+    padding: 2px;
+    width: 400px;
     height: 165px;
     margin-top: 10px;
     margin-left: 10px;
@@ -147,23 +141,54 @@ body {
     transition: all 1s;
 }
 
-.tile .tile-heading{
+.tile:hover {
+    opacity: 0.95;
+}
+
+.tile-heading{
     padding: 5px 8px;
     text-transform: uppercase;
     background-color: #1E91CF;
     color: #FFF;
 }
+.tile .tile-heading .pull-right {
+    transition: all 1s;
+    opacity: 0.7;
+}
+.tile:hover .tile-heading .pull-right {
+    opacity: 1;
+}
 
-.tile .tile-body{
-    padding: 15px;
+.tile-body{
+    padding: 22px;
     color: #FFFFFF;
     display: flex;
     flex-flow: row wrap;
 }
+.tile .tile-body i {
+    font-size: 50px;
+    opacity: 0.3;
+    transition: all 1s;
+}
+.tile:hover .tile-body i {
+    color: #FFFFFF;
+    opacity: 1;
+}
 
 .tile .tile-body h2{
-    font-size: 60px;
+    font-size: 42px;
     margin:0 auto ;
+}
+.tile-footer {
+    padding: 5px 8px;
+    background-color: #3DA9E3;
+}
+.tile-footer a{
+    text-decoration: none;
+    display: block;
+    padding: 5px 0;
+    text-transform: uppercase;
+    color: #FFF;
 }
 
 .svg-inline--fa .fa-list .fa-w-16{
@@ -179,14 +204,6 @@ body {
     transition: all 1s;
 }
 
-.tile-footer a{
-    text-decoration: none;
-    display: block;
-    padding: 5px 8px;
-    text-transform: uppercase;
-    background-color: #1E91CF;
-    color: #FFF;
-}
 
 /*styles for categories admin page*/
 .page-header{
@@ -201,6 +218,14 @@ body {
     flex-flow: row wrap;
     justify-content: space-around;
     margin: 0 auto;
+}
+
+.top-background{
+    background-color: #111111;
+}
+
+.pull-right h1{
+    color: #818181;
 }
 
 .container-fluid{
@@ -244,6 +269,7 @@ body {
     color: white;
 }
 .panel-default{
+    height: 100%;
     border: 1px solid #e8e8e8;
     border-top: 2px solid #bfbfbf;
 }
@@ -255,7 +281,6 @@ body {
     background-color: #FFFFFF;
     box-shadow: rgba(0, 0, 0, 0.5);
 }
-
 .panel-heading{
     position: relative;
     padding: 10px 30px;
@@ -413,4 +438,8 @@ label{
     display: inline-block;
     width: 50px;
     height: auto;
+}
+hr{
+    border: 0;
+    border-top: 1px solid #cccccc;
 }

@@ -202,10 +202,14 @@
         }
     }
 
-    var pageElement = document.querySelector('.page'),
-        mainElement = pageElement.querySelector('main'),
-        currentPage = getUrlPage(location.href),
-        navigations = document.querySelectorAll('a');
+    var pageElement = document.querySelector('.page');
+        console.log(pageElement);
+        var mainElement = pageElement.querySelector('main');
+        console.log(mainElement);
+        var currentPage = getUrlPage(location.href);
+console.log(currentPage);
+        var navigations = document.querySelectorAll('a');
+console.log(navigations);
 
     Array.from(document.querySelectorAll('a')).forEach(function(link) {
         link.addEventListener('click', function(event) {
