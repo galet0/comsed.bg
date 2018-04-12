@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (password.value.length > 5) {
                 if (password.value === passwordConfirm.value) {
                     if (user = UserModel.register(firstName, lastName, email, phone, addressForm, town, county, password.value)) {
-                        gotoPage(location.href);
+                        
                     } else {
                         firstName = '';
                         lastName = '';
@@ -93,7 +93,4 @@ document.addEventListener('DOMContentLoaded', function () {
             return true;
         }
     });
-
-
-
 });

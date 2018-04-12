@@ -6,7 +6,7 @@ html,
 body {
     padding: 0;
     margin: 0;
-    font-family: "Times New Roman", Times, serif;
+    font-family: Arial, Helvetica, sans-serif;
     background-image: url('../images/background.jpg');
     background-position: center;
     background-repeat: no-repeat;    
@@ -207,8 +207,10 @@ body {
     position: relative;
     background-color: lightcoral
 }
-
-
+.login label{
+    margin-bottom: 5px;
+    display: inline-block;
+}
 .enter-title{
     background-color:white;
     border:2px solid white;
@@ -274,7 +276,107 @@ body {
     border-radius: 3px;
     border:none;
 }
+/* Account Template */
+.account{
+    background-color: #daf0f8;
+    padding:20px;
+    margin: 0 0 40px;
+    font-size:16px;
+}
+.account h2{
+    display: block;
+    padding-left:10px;
+    color:#333;
+}
+.account .row{
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    color:#333;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+.account .clm-left{   
+    flex: 1;
+    padding: 20px;
+    border-radius: 5px;
+    background-color:white;
+    box-shadow: 
+		0 5px 15px 1px rgba(0, 0, 0, 0.6), 
+		0 0 200px 1px rgba(255, 255, 255, 0.5);
+}
+.account .clm-right{
+    flex:3;
+}
+.account .clm-left h2{
+    font-size: 16px;
+	line-height: 34px;
+    padding: 0 10px;
+    width: 210px;
+    cursor: pointer;
+    color: white;
+    background: lightcoral;
+    margin-bottom: 0;	
+    text-transform: uppercase;
+}
+.account .clm-left h3:hover{
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.7);
+}
+.account .clm-left ul{
+    margin:0;
+    padding:0;
+}
+.account .clm-left li{
+    list-style-type: none;
+    font-size:16px;
+    display:inline-block;
+    
+}
+.account ul li a:first-child{
+    margin-top:5px;
+}
+.account .clm-left ul li a {
+    text-decoration: none;
+    color:rgba(240, 128, 128, 0.9);
+    font-weight: bold;
+    font-size:14px;
+    text-transform: uppercase;
+    display:inline-block;
+    width: 210px;
+    padding: 15px 10px 15px 5px;
+}
+.account ul li.active a {
+    color: white;
+    background: rgba(240, 128, 128, 0.9);
+}
+.edit{
+    border-radius: 10px;
+    margin-top:20px;
+    border:2px solid lightcoral;
+}
+.edit p:first-child{
+    font-size:24px;
+    color:rgb(69, 168, 201);
+    font-weight: bold;
+    padding: 24px 0 0;
+    margin-bottom: 0;
+}
+.edit form legend:first-child{
+    margin:0;
+    padding:30px 0 5px;
+}
+.edit form{
+    color:rgb(83, 80, 80)
+}
+.save-btn {
+   margin:20px 30px 20px 0px;
+   font-size:13px;
+   text-transform: uppercase;
+   border-radius: 5px;
+   padding: 10px 15px
+}
 
+/*End of Account Template*/
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
 @media screen and (max-width:600px) {
     .column {

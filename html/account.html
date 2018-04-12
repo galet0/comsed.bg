@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>КОМСЕД</title>
-        <link rel="stylesheet" type="text/css" href="../css/account.css" />
+        <link rel="stylesheet" type="text/css" href="../css/register.css" />
         <script defer
             src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"
             integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
@@ -11,7 +11,8 @@
     </head>
     <body>
         <div class="container page account">
-            <div class="header">
+            <header>
+                <div class="header">
                 <img class="logo" src="../images/wonderland.png">
                 <div class="reg-cart">
                     <ul>
@@ -29,35 +30,178 @@
                 <a href="#">Промоции</a>
                 <a href="#">Контакти</a>
             </div>
-            <main>
-                <div class="profile">
-                    <h2>Моят профил</h2>
-                    <div class="row">
-                        <div class="column clm-left">
+            </header>
+            <aside>
+                <div class="column clm-left">
                             <ul>
-                                <h3>Настройки на профил</h3>
+                                <h2>Вашият профил</h2>
                                 <ul class="settings">
-                                    <li><a href=#>Редакция на профил</a></li>
-                                    <li><a href=#>Смяна на парола</a></li>
+                                    <li class="active"><a
+                                            href="../html/account.html"
+                                            class="current">Общa информация</a></li>
+                                    <li><a href="../html/edit.html">Редакция на профил</a></li>
                                     <li><a href=#>Управление на адреси</a></li>
-                                </ul>
-                                <h3>Поръчки</h3>
-                                <ul class="history">
                                     <li><a href=#>История на поръчки</a></li>
                                     <li><a href=#>Любими продукти</a></li>
                                 </ul>
                             </ul>
                         </div>
+            </aside>
+            <main>
+                <div class="account">
+                    <div class="row">                        
                         <div class="column clm-right">
-
-
+                            <div class="info">
+                                <p> Обща информация</p>
+                                <h1>Здравей!</h1>
+                                <p>От менюто на "Моят профил" може да разгледав активността ти и да актуализираш информацията в него.</p>
+                            </div>
+                            <div class="orders">
+                                <p>Последни поръчки <a href=#> Виж всичко</a></p>
+                                <table class="tableOrders">
+                                    <tr>
+                                        <th> Поръчка № </th>
+                                        <th> Дата </th>
+                                        <th> Обща сума</th>
+                                        <th> Статус</th>
+                                        <th> Преглед</th>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="profile">
+                                <p> Редакция на профил</p>
+                                <div class="profileTitle">
+                                    <h3> Лични данни</h3>
+                                    <a href="../html/edit.html"> Редактирай</a>
+                                </div>
+                                <div class="profileContent">
+                                    <p class="profileInfo"></p>
+                                    <a href=#>Промени парола</a>
+                                </div>
+                            </div>
+                            <div class="addressBook">
+                                <p>Адресна книга</p>
+                                <a href=#>Редакция на адресна книга</a>
+                                <div class="primary">
+                                    <p></p>
+                                    <a href=#>Редактирай адрес</a>
+                                </div>
+                                <div class="secondary">
+                                    <p></p>
+                                    <a href=#>Редактирай адрес</a>
+                                </div>
+                            </div>
+                            <div class="profile-right"></div>
                         </div>
+    
                     </div>
                 </div>
             </main>
         </div>
-        <script src="../js/handlebars.min.js"></script>
-        <script src="../js/AuthController.js"></script>
+        <script id="edit_tmpl" type="text/x-handlebars-template">
+            <div class="row page edit">
+                <div class="edit register clm-right">
+                    <p class="require">Редактиране на профил</p>
+                    <form action="" method="POST" id="formSubmit"
+                        class="register-form edit-form">
+                        <div class="error"></div>
+                        <fieldset>
+                            <legend>Личните ви данни</legend>
+                            <label for="name"> Име <span class="require"> *
+                                </span></label><input type="text"
+                                name="firstName" id="name"
+                                value={{firstName}} placeholder="Въведете
+                                име">
+                            <label for="lastname"> Фамилия <span
+                                    class="require"> * </span></label><input
+                                type="text" name="lastName"
+                                value={{lastName}} id="lastname"
+                                placeholder="Въведете фамилия">
+                            <label for="email"> Е-поща <span
+                                    class="require"> * </span></label><input
+                                type="email" name="email" id="email"
+                                value={{email}} disabled
+                                placeholder="Въведете е-поща">
+                            <label for="phone"> Телефон <span
+                                    class="require"> * </span></label><input
+                                type="tel" name="phone" id="phone"
+                                value={{phone}} placeholder="">
+                        </fieldset>
+                        <fieldset>
+                            <legend> Вашата парола</legend>
+                            <label for="pass"> Парола<span class="require">
+                                            *
+                                </span></label><input type="password"
+                                name="password" value={{password}} id="pass"
+                                placeholder="*******">
+                            <label for="pass"> Нова парола<span
+                                    class="require">
+                                                *
+                                </span></label><input type="password"
+                                name="newPassword" id="pass"
+                                placeholder="*******">
+                            <label for="pass2"> Потвърдете паролата<span
+                                    class="require"> * </span></label><input
+                                name="passwordConfirmNew" type="password"
+                                id="pass2" placeholder="*******">
+                        </fieldset>
+                        <button class="save-btn register-btn">Запази</button>
+                    </form>
+                </div>
+            </div>
+        </script>
+        <script id="account_tmpl" type="text/x-handlebars-template">
+            <div class="account">
+                <div class="row">
+                    <div class="column clm-right">
+                        <div class="info">
+                            <p> Обща информация</p>
+                            <h1>Здравей, {{firstName}} {{lastName}}!</h1>
+                            <p>От менюто на "Моят профил" може да разгледав активността ти и да актуализираш информацията в него.</p>
+                        </div>
+                        <div class="orders">
+                            <p>Последни поръчки <a href=#> Виж всичко</a></p>
+                            <table class="tableOrders">
+                                <tr>
+                                    <th> Поръчка № </th>
+                                    <th> Дата </th>
+                                    <th> Обща сума</th>
+                                    <th> Статус</th>
+                                    <th> Преглед</th>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="profile">
+                            <p> Редакция на профил</p>
+                            <div class="profileTitle">
+                                <h3> Лични данни</h3>
+                                <a href="../html/edit.html"> Редактирай</a>
+                            </div>
+                            <div class="profileContent">
+                                <p class="profileInfo"></p>
+                                <a href=#>Промени парола</a>
+                            </div>
+                        </div>
+                        <div class="addressBook">
+                            <p>Адресна книга</p>
+                            <a href=#>Редакция на адресна книга</a>
+                            <div class="primary">
+                                <p></p>
+                                <a href=#>Редактирай адрес</a>
+                            </div>
+                            <div class="secondary">
+                                <p></p>
+                                <a href=#>Редактирай адрес</a>
+                            </div>
+                        </div>
+                        <div class="profile-right"></div>
+                    </div>
+
+                </div>
+            </div>
+        </script>
+        <script src="../js/handlebars.min.js"></script>        
+        <script src="../js/AccountController.js"></script>
         <script src="../js/UserModel.js"></script>
     </body>
-</html>>
+</html>>>

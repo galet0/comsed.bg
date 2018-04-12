@@ -1,7 +1,8 @@
 var UserModel = (function(){
 
-    function User(firstName, lastName, email, phone, address, town, county, password){
-        this.userID = User.prototype.nextID++;
+    var nextID = 1;
+    function User(firstName, lastName, email, phone, address, town, county, password, isAdmin){
+        this.userID = nextID++;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -10,15 +11,19 @@ var UserModel = (function(){
         this.town = town;
         this.county = county;
         this.password = password;
-    }
-
-    User.prototype.nextID = 1;
+        this.isAdmin = isAdmin || false;
+    }    
 
     var users = JSON.parse(window.localStorage.getItem('users')) || [];
 
     var UserStorage = {
         register: function(firstName, lastName, email, phone, address, town, county, password) {
-            var user = new User(firstName, lastName, email, phone, address, town, county, password);
+            var user;
+            if(users.length){
+                user = new User(firstName, lastName, email, phone, address, town, county, password);
+            }else{
+                user = new User(firstName, lastName, email, phone, address, town, county, password, true);
+            }
             users.push(user);
             window.localStorage.setItem('users', JSON.stringify(users));
             return user;
