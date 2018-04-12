@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>КОМСЕД Регистрация</title>
+        <link rel="stylesheet" type="text/css" href="../css/register.css" />
+        <script defer
+            src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"
+            integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
+            crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+    <body>
+        <div class="container page">
+            <div class="header">
+                <img class="logo" src="../images/wonderland.png">
+                <div class="reg-cart">
+                    <ul>
+                        <li class="login-btn"><a href="auth.html"><i class="fas fa-sign-in-alt"></i>Вход/Регистрация</a></li>
+                        <li class="cart-btn"><a href="#"><i class="fas fa-cart-arrow-down"></i>Количка</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="topnav">
+                <a href="#">Начало</a>
+                <a href="#">За нас</a>
+                <a href="#">Новини</a>
+                <a href="#">Промоции</a>
+                <a href="#">Контакти</a>
+            </div>
+            <div class="hidden"><a href="edit.html" class="current"></a></div>
+            <main>
+                <div class="row page account">
+                    <div class="column clm-left">
+                        <ul>
+                            <h2>Вашият профил</h2>
+                            <ul class="settings"><li class="active"><a href="../html/account.html">Обща информация</a></li>
+                                <li><a href="../html/edit.html" class="current">Редакция на профил</a></li>
+                                <li><a href=#>Управление на адреси</a></li>
+                                <li><a href=#>История на поръчки</a></li>
+                                <li><a href=#>Любими продукти</a></li>
+                            </ul>
+                        </ul>
+                    </div>
+                    <div class="edit register clm-right">
+                        <p class="require">Редактиране на профил</p>
+                        <form action="" method="POST" id="formSubmit"
+                            class="register-form edit-form">
+                            <div class="error"></div>
+                            <fieldset>
+                                <legend>Личните ви данни</legend>
+                                <label for="name"> Име <span class="require"> * </span></label><input value={firstName} type="text" name="firstName" id="name" placeholder="Въведете име">
+                                <label for="lastname"> Фамилия <span class="require"> * </span></label><input type="text" value={lastName} name="lastName" id="lastname" placeholder="Въведете фамилия">
+                                <label for="email"> Е-поща <span class="require"> * </span></label><input type="email" name="email" id="email" disabled placeholder="Въведете е-поща">
+                                <label for="phone"> Телефон <span class="require"> * </span></label><input type="tel" name="phone" id="phone" placeholder="">
+                            </fieldset>
+                            <fieldset>
+                                <legend> Вашата парола</legend>
+                                <label for="pass"> Парола<span class="require"> * </span></label><input type="password" name="password" id="pass" placeholder="*******">
+                                <label for="pass"> Нова парола<span class="require"> * </span></label><input type="password" name="newPassword" id="pass" placeholder="*******">
+                                <label for="pass2"> Потвърдете паролата<span class="require"> * </span></label><input name="passwordConfirmNew" type="password" id="pass2" placeholder="*******">
+                            </fieldset>
+                            <button class="save-btn register-btn">Запази</button>
+                        </form>
+                        
+                    </div>
+                </div>
+                </main>
+            </div>
+            <script src="../js/handlebars.min.js"></script>        
+            <script src="../js/LoginController.js"></script>                
+            <script src="../js/AccountController.js"></script>
+            <script src="../js/AuthController.js"></script>
+            <script src="../js/AppController.js"></script>
+            <script src="../js/UserModel.js"></script>
+        </body>
+    </html>>

@@ -7,10 +7,11 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
 </head>
 <body>
+<div class="container age index">
 <header>
     <div class="container">
         <div class="header">
-            <img class="logo" src="../images/logo.png">
+            <img class="logo" src="../images/wonderland.png">
             <div class="reg-cart">
                 <ul>
                     <li class="login-btn"><a href="#"><i class="fas fa-sign-in-alt"></i>Вход/Регистрация</a></li>
@@ -20,16 +21,15 @@
         </div>
 
         <div class="topnav">
-            <a href="index.html">Начало</a>
+            <a href="index.html" class="current">Начало</a>
             <a href="about.html">За нас</a>
             <a href="news.html">Новини</a>
             <a href="promotions.html">Промоции</a>
             <a href="contacts.html">Контакти</a>
         </div>
-    </div>
+
 </header>
 <main>
-    <div class="container">
         <div class="row">
             <div class="column-left">
                 <div class="input-group">
@@ -92,11 +92,22 @@
                 <button>Купи</button>
             </div>
         </div>
-    </div>
 </main>
 <footer>
 
 </footer>
-
+</div>
+<script id="indexProfile_tmpl" type="text/x-handlebars-template">
+    <div class="reg-cart">
+                <ul>
+                    <li class="profile-btn"><a href="#" ><i class="material-icons">person</i>Моят профил</a></li>
+                    <li class="cart-btn"><a href="#"><i class="fas fa-cart-arrow-down"></i>Количка</a></li>
+                </ul>
+    </div>        
+</script>
+<script src="../js/handlebars.min.js"></script>
+<script src="../js/AccountController.js"></script>
+<script src="../js/AppController.js"></script>
+<script src="../js/UserModel.js"></script>
 </body>
 </html>

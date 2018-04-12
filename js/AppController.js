@@ -202,12 +202,12 @@
         }
     }
 
-    var pageElement = document.querySelector('body'),
+    var pageElement = document.querySelector('.page'),
         mainElement = pageElement.querySelector('main'),
         currentPage = getUrlPage(location.href),
-        navigations = document.querySelectorAll('nav a');
+        navigations = document.querySelectorAll('a');
 
-    Array.from(document.querySelectorAll('nav a')).forEach(function(link) {
+    Array.from(document.querySelectorAll('a')).forEach(function(link) {
         link.addEventListener('click', function(event) {
             event.preventDefault();
             gotoPage(this.href);
