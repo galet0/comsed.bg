@@ -2,16 +2,17 @@
 var TypeModule = (function () {
 
     var types = JSON.parse(window.localStorage.getItem('types')) || [];
+    var typeID = 0;
 
     function Type(name, description, categoryID) {
-        this.id = Type.prototype.typeID++;
+        this.id = ++typeID;
         this.categoryID = categoryID;
         this.name = name;
         this.description = description;
         this.products = [];
     }
 
-    Type.prototype.typeID = 1;
+
 
     return{
         findByTypeName: function (name) {
@@ -26,14 +27,21 @@ var TypeModule = (function () {
             })
         },
 
-        addType: function (categoryID, name, description) {
+        getAllTypes: function () {
+            return types.forEach(function (type) {
+                return type.name;
+            });
+        },
+
+        addType: function (name, description, categoryID) {
             var typeIndex = this.findByTypeName(name);
             if(typeIndex === -1){
-                var type = new Type(name, description);
-                types.push(type);
-                window.localStorage.setItem('types', JSON.stringify(types));
                 var category = CategoryModule.findByCategoryID(categoryID);
+                var type = new Type(name, description, categoryID);
+                types.push(type);
                 category.types.push(type);
+                window.localStorage.setItem('types', JSON.stringify(types));
+
                 return type.id;
             } else {
                 console.log('Вече съществува такава подкатегория!');
@@ -55,7 +63,7 @@ var TypeModule = (function () {
             }
         },
 
-        updateType: function (categoryID, typeID, name, description) {
+        editType: function (categoryID, typeID, name, description) {
             var typeIndex = this.findByTypeID(typeID);
             if(typeIndex !== -1){
                 var type = types.slice(typeIndex, 1)[0];

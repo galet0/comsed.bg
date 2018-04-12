@@ -1,11 +1,17 @@
 document.addEventListener('DOMContentLoaded', function () {
-    var main = document.querySelector('main');
 
     function showCategories() {
-
+        var categories = CategoryModule.getAllCategories();
+        console.log(categories);
+        var types = TypeModule.getAllTypes();
+        console.log(types);
+        var categoriesTmpl = getTemplate('showCategoriesList');
+        if(categoriesTmpl){
+            main.innerHTML = categoriesTmpl;
+        }
     }
 
-    document.querySelector('#addBtn').addEventListener('click', function (event) {
+    document.querySelector('.btn-add').addEventListener('click', function (event) {
         event.preventDefault();
 
         var addCategoryTmpl = getTemplate('addCategory');
@@ -13,16 +19,14 @@ document.addEventListener('DOMContentLoaded', function () {
             main.innerHTML = addCategoryTmpl;
         }
 
-
-
-        document.querySelector('#saveBtn').addEventListener('click', function () {
+        document.querySelector('.btn-save').addEventListener('click', function () {
             var form = document.querySelector('form'),
                 parentName = form.querySelector('input[name="parent"]').value,
                 categoryName = form.querySelector('input[name="categoryName"]').value,
                 description = form.querySelector('textarea[name="description"]').value;
             if(parentName){//if it has category name
                 var category = CategoryModule.findByCategoryName(parentName);
-                TypeModule.addType(category.id, categoryName, description);
+                TypeModule.addType(categoryName, description, category.id);
             } else {
                 CategoryModule.addCategory(categoryName, description);
             }
@@ -31,10 +35,12 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     });
 
-
-    document.querySelector('#editBtn').addEventListener('click',function (event) {
+    document.querySelector('.btn-edit').addEventListener('click',function (event) {
         event.preventDefault();
 
-    })
+    });
+
+    var main = document.querySelector('main');
+    showCategories();
 
 });

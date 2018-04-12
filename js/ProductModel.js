@@ -1,10 +1,10 @@
 var ProductModule = (function () {
 
     var products = JSON.parse(window.localStorage.getItem('products')) || [];
-    var productID = 1;
+    var productID = 0;
 
     function Product(image, name, price, description, brand, typeID, quantity, minAge, maxAge) {
-        this.id = productID++;
+        this.id = ++productID;
         this.image = image;
         this.name = name;
         this.price = price;
@@ -68,7 +68,7 @@ var ProductModule = (function () {
             }
         },
 
-        updateProduct: function (prodID, image, name, price, description, brand, typeID, quantity, minAge, maxAge) {
+        editProduct: function (prodID, image, name, price, description, brand, typeID, quantity, minAge, maxAge) {
             var prodIndex = this.findProductById(prodID);
             if(prodIndex !== -1){
                 var prod = products.slice(prodIndex, 1)[0];
