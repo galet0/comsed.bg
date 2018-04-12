@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WONDERLAND</title>
+    <link rel="stylesheet" type="text/css" href="../css/main.css"/>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container age index">
+<header>
+        <div class="header">
+            <img class="logo" src='../images/logo1.png'></img>
+            <div class="reg-cart">
+                <ul>
+                    <li class="login-btn"><a href="#"><i class="fas fa-sign-in-alt"></i>Вход/Регистрация</a></li>
+                    <li class="cart-btn"><a href="#"><i class="fas fa-cart-arrow-down"></i>Количка</a></li>
+                </ul>
+            </div>
+        <div class="topnav">
+            <a href="index.html" class="current">Начало</a>
+            <a href="about.html">За нас</a>
+            <a href="news.html">Новини</a>
+            <a href="promotions.html">Промоции</a>
+            <a href="contacts.html">Контакти</a>
+        </div>
+
+</header>
+
+<main>    <div class="row">
+            <div class="column-left">
+                <div class="input-group">
+                    <input type="text" placeholder="Търси по ключова дума">
+                </div>
+                <h3>Търси в:</h3>
+                <ul>
+                    <li>
+                        <a href="#">За бебето и майката</a>
+                        <a href="#">Детски дрехи и обувки</a>
+                        <a href="#">Бебешки играчки</a>
+                        <a href="#">Детски играчки</a>
+                        <a href="#">Играчки за момчета</a>
+                        <a href="#">Играчки за момичета</a>
+                        <a href="#">Забавления на двора</a>
+                        <a href="#">Промоции</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="column-right">
+
+            </div>
+        </div>
+
+        <div class="row row-slider">
+            <div class="img-column">
+                <a href="#">
+                    <img src="../images/Lego1.jpg">
+                </a>
+                <h3>Име на играчката</h3>
+                <p>Filtri kartinki</p>
+                <h2>Cena</h2>
+                <button>Купи</button>
+            </div>
+            <div class="img-column">
+                <a href="#">
+                    <img src="../images/Lego2.jpg">
+                </a>
+                <h3>Име на играчката</h3>
+                <p>Filtri kartinki</p>
+                <h2>Cena</h2>
+                <button>Купи</button>
+            </div>
+            <div class="img-column">
+                <a href="#">
+                    <img src="../images/Lego3.jpg">
+                </a>
+                <h3>Име на играчката</h3>
+                <p>Filtri kartinki</p>
+                <h2>Cena</h2>
+                <button>Купи</button>
+            </div>
+            <div class="img-column">
+                <a href="#">
+                    <img src="../images/Lego4.jpg">
+                </a>
+                <h3>Име на играчката</h3>
+                <p>Filtri kartinki</p>
+                <h2>Cena</h2>
+                <button>Купи</button>
+            </div>
+        </div>
+</main>
+<footer>
+
+</footer>
+</div>
+<script id="indexProfile_tmpl" type="text/x-handlebars-template">
+    <div class="reg-cart">
+                <ul>
+                    <li class="profile-btn">
+                        <div class="dropdown">
+                            <a href="#" class="accountBtn"><i class="material-icons">person</i>Моят профил</a>
+                            <div class="dropdown-content">
+                              <a href="#">Link 1</a>
+                              <a href="#">Link 2</a>
+                              <a href="#">Link 3</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="cart-btn"><a href="#"><i class="fas fa-cart-arrow-down"></i>Количка</a></li>
+                </ul>
+    </div>        
+</script>
+<script src="../js/handlebars.min.js"></script>
+<script src="../js/AccountController.js"></script>
+<script src="../js/AppController.js"></script>
+<script src="../js/UserModel.js"></script>
+<!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function() {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					head.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					head.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function(msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if(sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer'))
+			{
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>
