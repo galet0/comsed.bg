@@ -1,14 +1,22 @@
 
 document.addEventListener('DOMContentLoaded', function () {
-
+    console.log(document);
     function showProductList(){
         var products = ProductModule.getAllProducts();
         console.log(products);
         var showProductList = getTemplate('showProductList');
         if(showProductList){
+
+            Handlebars.registerHelper("getValue", function(val) {
+                if(val === undefined) {
+                    return "null";
+                }
+                return val;
+            });
             var template = Handlebars.compile(showProductList);
-            var html = template(products);
-            main.innerHTML = html;
+            var html = template(products);   
+            var table = main.querySelector('.panel-body'); 
+            table.innerHTML = html;
 
             Array.from(document.querySelectorAll('.btn-edit')).forEach(function(btn) {
                 btn.addEventListener('click', function (event) {
@@ -29,7 +37,6 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
     }
-
     document.querySelector('#addBtn').addEventListener('click', function (event) {
         event.preventDefault();
 
@@ -58,9 +65,13 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // init
     var main = document.querySelector('main');
     showProductList();
+    // init
+    
+
+    
+    
 
 });
 

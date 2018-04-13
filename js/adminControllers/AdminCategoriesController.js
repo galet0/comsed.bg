@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
             main.innerHTML = addCategoryTmpl;
         }
 
-        document.querySelector('.btn-save').addEventListener('click', function () {
+        document.querySelector('#saveBtn').addEventListener('click', function () {
             var form = document.querySelector('form'),
                 parentName = form.querySelector('input[name="parent"]').value,
                 categoryName = form.querySelector('input[name="categoryName"]').value,

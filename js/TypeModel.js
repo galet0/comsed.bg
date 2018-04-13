@@ -85,3 +85,5 @@ var TypeModule = (function () {
         }
     }
 })();
+
+var type = TypeModule.addType('type1', 'des', 1);
