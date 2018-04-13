@@ -10,7 +10,7 @@
             crossorigin="anonymous"></script>
     </head>
     <body>
-        <div class="container age index">
+        <div class="container page index">
             <header>
                 <div class='topHeader'>
                     <div class="input-group">
@@ -40,17 +40,7 @@
                 <div class="row">
                     <div class="column-left">
                         <h3>Търси в:</h3>
-                        <ul>
-                            <li>
-                                <a href="#">За бебето и майката</a>
-                                <a href="#">Детски дрехи и обувки</a>
-                                <a href="#">Бебешки играчки</a>
-                                <a href="#">Детски играчки</a>
-                                <a href="#">Играчки за момчета</a>
-                                <a href="#">Играчки за момичета</a>
-                                <a href="#">Забавления на двора</a>
-                                <a href="#">Промоции</a>
-                            </li>
+                        <ul class="navigation">
                         </ul>
                     </div>
                     <div class="column-right">
@@ -116,9 +106,15 @@
                 </div>
             
         </script>
+        <script id="menu_tmpl" type="text/x-handlebars-template">
+            
+        </script>
         <script src="../js/handlebars.min.js"></script>
+        <script src="../json/categories.json"></script>
         <script src="../js/AccountController.js"></script>
         <script src="../js/AppController.js"></script>
         <script src="../js/UserModel.js"></script>
+        <script src="../js/CategoryModel.js"></script>        
+        <script src="../js/TypeModel.js"></script>
     </body>
 </html>

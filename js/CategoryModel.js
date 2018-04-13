@@ -1,4 +1,14 @@
 var CategoryModule = (function () {
+
+    /*sendRequest('/json/categories.json')
+    .then(function(response) {
+        if(response.length){
+            window.localStorage.setItem('categories',JSON.stringify(response));
+        }
+        return response;
+    });
+*/  
+    var types = JSON.parse(window.localStorage.getItem('types')) || [];
     var categories = JSON.parse(window.localStorage.getItem('categories')) || [];
     var categoryID = 0;
 
@@ -40,7 +50,6 @@ var CategoryModule = (function () {
             }
 
         },
-
         deleteCategory: function (categoryID) {
             var category = this.findByCategoryID(categoryID);
             if(category !== -1){

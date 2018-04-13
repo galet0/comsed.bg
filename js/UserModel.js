@@ -13,8 +13,8 @@ var UserModel = (function(){
         this.password = password;
         this.isAdmin = isAdmin || false;
     }    
-
-    var users = JSON.parse(window.localStorage.getItem('users')) || [];
+    
+     users = JSON.parse(window.localStorage.getItem('users')) || [];
 
     var UserStorage = {
         register: function(firstName, lastName, email, phone, address, town, county, password) {

@@ -1,6 +1,15 @@
 //Подкатегории
 var TypeModule = (function () {
 
+   /* sendRequest('/json/types.json')
+    .then(function(response) {
+        if(response.length){
+            window.localStorage.setItem('types',JSON.stringify(response));
+        }
+        return response;
+    });
+*/
+
     var types = JSON.parse(window.localStorage.getItem('types')) || [];
     var typeID = 0;
 
@@ -39,9 +48,8 @@ var TypeModule = (function () {
                 var category = CategoryModule.findByCategoryID(categoryID);
                 var type = new Type(name, description, categoryID);
                 types.push(type);
-                category.types.push(type);
+                category.types.push(type);    
                 window.localStorage.setItem('types', JSON.stringify(types));
-
                 return type.id;
             } else {
                 console.log('Вече съществува такава подкатегория!');
