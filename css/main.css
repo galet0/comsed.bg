@@ -329,6 +329,134 @@ footer{
     background-color: #ddd;
 }
 
+/*Cart*/
+.table tr{
+    border: 1px solid #ddd;
+}
+
+.table{
+    display: table;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 17px;
+    background-color: transparent;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.table-responsive{
+    background-color: #fff;
+}
+
+.table thead{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.table td{
+    padding: 15px 10px;
+    border: 1px solid #ddd;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.text-left{
+    text-align: left;
+}
+
+.text-right{
+    text-align: right;
+}
+
+.input-group .form-control[name^=quantity]{
+    min-width: 50px;
+    width: 100px;
+}
+
+.form-control{
+    display: block;
+    width: 100%;
+    height: 35px;
+    padding: 8px 13px;
+    font-size: 13px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, .075);
+}
+
+
+.input-group .form-control{
+    display: table-cell;
+    position: relative;
+    z-index: 2;
+    float: left;
+    width: 100%;
+    margin-bottom: 0;
+}
+.input-group .form-control:first-child{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.input-group-btn {
+    position: relative;
+    font-size: 0;
+    white-space: nowrap;
+}
+
+.btn{
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.42857;
+    border-radius: 3px;
+}
+
+.btn{
+    padding: 7.5px 12px;
+    font-size: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+}
+
+.input-group-btn:last-child>.btn, .input-group-btn:last-child>.btn-group>.btn{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.input-group-btn:last-child>.btn:not(:last-child):not(.dropdown-toggle) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.btn-primary {
+    color: #ffffff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    background-color: #229ac8;
+    background-image: linear-gradient(to bottom, #23a1d1, #1f90bb);
+    background-repeat: repeat-x;
+    border-color: #1f90bb #1f90bb #145e7a;
+}
+.btn-block{
+    display: block;
+    width: 100%;
+}
+.btn-danger {
+    color: #ffffff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    background-color: #da4f49;
+    background-image: linear-gradient(to bottom, #ee5f5b, #bd362f);
+    background-repeat: repeat-x;
+    border-color: #bd362f #bd362f #802420;
+}
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
 @media screen and (max-width:600px) {
     .column {

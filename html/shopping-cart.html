@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>КОМСЕД Регистрация</title>
+    <link rel="stylesheet" type="text/css" href="../css/main.css"/>
+    <script defer
+            src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"
+            integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
+            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+<header>
+    <div class="container page">
+        <div class="header">
+            <img class="logo" src="../images/wonderland.png">
+            <div class="reg-cart">
+                <ul>
+                    <li class="login-btn"><a href="auth.html"><i class="fas fa-sign-in-alt"></i>Вход/Регистрация</a>
+                    </li>
+                    <li class="cart-btn"><a href="#"><i class="fas fa-cart-arrow-down"></i>Количка</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="topnav">
+            <a href="#">Начало</a>
+            <a href="#">За нас</a>
+            <a href="#">Новини</a>
+            <a href="#">Промоции</a>
+            <a href="#">Контакти</a>
+        </div>
+        <div class="hidden"><a href="edit.html" class="current"></a></div>
+    </div>
+</header>
+<main>
+    <div class="container">
+        <h1>Количка</h1>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <td class="text-center">Снимка</td>
+                    <td class="text-left">Име на продукт</td>
+                    <td class="text-left">Количество</td>
+                    <td class="text-right">Ед. цена</td>
+                    <td class="text-right">Общо</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="text-center">Снимка</td>
+                    <td class="text-left">Име на продукт</td>
+                    <td class="text-left">
+                        <div class="input-group btn-block" style="max-width: 0">
+                            <input type="text" name="quantity" class="form-control input-quantity">
+                            <span class="input-group-btn">
+                                <button type="submit" class="btn btn-primary" title="Обнови"><i class="fas fa-sync-alt"></i></button>
+                                <button type="button" class="btn btn-danger" title="Премахни"><i class="fa fa-times-circle"></i></button>
+                            </span>
+                        </div>
+                    </td>
+                    <td class="text-right">Ед. цена</td>
+                    <td class="text-right">Общо</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+<footer>
+
+</footer>
+</body>
+</html>
