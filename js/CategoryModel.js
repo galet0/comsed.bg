@@ -16,7 +16,7 @@ var CategoryModule = (function () {
         this.id = ++categoryID;
         this.name = name;
         this.description = description;
-        this.types = [];
+        this.types = JSON.parse(window.localStorage.getItem('types')) || [];
     }
 
     return{
@@ -81,4 +81,5 @@ var CategoryModule = (function () {
     }
 })();
 
+var category = CategoryModule.addCategory('cat1', 'des');
 

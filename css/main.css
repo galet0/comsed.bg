@@ -397,6 +397,7 @@ footer{
 
 .dropdown:hover .dropbtn {
     background-color: #3e8e41;
+>>>>>>> 501ee838fa6c63a9cbd2c95ada1787db3d77c97c
 }
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
 @media screen and (max-width:600px) {
