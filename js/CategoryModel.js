@@ -7,7 +7,7 @@ var CategoryModule = (function () {
         }
         return response;
     });
-*/  
+*/  //updateCategories();
     var types = JSON.parse(window.localStorage.getItem('types')) || [];
     var categories = JSON.parse(window.localStorage.getItem('categories')) || [];
     var categoryID = 0;
@@ -16,7 +16,7 @@ var CategoryModule = (function () {
         this.id = ++categoryID;
         this.name = name;
         this.description = description;
-        this.types = JSON.parse(window.localStorage.getItem('types')) || [];
+        this.types = [];
     }
 
     return{
@@ -35,7 +35,7 @@ var CategoryModule = (function () {
         getAllCategories: function () {
             return categories.forEach(function (category) {
                 return category.name;
-            })
+            });
         },
 
         addCategory: function (name, description) {
@@ -77,9 +77,23 @@ var CategoryModule = (function () {
             } else {
                 console.log('Не съществува такава категория!');
             }
+        },
+        updateCategories: function(){
+            var categories = JSON.parse(window.localStorage.getItem('categories'));
+            var types = this.getAllTypes();
+            if(types){
+            for(var i = 0; i < categories.length; i++){
+                for(var j = 0; j < types.length; j++){
+                    if(categories[i].categoryID === types[j].categoryID){
+                        categories[i].types.push(type[j]);
+                    }
+                }
+            }
+            window.localStorage.setItem('categories',JSON.stringify(categories));
         }
+    }
     }
 })();
 
-var category = CategoryModule.addCategory('cat1', 'des');
+
 

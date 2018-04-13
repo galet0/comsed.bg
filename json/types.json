@@ -211,7 +211,7 @@
   "id":27,
   "categoryID":6,
   "name":"Кънки и ролери",
-  "description":"Кънки и ролери",
+  "description":"Кънки, ролери",
   "products":[
   ]
   },
@@ -219,7 +219,7 @@
   "id":28,
   "categoryID":6,
   "name":"Спорт",
-  "description":"Спорт",
+  "description":"Спорт, спортни аксесоари и принадлежности",
   "products":[
   ]
   },
@@ -243,15 +243,15 @@
   "id":31,
   "categoryID":7,
   "name":"Раници и несесери",
-  "description":"Раници и несесери",
+  "description":"Раници,чанти и несесери",
   "products":[
   ]
   },
   {
   "id":32,
   "categoryID":7,
-  "name":"Енциклопедии",
-  "description":"Книги",
+  "name":"Книги",
+  "description":"Енциклопедии, книги, помагала",
   "products":[
   ]
   },
@@ -278,13 +278,5 @@
   "description":"детски комплекти",
   "products":[
   ]
-  },
-  {
-    "id":36,
-    "categoryID":6,
-    "name":"Колички",
-    "description":"Колички каране, за яздене",
-    "products":[
-    ]
-    }
+  }
   ]

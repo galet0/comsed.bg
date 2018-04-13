@@ -1,66 +1,338 @@
-[  
-  {  
-     "id":1,
-     "name":"Козметика и аксесоари",
-     "description":"Козметични комплекти и аксесоари за детето",
-     "types":[  
-
-     ]
-  },
-  {  
-     "id":2,
-     "name":"Книги и канцеларски изделия",
-     "description":"Книги и канцеларски изделия",
-     "types":[  
-
-     ]
-  },
-  {  
-     "id":3,
-     "name":"Превозни средства и спорт",
-     "description":"Играчки на открито",
-     "types":[  
-
-     ]
-  },
-  {  
-     "id":4,
-     "name":"Бебешки играчки",
-     "description":"Играчки за деца от 0-2 години",
-     "types":[  
-
-     ]
-  },
-  {  
-     "id":5,
-     "name":"Наука и природа",
-     "description":"Космос, животни",
-     "types":[  
-
-     ]
-  },
-  {  
-     "id":6,
-     "name":"Музика, изкуство, активни занимания",
-     "description":"Рисуване, шиене, моделиране",
-     "types":[  
-
-     ]
-  },
-  {  
-     "id":7,
-     "name":"Детски кухни, кукли и колички",
-     "description":"Играчки подходящи за всяка възраст",
-     "types":[  
-
-     ]
-  },
-  {  
-     "id":8,
-     "name":"Конструктори и логически игри",
-     "description":"Пъзели, логически игри, настолни игри",
-     "types":[  
-
-     ]
-  }
+[
+{
+"id":1,
+"name":"Бебешки играчки",
+"description":"Играчки за деца от 0-2 години",
+"types":[
+{
+"id":1,
+"categoryID":1,
+"name":"Бебешки играчки",
+"description":"Играчки за бебета",
+"products":[
+]
+},
+{
+"id":2,
+"categoryID":1,
+"name":"Бебешки кошари и креватчета",
+"description":"Спане бебета",
+"products":[
+]
+},
+{
+"id":3,
+"categoryID":1,
+"name":"Бебешки колички",
+"description":"Колички за бебета",
+"products":[
+]
+},
+{
+"id":4,
+"categoryID":1,
+"name":"Уреди",
+"description":"Бебефони, уреди за безопасност на бебето",
+"products":[
+]
+},
+{
+"id":5,
+"categoryID":1,
+"name":"Столчета за кола",
+"description":"Безопасност",
+"products":[
+]
+}
+]
+},
+{
+"id":2,
+"name":"Конструктори и логически игри",
+"description":"Пъзели, логически игри, настолни игри",
+"types":[
+{
+"id":6,
+"categoryID":2,
+"name":"Дървени играчки",
+"description":"Играчки от дърво",
+"products":[
+]
+},
+{
+"id":7,
+"categoryID":2,
+"name":"Логически игри",
+"description":"Логически игри",
+"products":[
+]
+},
+{
+"id":8,
+"categoryID":2,
+"name":"Образователни игри",
+"description":"Игри за развиване на умения и придобиване на знания",
+"products":[
+]
+},
+{
+"id":9,
+"categoryID":2,
+"name":"Пъзели",
+"description":"Пъзели",
+"products":[
+]
+},
+{
+"id":10,
+"categoryID":2,
+"name":"Настолни игри",
+"description":"Семейни игри, игри за групи",
+"products":[
+]
+}
+]
+},
+{
+"id":3,
+"name":"Детски кухни, кукли и колички",
+"description":"Играчки подходящи за всяка възраст",
+"types":[
+{
+"id":11,
+"categoryID":3,
+"name":"Кукли",
+"description":"Кукли, бебета",
+"products":[
+]
+},
+{
+"id":12,
+"categoryID":3,
+"name":"Детски кухни",
+"description":"Кухни",
+"products":[
+]
+},
+{
+"id":13,
+"categoryID":3,
+"name":"Плюшени играчки",
+"description":"Плюшени играчки различни размери",
+"products":[
+]
+},
+{
+"id":14,
+"categoryID":3,
+"name":"Интерактивни играчки",
+"description":"Говорещи, движещи се играчки",
+"products":[
+]
+},
+{
+"id":15,
+"categoryID":3,
+"name":"Колички",
+"description":"Коли с дистанционно управление",
+"products":[
+]
+}
+]
+},
+{
+"id":4,
+"name":"Музика, изкуство, активни занимания",
+"description":"Рисуване, шиене, моделиране",
+"types":[
+{
+"id":16,
+"categoryID":4,
+"name":"Mузикални инструменти",
+"description":"Барабани, китари",
+"products":[
+]
+},
+{
+"id":17,
+"categoryID":4,
+"name":"Рисуване",
+"description":"Пособия за рисуване",
+"products":[
+]
+},
+{
+"id":18,
+"categoryID":4,
+"name":"Моделиране",
+"description":"Пластелин",
+"products":[
+]
+},
+{
+"id":19,
+"categoryID":4,
+"name":"Шиене",
+"description":"Пособия за шиене",
+"products":[
+]
+}
+]
+},
+{
+"id":5,
+"name":"Наука и природа",
+"description":"Космос, животни",
+"types":[
+{
+"id":20,
+"categoryID":5,
+"name":"Светът на животните",
+"description":"Животни",
+"products":[
+]
+},
+{
+"id":21,
+"categoryID":5,
+"name":"Роботи и дронове",
+"description":"Роботи, дронове",
+"products":[
+]
+},
+{
+"id":22,
+"categoryID":5,
+"name":"Пространстро",
+"description":"Космос",
+"products":[
+]
+},
+{
+"id":23,
+"categoryID":5,
+"name":"Опити",
+"description":"Експерименти",
+"products":[
+]
+},
+{
+"id":24,
+"categoryID":5,
+"name":"Глобуси и карти",
+"description":"Глобуси, карти",
+"products":[
+]
+}
+]
+},
+{
+"id":6,
+"name":"Превозни средства и спорт",
+"description":"Играчки на открито",
+"types":[
+{
+"id":25,
+"categoryID":6,
+"name":"Велосипеди",
+"description":"Велосипеди",
+"products":[
+]
+},
+{
+"id":26,
+"categoryID":6,
+"name":"Тротинетки",
+"description":"Тротинетки",
+"products":[
+]
+},
+{
+"id":27,
+"categoryID":6,
+"name":"Кънки и ролери",
+"description":"Кънки, ролери",
+"products":[
+]
+},
+{
+"id":28,
+"categoryID":6,
+"name":"Спорт",
+"description":"Спорт, спортни аксесоари и принадлежности",
+"products":[
+]
+}
+]
+},
+{
+"id":7,
+"name":"Книги и канцеларски изделия",
+"description":"Книги и канцеларски изделия",
+"types":[
+{
+"id":29,
+"categoryID":7,
+"name":"Ученически принадлежности",
+"description":"Говорещи, движещи се играчки",
+"products":[
+]
+},
+{
+"id":30,
+"categoryID":7,
+"name":"Аксесоари",
+"description":"Говорещи, движещи се играчки",
+"products":[
+]
+},
+{
+"id":31,
+"categoryID":7,
+"name":"Раници и несесери",
+"description":"Раници,чанти и несесери",
+"products":[
+]
+},
+{
+"id":32,
+"categoryID":7,
+"name":"Книги",
+"description":"Енциклопедии, книги, помагала",
+"products":[
+]
+}
+]
+},
+{
+"id":8,
+"name":"Козметика и аксесоари",
+"description":"Козметични комплекти и аксесоари за детето",
+"types":[
+{
+"id":33,
+"categoryID":8,
+"name":"За банята",
+"description":"Козметика",
+"products":[
+]
+},
+{
+"id":34,
+"categoryID":8,
+"name":"За зъбките",
+"description":"Пасти, четки, комплекти",
+"products":[
+]
+},
+{
+"id":35,
+"categoryID":8,
+"name":"Козметички комплекти",
+"description":"детски комплекти",
+"products":[
+]
+}
+]
+}
 ]
