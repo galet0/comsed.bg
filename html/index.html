@@ -15,54 +15,29 @@
     <header>
         <div class="topHeader">
             <div class="input-group">
-                <input
-                        type="text"
-                        placeholder="Търси по ключова дума"></input>
+                <input type="text" placeholder="Търси по ключова дума"></input>
             </div>
-
             <div class="headderAuth">
                 <div class="login-btn">
                     <a href="auth.html">
-                        <i class="fas
-                                    fa-sign-in-alt"></i>
+                        <i class="fas fa-sign-in-alt"></i>
                         Вход/Регистрация
                     </a>
                 </div>
-
                 <div class="cart-btn">
                     <a href="#">
-                        <i class="fas
-                                    fa-cart-arrow-down"></i>
+                        <i class="fas fa-cart-arrow-down"></i>
                         Количка
                     </a>
                 </div>
             </div>
         </div>
-
         <div class="header">
             <img class="logo" src="../images/logo1.png">
-
             <div class="topnav">
                 <ul>
-                    <li class="index">
-                        <a href="index.html" class="current">Начало</a>
-                    </li>
-
-                    <li class="about">
-                        <a href="about.html">За нас</a>
-                    </li>
-
-                    <li class="news">
-                        <a href="news.html">Новини</a>
-                    </li>
-
-                    <li class="promotions">
-                        <a href="promotions.html">Промоции</a>
-                    </li>
-
-                    <li class="contacts">
-                        <a href="contacts.html">Контакти</a>
-                    </li>
+                    <!-- <li class="index"><a href="index.html" class="current">Начало</a></li><li class="about"><a href="about.html">За нас</a></li><li class="news"><a href="news.html">Новини</a></li><li class="promotions"><a href="promotions.html">Промоции</a></li><li class="contacts"><a href="contacts.html">Контакти</a></li> -->
+                    <li class="index"><a href="index.html" class="current">Начало</a></li><li class="about"><a href="about.html">За нас</a></li><li class="news"><a href="news.html">Новини</a></li><li class="promotions"><a href="promotions.html">Промоции</a></li><li class="contacts"><a href="contacts.html">Контакти</a></li>
                 </ul>
             </div>
         </div>
@@ -109,7 +84,12 @@
                 </div>
             </div>
         </div>
-        <div class="row row-slider">
+        <div class ="row-slider">
+            <div class="firstCategory">
+            
+            </div>
+        </div>
+        <!-- <div class="row row-slider">
             <div class="img-column">
                 <a href="#"><img src="../images/Lego1.jpg"></a>
 
@@ -123,8 +103,7 @@
             </div>
 
             <div class="img-column">
-                <a href="#">
-                    <img src="../images/Lego2.jpg">
+                <a href="#"> <img src="../images/Lego2.jpg">
                 </a>
 
                 <h3>Име на играчката</h3>
@@ -163,7 +142,7 @@
 
                 <button>Купи</button>
             </div>
-        </div>
+        </div> -->
     </main>
 
     <footer></footer>
@@ -185,7 +164,8 @@
     </div>
 </script>
 
-<script id="menu_tmpl" type="text/x-handlebars-template"></script>
+<script id="promo_tmpl" type="text/x-handlebars-template">
+    {{each promo}}</script>
 
 <script src="../js/handlebars.min.js"></script>
 <script src="../js/AppController.js"></script>
