@@ -12,6 +12,18 @@ body {
     background-repeat: no-repeat;
     color:#4c4242;
 }
+/*admin panel*/
+.admin .column-left{
+    background-color: #2b1d0e;
+}
+
+.admin .column-left>ul>li>a{
+    display: block;
+    text-decoration: none;
+    padding: 15px 30px;
+    font-size: 17px;
+    color: white;
+}
 
 .container {
     max-width: 1200px;

@@ -9,85 +9,90 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
-<header>
-    <div class="sidenav">
-        <div>
-            <a>Добре дошли, име админ!<small>Администратор</small></a>
-            <a href="../admin/admin-index.html">Табло</a>
-            <a href="../admin/show-categories-list.html">Категории</a>
-            <a href="../admin/show-product-list.html">Продукти</a>
-            <a href="../admin/show-user-list.html">Потребители</a>
-            <a href="../admin/show-sales.html">Продажби</a>
+<div class="page sales">
+    <header>
+        <div class="sidenav">
+            <div>
+                <a>Добре дошли, име админ!<small>Администратор</small></a>
+                <a href="../admin/admin-index.html" class="dashboard-btn">Табло</a>
+                <a href="../admin/show-categories-list.html" class="category-btn">Категории</a>
+                <a href="../admin/show-product-list.html" class="product-btn">Продукти</a>
+                <a href="../admin/show-user-list.html" class="user-btn">Потребители</a>
+                <a href="../admin/show-sales.html" class="current sales-btn">Продажби</a>
+            </div>
         </div>
-    </div>
-</header>
-<main>
-    <div class="main">
-        <div class="pull-right top-background">
-            <h1>Поръчки</h1>
-            <a id="addBtn" class="btn btn-primary current"><i class="fas fa-plus"></i></a>
-            <button class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-        </div>
-        <div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <div class="panel-title">
-                        <i class="fa fa-list" aria-hidden="true"></i>
-                        Списък поръчки:
+    </header>
+    <main>
+        <div class="main">
+            <div class="pull-right top-background">
+                <h1>Поръчки</h1>
+                <a id="addBtn" class="btn btn-primary current"><i class="fas fa-plus"></i></a>
+                <button class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+            </div>
+            <div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <i class="fa fa-list" aria-hidden="true"></i>
+                            Списък поръчки:
+                        </div>
                     </div>
-                </div>
-                <div class="panel-body">
-                    <table class="table table-bordered table-hover">
-                        <thead>
-                        <tr>
-                            <td class="table-data text-center">
-                                <input type="checkbox">
-                            </td>
-                            <td class="text-left">
-                                ID поръчка
-                            </td>
-                            <td class="text-left">
-                                Потребител
-                            </td>
-                            <td class="text-right">
-                                Цена тотал
-                            </td>
-                            <td class="text-right">
-                                Дата
-                            </td>
-                            <td class="text-right">
-                                Действие
-                            </td>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {{#each users}}
-                        <tr>
-                            <td class="text-center">
-                                <input type="checkbox" value="{{id}}">
-                            </td>
-                            <td class="text-left">
-                                {{id}}
-                            </td>
-                            <td class="text-left">
-                                {{user.name}}
-                            </td>
-                            <td class="text-right">
-                                {{priceTotal}}
-                            </td>
-                            <td class="text-right">
-                                {{date}}
-                            </td>
-                            <td class="text-right">
-                                <a href="#" class="btn btn-primary btn-view"><i class="fas fa-eye"></i></a>
-                                <a href="#" class="btn btn-danger btn-edit"><i class="fas fa-pencil-alt"></i></a>
-                            </td>
-                        </tr>
-                        {{/each}}
-                        </tbody>
-                    </table>
+                    <div class="panel-body">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                            <tr>
+                                <td class="table-data text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="text-left">
+                                    ID поръчка
+                                </td>
+                                <td class="text-left">
+                                    Потребител
+                                </td>
+                                <td class="text-right">
+                                    Цена тотал
+                                </td>
+                                <td class="text-right">
+                                    Дата
+                                </td>
+                                <td class="text-right">
+                                    Действие
+                                </td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {{#each users}}
+                            <tr>
+                                <td class="text-center">
+                                    <input type="checkbox" value="{{id}}">
+                                </td>
+                                <td class="text-left">
+                                    {{id}}
+                                </td>
+                                <td class="text-left">
+                                    {{user.name}}
+                                </td>
+                                <td class="text-right">
+                                    {{priceTotal}}
+                                </td>
+                                <td class="text-right">
+                                    {{date}}
+                                </td>
+                                <td class="text-right">
+                                    <a href="#" class="btn btn-primary btn-view"><i class="fas fa-eye"></i></a>
+                                    <a href="#" class="btn btn-danger btn-edit"><i class="fas fa-pencil-alt"></i></a>
+                                </td>
+                            </tr>
+                            {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</main>
+    </main>
+</div>
+<script src="../../js/adminControllers/AdminIndexController.js"></script>
+</body>
+</html>

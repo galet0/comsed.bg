@@ -37,9 +37,13 @@ var TypeModule = (function () {
             var typeIndex = this.findByTypeName(name);
             if(typeIndex === -1){
                 var category = CategoryModule.findByCategoryID(categoryID);
+                if(!category){
+                    category = CategoryModule.addCategory(name, description);
+                }
                 var type = new Type(name, description, categoryID);
                 types.push(type);
-                category.types.push(type);
+                CategoryModule.findByCategoryID(category).types.push(type);
+
                 window.localStorage.setItem('types', JSON.stringify(types));
 
                 return type.id;
@@ -63,15 +67,15 @@ var TypeModule = (function () {
             }
         },
 
-        editType: function (categoryID, typeID, name, description) {
-            var typeIndex = this.findByTypeID(typeID);
+        editType: function (categoryName, typeName, description) {
+            var typeIndex = this.findByTypeName(typeName);
             if(typeIndex !== -1){
                 var type = types.slice(typeIndex, 1)[0];
-                var category = CategoryModule.findByCategoryID(categoryID);
+                var category = CategoryModule.findByCategoryName(categoryName);
                 var typeInCategory = category.types.slice(typeIndex, 1);
-                if(name !== undefined && name !== null && name !== ''){
-                    type.name = name;
-                    typeInCategory.name = name;
+                if(typeName !== undefined && typeName !== null && typeName !== ''){
+                    type.name = typeName;
+                    typeInCategory.name = typeName;
                 }
                 if(description !== undefined && description !== null){
                     type.description = description;
@@ -86,4 +90,3 @@ var TypeModule = (function () {
     }
 })();
 
-var type = TypeModule.addType('type1', 'des', 1);

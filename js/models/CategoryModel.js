@@ -72,5 +72,5 @@ var CategoryModule = (function () {
     }
 })();
 
-var category = CategoryModule.addCategory('cat1', 'des');
+
 
