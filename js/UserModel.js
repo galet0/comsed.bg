@@ -12,8 +12,10 @@ var UserModel = (function(){
         this.county = county;
         this.password = password;
         this.isAdmin = isAdmin || false;
+        this.cart = [];
+        this.orders = []
     }    
-
+    
     var users = JSON.parse(window.localStorage.getItem('users')) || [];
 
     var UserStorage = {

@@ -48,8 +48,15 @@ var ProductModule = (function () {
                 var product = new Product(image, name, price, description, brand, typeID, quantity, minAge, maxAge);
                 products.push(product);
                 window.localStorage.setItem('products', JSON.stringify(products));
-                var type = TypeModule.findByTypeID(typeID);
-                type.products.push(product);
+                var getTypes = JSON.parse(window.localStorage.getItem('types'));
+                //var type = TypeModule.findByTypeID(typeID);
+                if(getTypes){
+                    var index = getTypes.findIndex(type => type.id === typeID);
+                    getTypes[index].products.push(product);
+                   // type.products.push(product);
+                    window.localStorage.setItem('types',JSON.stringify(getTypes));
+                }
+                window.localStorage.setItem('products', JSON.stringify(products));
                 console.log(product.id);
                 return product.id;
             } else {
@@ -107,5 +114,4 @@ var ProductModule = (function () {
         }
     }
 })();
-
 

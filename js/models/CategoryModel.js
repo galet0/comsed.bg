@@ -1,4 +1,14 @@
 var CategoryModule = (function () {
+
+    // sendRequest('/json/categories.json')
+    // .then(function(response) {
+    //     if(response.length){
+    //         window.localStorage.setItem('categories',JSON.stringify(response));
+    //     }
+    //     return response;
+    // });
+
+    var types = JSON.parse(window.localStorage.getItem('types')) || [];
     var categories = JSON.parse(window.localStorage.getItem('categories')) || [];
     var categoryID = 0;
 
@@ -6,7 +16,7 @@ var CategoryModule = (function () {
         this.id = ++categoryID;
         this.name = name;
         this.description = description;
-        this.types = JSON.parse(window.localStorage.getItem('types')) || [];
+        this.types = [];
     }
 
     return{
@@ -25,7 +35,7 @@ var CategoryModule = (function () {
         getAllCategories: function () {
             return categories.forEach(function (category) {
                 return category.name;
-            })
+            });
         },
 
         addCategory: function (name, description) {
@@ -40,7 +50,6 @@ var CategoryModule = (function () {
             }
 
         },
-
         deleteCategory: function (categoryID) {
             var category = this.findByCategoryID(categoryID);
             if(category !== -1){

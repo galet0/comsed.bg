@@ -1,124 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>WONDERLAND</title>
-        <link rel="stylesheet" type="text/css" href="../css/main.css" />
-        <script defer
-            src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"
-            integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
-            crossorigin="anonymous"></script>
-    </head>
-    <body>
-        <div class="container age index">
-            <header>
-                <div class='topHeader'>
-                    <div class="input-group">
-                        <input type="text" placeholder="Търси по ключова дума">
-                    </div>
-                    <div class="headderAuth">
-                        <div class="login-btn"><a href="auth.html"><i class="fas
-                                    fa-sign-in-alt"></i>Вход/Регистрация</a></div>
-                        <div class="cart-btn"><a href="#"><i class="fas
-                                    fa-cart-arrow-down"></i>Количка</a></fiv>
+<head>
+    <meta charset="UTF-8"></meta>
+
+    <title>WONDERLAND</title>
+
+    <link rel="stylesheet" type="text/css" href="../css/main.css"></link>
+
+    <script defer="defer" src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+</head>
+
+<body>
+<div class="container page index">
+    <header>
+        <div class="topHeader">
+            <div class="input-group">
+                <input
+                        type="text"
+                        placeholder="Търси по ключова дума"></input>
+            </div>
+
+            <div class="headderAuth">
+                <div class="login-btn">
+                    <a href="auth.html">
+                        <i class="fas
+                                    fa-sign-in-alt"></i>
+                        Вход/Регистрация
+                    </a>
+                </div>
+
+                <div class="cart-btn">
+                    <a href="#">
+                        <i class="fas
+                                    fa-cart-arrow-down"></i>
+                        Количка
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="header">
+            <img class="logo" src="../images/logo1.png">
+
+            <div class="topnav">
+                <ul>
+                    <li class="index">
+                        <a href="index.html" class="current">Начало</a>
+                    </li>
+
+                    <li class="about">
+                        <a href="about.html">За нас</a>
+                    </li>
+
+                    <li class="news">
+                        <a href="news.html">Новини</a>
+                    </li>
+
+                    <li class="promotions">
+                        <a href="promotions.html">Промоции</a>
+                    </li>
+
+                    <li class="contacts">
+                        <a href="contacts.html">Контакти</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="row">
+            <div class="column-left">
+                <h3>Търси в:</h3>
+                <ul class="navigation"></ul>
+            </div>
+            <div class="column-right">
+                <div class="outer-wrapper">
+                    <div class="s-wrap s-type-1" role="slider">
+                        <input type="radio" id="s-1" name="slider-control" checked="checked">
+                        <input type="radio" id="s-2" name="slider-control">
+                        <input type="radio" id="s-3" name="slider-control">
+                        <input type="radio" id="s-4" name="slider-control">
+                        <input type="radio" id="s-5" name="slider-control">
+                        <ul class="s-content">
+                            <li class="s-item s-item-1"></li>
+                            <li class="s-item s-item-2"></li>
+                            <li class="s-item s-item-3"></li>
+                            <li class="s-item s-item-4"></li>
+                            <li class="s-item s-item-5"></li>
+                        </ul>
+                        <div class="s-control">
+                            <label class="s-c-1" for="s-1"></label>
+                            <label class="s-c-2" for="s-2"></label>
+                            <label class="s-c-3" for="s-3"></label>
+                            <label class="s-c-4" for="s-4"></label>
+                            <label class="s-c-5" for="s-5"></label>
+                        </div>
+                        <div class="s-nav">
+                            <label class="s-nav-1 right" for="s-2"></label>
+                            <label class="s-nav-2 left" for="s-1"></label>
+                            <label class="s-nav-2 right" for="s-3"></label>
+                            <label class="s-nav-3 left" for="s-2"></label>
+                            <label class="s-nav-3 right" for="s-4"></label>
+                            <label class="s-nav-4 left" for="s-3"></label>
+                            <label class="s-nav-4 right" for="s-5"></label>
+                            <label class="s-nav-5 left" for="s-4"></label>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="header">
-                <img class="logo" src='../images/logo1.png'/>
-                <div class="topnav">
-                    <ul>
-                        <li class="index"><a href="index.html" class="current">Начало</a></li><li
-                            class="about"><a href="about.html">За нас</a></li><li
-                            class="news"><a href="news.html">Новини</a></li><li
-                            class="promotions"><a href="promotions.html">Промоции</a></li><li
-                            class="contacts"><a href="contacts.html">Контакти</a></li>
-                    </ul>
-                </div>
-            </header>
-            <main>
-                <div class="row">
-                    <div class="column-left">
-                        <h3>Търси в:</h3>
-                        <ul>
-                            <li>
-                                <a href="#">За бебето и майката</a>
-                                <a href="#">Детски дрехи и обувки</a>
-                                <a href="#">Бебешки играчки</a>
-                                <a href="#">Детски играчки</a>
-                                <a href="#">Играчки за момчета</a>
-                                <a href="#">Играчки за момичета</a>
-                                <a href="#">Забавления на двора</a>
-                                <a href="#">Промоции</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="column-right">
-
-                    </div>
-                </div>
-
-                <div class="row row-slider">
-                    <div class="img-column">
-                        <a href="#">
-                            <img src="../images/Lego1.jpg">
-                        </a>
-                        <h3>Име на играчката</h3>
-                        <p>Filtri kartinki</p>
-                        <h2>Cena</h2>
-                        <button>Купи</button>
-                    </div>
-                    <div class="img-column">
-                        <a href="#">
-                            <img src="../images/Lego2.jpg">
-                        </a>
-                        <h3>Име на играчката</h3>
-                        <p>Filtri kartinki</p>
-                        <h2>Cena</h2>
-                        <button>Купи</button>
-                    </div>
-                    <div class="img-column">
-                        <a href="#">
-                            <img src="../images/Lego3.jpg">
-                        </a>
-                        <h3>Име на играчката</h3>
-                        <p>Filtri kartinki</p>
-                        <h2>Cena</h2>
-                        <button>Купи</button>
-                    </div>
-                    <div class="img-column">
-                        <a href="#">
-                            <img src="../images/Lego4.jpg">
-                        </a>
-                        <h3>Име на играчката</h3>
-                        <p>Filtri kartinki</p>
-                        <h2>Cena</h2>
-                        <button>Купи</button>
-                    </div>
-                </div>
-            </main>
-            <footer>
-            </footer>
         </div>
-        <script id="indexProfile_tmpl" type="text/x-handlebars-template">
-                <div class="dropdown">
-                    <a href="#" class="accountBtn dropbtn">Моят профил</a>
-                    <div class="dropdown-content">
-                        <a href="#" class="info">Информация</a>
-                        <a href="#" class="edit">Редактиране</a>
-                        <a href="#"class="address">Адреси</a>
-                        <a href="#"class="orders">Поръчки</a>
-                        <a href="#"class="favorites">Любими продукти</a>                
-                    </div>
-                </div>
-                <div class="cart-btn">
-                    <a href="#"><i class="fas fa-cart-arrow-down"></i>Количка</a>
-                </div>
-            
-        </script>
-        <script src="../js/handlebars.min.js"></script>
-        <script src="../js/AccountController.js"></script>
-        <script src="../js/AppController.js"></script>
-        <script src="../js/UserModel.js"></script>
-    </body>
+        <div class="row row-slider">
+            <div class="img-column">
+                <a href="#"><img src="../images/Lego1.jpg"></a>
+
+                <h3>Име на играчката</h3>
+
+                <p>Filtri kartinki</p>
+
+                <h2>Cena</h2>
+
+                <button>Купи</button>
+            </div>
+
+            <div class="img-column">
+                <a href="#">
+                    <img src="../images/Lego2.jpg">
+                </a>
+
+                <h3>Име на играчката</h3>
+
+                <p>Filtri kartinki</p>
+
+                <h2>Cena</h2>
+
+                <button>Купи</button>
+            </div>
+
+            <div class="img-column">
+                <a href="#">
+                    <img src="../images/Lego3.jpg">
+                </a>
+
+                <h3>Име на играчката</h3>
+
+                <p>Filtri kartinki</p>
+
+                <h2>Cena</h2>
+
+                <button>Купи</button>
+            </div>
+
+            <div class="img-column">
+                <a href="#">
+                    <img src="../images/Lego4.jpg">
+                </a>
+
+                <h3>Име на играчката</h3>
+
+                <p>Filtri kartinki</p>
+
+                <h2>Cena</h2>
+
+                <button>Купи</button>
+            </div>
+        </div>
+    </main>
+
+    <footer></footer>
+</div>
+
+<script id="indexProfile_tmpl" type="text/x-handlebars-template">
+    <div class="dropdown">
+        <a href="#" class="accountBtn dropbtn">Моят профил</a>
+        <div class="dropdown-content">
+            <a href="#" class="info">Информация</a>
+            <a href="#" class="edit">Редактиране</a>
+            <a href="#" class="address">Адреси</a>
+            <a href="#" class="orders">Поръчки</a>
+            <a href="#" class="favorites">Любими продукти</a>
+        </div>
+    </div>
+    <div class="cart-btn">
+        <a href="#"><i class="fas fa-cart-arrow-down"></i>Количка</a>
+    </div>
+</script>
+
+<script id="menu_tmpl" type="text/x-handlebars-template"></script>
+
+<script src="../js/handlebars.min.js"></script>
+<script src="../js/AppController.js"></script>
+<script src="../js/AccountController.js"></script>
+<script src="../json/categories.json" type="application/json"></script>
+<script src="../json/types.json" type="application/json"></script>
+<script src="../js/UserModel.js"></script>
+<script src="../js/models/CategoryModel.js"></script>
+<script src="../js/models/TypeModel.js"></script>
+<script src="../js/models/ProductModel.js"></script>
+</body>
 </html>

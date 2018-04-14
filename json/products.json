@@ -1,15 +1,68 @@
 [
   {
     "id":1,
-    "image":"../images/products/babiesToys/zalygalki/0746937-1-1200x1000.jpg",
-    "name":"Клипс със залъгалка Lorelli Baby Care, асортимент",
-    "price":3.90,
-    "description":"Клипс със залъгалка Lorelli Baby Care, асортимент. 3+ месеца",
+    "image":"../images/products/babiesToys/kolichki/img1.jpg",
+    "name":"Лятна бебешка количка Lorelli Trek, бежова Green Lambs",
+    "price": 82.5,
+    "description":"Eргономични дръжки отстраняем гриф лесно сгъваема двупозиционна облегалка сгъваем сенник с допълнителна секция и козирка",
     "brand":"Lorelli",
-    "type":1,
+    "type":3,
+    "quantity":5,
+    "minAge": 0,
+    "maxAge": 3,
+    "hasPromo":false
+  },
+  {
+    "id":2,
+    "image":"../images/products/babiesToys/kolichki/img2.jpg",
+    "name":"Лятна бебешка количка Lorelli Trek, бежова Green Lambs",
+    "price": 82.5,
+    "description":"Eргономични дръжки отстраняем гриф лесно сгъваема двупозиционна облегалка сгъваем сенник с допълнителна секция и козирка",
+    "brand":"Lorelli",
+    "type":3,
+    "quantity":5,
+    "minAge": 0,
+    "maxAge": 3,
+    "hasPromo":false
+  },
+  {
+    "id":4,
+    "image":"../images/products/babiesToys/kolichki/img4.jpg",
+    "name":"Лятна бебешка количка Lorelli Trek, бежова Green Lambs",
+    "price": 82.5,
+    "description":"Eргономични дръжки отстраняем гриф лесно сгъваема двупозиционна облегалка сгъваем сенник с допълнителна секция и козирка",
+    "brand":"Lorelli",
+    "type":3,
+    "quantity":5,
+    "minAge": 0,
+    "maxAge": 3,
+    "hasPromo":false
+  },
+  {
+    "id":5,
+    "image":"../images/products/babiesToys/kolichki/img5.jpg",
+    "name":"Лятна бебешка количка Lorelli Trek, бежова Green Lambs",
+    "price": 82.5,
+    "description":"Eргономични дръжки отстраняем гриф лесно сгъваема двупозиционна облегалка сгъваем сенник с допълнителна секция и козирка",
+    "brand":"Lorelli",
+    "type":3,
+    "quantity":5,
+    "minAge": 0,
+    "maxAge": 3,
+    "hasPromo":false
+  },
+  {
+    "id":6,
+    "image":"../images/products/babiesToys/kolichki/img6.jpg",
+    "name":"Лятна бебешка количка Lorelli Trek, бежова Green Lambs",
+    "price": 82.5,
+    "description":"Eргономични дръжки отстраняем гриф лесно сгъваема двупозиционна облегалка сгъваем сенник с допълнителна секция и козирка",
+    "brand":"Lorelli",
+    "type":3,
     "quantity":5,
     "minAge": 0,
     "maxAge": 3,
     "hasPromo":false
   }
+
 ]

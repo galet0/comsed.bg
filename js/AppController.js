@@ -217,9 +217,40 @@ console.log(navigations);
             gotoPage(this.href);
         });
     });
-
     window.addEventListener('popstate', function(event) {
         //showPage(getUrlPage(location.href));
         sendRequest(location.href, onPageSuccess.bind(this, getUrlPage(location.href)), onPageError);
     });
+
+    //JSON 
+    // function sendRequest(url) {
+    //     return new Promise(function(resolve, reject) {
+    //         var xhr;
+    //         try {
+    //             xhr = new XMLHttpRequest();
+    //         } catch (err) {
+    //             try {
+    //                 // code for old IE browsers
+    //                 xhr = new ActiveXObject("Microsoft.XMLHTTP");
+    //             } catch (err) {
+    //                 error(new Error('no ajax sorry'));
+    //             }
+    //         }
+    //
+    //         if (xhr) {
+    //             xhr.addEventListener('readystatechange', function(event) {
+    //                 //console.log('readystatechange', xhr.readyState, xhr.status);
+    //                 if (xhr.readyState === 4) {
+    //                     if (xhr.status === 200) {
+    //                         resolve(JSON.parse(xhr.responseText));
+    //                     } else {
+    //                         reject(new Error(xhr.status));
+    //                     }
+    //                 }
+    //             });
+    //             xhr.open('GET', url, true);
+    //             xhr.send(null);
+    //        }
+    //     });
+    // }
 

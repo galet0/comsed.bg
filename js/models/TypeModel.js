@@ -1,5 +1,13 @@
 //Подкатегории
 var TypeModule = (function () {
+     //
+     // sendRequest('/json/types.json')
+     // .then(function(response) {
+     //     if(response.length){
+     //         window.localStorage.setItem('types',JSON.stringify(response));
+     //     }
+     //     return response;
+     // });
 
     var types = JSON.parse(window.localStorage.getItem('types')) || [];
     var typeID = 0;
@@ -37,15 +45,17 @@ var TypeModule = (function () {
             var typeIndex = this.findByTypeName(name);
             if(typeIndex === -1){
                 var category = CategoryModule.findByCategoryID(categoryID);
-                if(!category){
-                    category = CategoryModule.addCategory(name, description);
-                }
+
                 var type = new Type(name, description, categoryID);
                 types.push(type);
-                CategoryModule.findByCategoryID(category).types.push(type);
-
+                if(category){
+                    var getCategory = JSON.parse(window.localStorage.getItem('categories'));
+                    var index = getCategory.findIndex(category => category.id === categoryID);
+                    getCategory[index].types.push(type);
+                    category.types.push(type);
+                    window.localStorage.setItem('categories',JSON.stringify(getCategory));
+                }
                 window.localStorage.setItem('types', JSON.stringify(types));
-
                 return type.id;
             } else {
                 console.log('Вече съществува такава подкатегория!');
@@ -67,26 +77,32 @@ var TypeModule = (function () {
             }
         },
 
-        editType: function (categoryName, typeName, description) {
-            var typeIndex = this.findByTypeName(typeName);
-            if(typeIndex !== -1){
-                var type = types.slice(typeIndex, 1)[0];
-                var category = CategoryModule.findByCategoryName(categoryName);
-                var typeInCategory = category.types.slice(typeIndex, 1);
-                if(typeName !== undefined && typeName !== null && typeName !== ''){
-                    type.name = typeName;
-                    typeInCategory.name = typeName;
+        editType: function (categoryID, typeID, name, description) {
+            var type = this.findByTypeID(typeID);
+            var typeIndex = types.findIndex(function (type) {
+                return type.id === typeID;
+            });
+            if(type){
+                if(name !== undefined && name !== null && name !== ''){
+                    type.name = name;
                 }
                 if(description !== undefined && description !== null){
                     type.description = description;
-                    typeInCategory.description = description;
                 }
                 types[typeIndex] = type;
-                category.types[typeIndex] = type;
+                window.localStorage.setItem('types', JSON.stringify(types));
+                var categoriesLocal = JSON.parse(window.localStorage.getItem('categories'));
+                var categoryIndex = categoriesLocal.findIndex(function (category) {
+                    return category.id === categoryID;
+                });
+
+                categoriesLocal[categoryIndex].types[typeIndex] = type;
+                window.localStorage.setItem('categories', JSON.stringify(categoriesLocal));
             } else {
                 console.log('Няма такава подкатегория!');
             }
+
+            return true;
         }
     }
 })();
-

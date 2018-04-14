@@ -18,8 +18,8 @@ document.addEventListener('DOMContentLoaded', function () {
             if (password.value) {
                 if (user = UserModel.login(email.value, password.value)) {
                     //start session for logged user
-                    sessionStorage.setItem('isLogged',true);
-                    sessionStorage.setItem('logged', email.value);
+                    window.sessionStorage.setItem('isLogged',true);
+                    window.sessionStorage.setItem('logged', email.value);
                     window.location = "index.html";
 
                 } else {

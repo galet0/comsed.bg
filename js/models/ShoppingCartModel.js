@@ -2,10 +2,11 @@ var ShoppingCartModule = (function () {
 
     var cart = [];
 
-    function Order(productID, quantity){
+    function Order(productID, quantity, userID){
         this.productList = [];
         this.productID = productID;
         this.quantity = quantity;
+        this.userID = userID;
     }
 
     return{
@@ -37,7 +38,7 @@ var ShoppingCartModule = (function () {
     }
 })();
 
-/*// ***************************************************
+// ***************************************************
 // Shopping Cart functions
 
 var shoppingCart = (function () {
@@ -162,4 +163,4 @@ var shoppingCart = (function () {
 
     // ----------------------------
     return obj;
-})();*/
+})();
