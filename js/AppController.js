@@ -207,9 +207,9 @@
         var mainElement = pageElement.querySelector('main');
         console.log(mainElement);
         var currentPage = getUrlPage(location.href);
-console.log(currentPage);
+        console.log(currentPage);
         var navigations = document.querySelectorAll('a');
-console.log(navigations);
+    console.log(navigations);
 
     Array.from(document.querySelectorAll('a')).forEach(function(link) {
         link.addEventListener('click', function(event) {
@@ -236,7 +236,7 @@ console.log(navigations);
     //                 error(new Error('no ajax sorry'));
     //             }
     //         }
-    //
+    
     //         if (xhr) {
     //             xhr.addEventListener('readystatechange', function(event) {
     //                 //console.log('readystatechange', xhr.readyState, xhr.status);

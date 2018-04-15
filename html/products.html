@@ -7,67 +7,50 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
 </head>
 <body>
-<header>
-    <div class="container">
-        <div class="header">
-            <img class="logo" src="../images/wonderland.png">
-            <div class="reg-cart">
-                <ul>
-                    <li class="login-btn"><a href="#"><i class="fas fa-sign-in-alt"></i>Вход/Регистрация</a></li>
-                    <li class="cart-btn"><a href="#"><i class="fas fa-cart-arrow-down"></i>Количка</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="topnav">
-            <a href="#">Начало</a>
-            <a href="#">За нас</a>
-            <a href="#">Новини</a>
-            <a href="#">Промоции</a>
-            <a href="#">Контакти</a>
-        </div>
-        <div class="row">
-            <div class="product-layout">
-
-            </div>
-        </div>
-    </div>
-</header>
-<main>
-    <main>
-        <div class="container">
+    <div class="container page products">
+        <header>
+            <div class="topHeader">
+                <div class="input-group">
+                    <input type="text" placeholder="Търси по ключова дума"></input>
+                </div>
+                <div class="headderAuth">
+                    <div class="login-btn">
+                        <a href="auth.html"><i class="fas fa-sign-in-alt"></i>Вход/Регистрация</a>
+                        </div>
+                        <div class="cart-btn">
+                            <a href="#"><i class="fas fa-cart-arrow-down"></i>Количка</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="header">
+                    <img class="logo" src="../images/logo1.png">
+                    <div class="topnav">
+                        <ul>
+                            <!-- <li class="index"><a href="index.html" class="current">Начало</a></li><li class="about"><a href="about.html">За нас</a></li><li class="news"><a href="news.html">Новини</a></li><li class="promotions"><a href="promotions.html">Промоции</a></li><li class="contacts"><a href="contacts.html">Контакти</a></li> -->
+                            <li class="index"><a href="index.html" class="current">Начало</a></li><li class="about"><a href="about.html">За нас</a></li><li class="news"><a href="news.html">Новини</a></li><li class="promotions"><a href="promotions.html">Промоции</a></li><li class="contacts"><a href="contacts.html">Контакти</a></li>
+                        </ul>
+                    </div>
+                </div>
+        </header>
+        <main>
             <div class="row">
                 <div class="column-left">
-                    <div class="input-group">
-                        <input type="text" placeholder="Търси по ключова дума">
-                    </div>
                     <h3>Търси в:</h3>
-                    <ul>
-                        <li>
-                            <a href="#">За бебето и майката</a>
-                            <a href="#">Детски дрехи и обувки</a>
-                            <a href="#">Бебешки играчки</a>
-                            <a href="#">Детски играчки</a>
-                            <a href="#">Играчки за момчета</a>
-                            <a href="#">Играчки за момичета</a>
-                            <a href="#">Забавления на двора</a>
-                            <a href="#">Промоции</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="column-right">
-                    <ul class="product-container">
-                        <li class="product-item">
-                            <a>
-                                <img class="product-img" src="../images/lego_promo.jpg">
-                                <h3>Lego 10753 Juniors Batman - Нападението от Жокера над бат-пещерата</h3>
-                                <p class="price">Цена: 80.00лв.</p>
-                                <div class="button-group">
-                                    <button><i class="fas fa-cart-arrow-down"></i>Купи</button>
-                                    <button><i class="fas fa-heart"></i>Добави в любими</button>
-                                </div>
-                            </a>
-                        </li>
+                    <ul class="navigation"></ul>
+            </div>
+            <div class="column-right">
+                <ul class="product-container">
+                    <li class="product-item">
+                        <a>
+                            <img class="product-img" src="../images/lego_promo.jpg">
+                            <h3>Lego 10753 Juniors Batman - Нападението от Жокера над бат-пещерата</h3>
+                            <p class="price">Цена: 80.00лв.</p>
+                            <div class="button-group">
+                                <button><i class="fas fa-cart-arrow-down"></i>Купи</button>
+                                <button><i class="fas fa-heart"></i>Добави в любими</button>
+                            </div>
+                        </a>
+                    </li>
                         <li class="product-item">
                             <a>
                                 <img class="product-img" src="../images/lego_promo.jpg">
@@ -152,6 +135,15 @@
         </div>
     </main>
 </main>
-
+</div>
 </body>
+<script src="../js/handlebars.min.js"></script>
+<script src="../js/AppController.js"></script>
+<script src="../js/AccountController.js"></script>
+<script src="../json/categories.json" type="application/json"></script>
+<script src="../json/types.json" type="application/json"></script>
+<script src="../js/UserModel.js"></script>
+<script src="../js/models/CategoryModel.js"></script>
+<script src="../js/models/TypeModel.js"></script>
+<script src="../js/models/ProductModel.js"></script>
 </html>
