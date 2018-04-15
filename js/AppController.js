@@ -236,7 +236,7 @@
     //                 error(new Error('no ajax sorry'));
     //             }
     //         }
-    
+    //
     //         if (xhr) {
     //             xhr.addEventListener('readystatechange', function(event) {
     //                 //console.log('readystatechange', xhr.readyState, xhr.status);

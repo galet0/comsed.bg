@@ -75,7 +75,7 @@
 </div>
 <script src="../../js/handlebars.min.js"></script>
 <script id="showProductList_tmpl" type="text/x-handlebars-template">
-<!--<tbody>-->
+    <!--<tbody>-->
     {{#each products}}
     <tr>
         <td class="text-center">
@@ -101,82 +101,86 @@
         </td>
     </tr>
     {{/each}}
-<!--</tbody>-->
+    <!--</tbody>-->
 </script>
 <!--Темплейт за редактиране на продукт!-->
 <script id="editProduct_tmpl" type="text/x-handlebars-template">
-    <div class="container">
-        <div class="row">
-            <div class="column-right">
-                <div>
-                    <div class="panel panel-default">
-                        <div class="pull-right panel-heading">
-                            <div class="panel-title">
-                                Редактирай продукт:
-                            </div>
-                            <a href="#" class="btn btn-primary"><i class="far fa-save"></i></a>
-                            <button class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-                        </div>
-                        <div class="panel-body">
-                            <form action="#" method="post" class="form-horizontal">
-                                <div class="form-group">
-                                    <label for="parent" class="col-sm-2 control-label">Име на продукт</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" id="parent" placeholder="Име на продукт"
-                                               class="form-control"/>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="product-name" class="col-sm-2 control-label">Подкатегория:</label>
-                                    <div class="col-sm-10">
-                                        <input id="product-name" type="text" placeholder="Име на подкатегория"
-                                               class="form-control">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="description" class="col-sm-2 control-label">Описание</label>
-                                    <div class="col-sm-10">
-                                        <textarea id="description" class="form-control summernote"></textarea>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="price" class="col-sm-2 control-label">Цена:</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" id="price" placeholder="Цена" class="form-control"/>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="brand" class="col-sm-2 control-label">Марка</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" id="brand" placeholder="Марка" class="form-control"/>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="quantity" class="col-sm-2 control-label">Количество</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" id="quantity" placeholder="Количество" class="form-control"/>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="age-min" class="col-sm-2 control-label">Възраст от:</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" id="age-min" placeholder="Възраст от" class="form-control"/>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="age-max" class="col-sm-2 control-label">Възраст до:</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" id="age-max" placeholder="Възраст до" class="form-control"/>
-                                    </div>
-                                </div>
-                            </form>
+    <div class="main">
+        <div class="panel panel-default">
+            <div class="pull-right panel-heading">
+                <div class="panel-title">
+                    Редактирай продукт:
+                </div>
+                <a href="#" class="btn btn-primary btn-save"><i class="far fa-save"></i></a>
+                <button class="btn btn-danger btn-cancel"><i class="far fa-trash-alt"></i></button>
+            </div>
+            <div class="panel-body">
+                <form action="#" method="post" class="form-horizontal">
+                    <div class="form-group">
+                        <label for="name" class="col-sm-2 control-label">Име на продукт</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="name" id="name" placeholder="Име на продукт" class="form-control" value="{{name}}"/>
                         </div>
                     </div>
-                </div>
+                    <div class="form-group">
+                        <label for="img" class="col-sm-2 control-label">Снимка src</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="image" id="img" placeholder="Име на продукт" class="form-control" value="{{image}}"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Подкатегория:</label>
+                        <div class="col-sm-10">
+                            <!--<input id="product-name" type="text" placeholder="Име на подкатегория" class="form-control">-->
+                            <select name="types" class="form-control">
+                                {{#each types}}
+                                <option value="{{id}}">
+                                    {{name}}
+                                </option>
+                                {{/each}}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="description" class="col-sm-2 control-label">Описание</label>
+                        <div class="col-sm-10">
+                            <textarea name="description" id="description" class="form-control summernote">{{description}}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="price" class="col-sm-2 control-label">Цена:</label>
+                        <div class="col-sm-10">
+                            <input name="price" type="number" id="price" placeholder="Цена" class="form-control" value="{{price}}"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="brand" class="col-sm-2 control-label">Марка</label>
+                        <div class="col-sm-10">
+                            <input name="brand" type="text" id="brand" placeholder="Марка" class="form-control" value="{{brand}}"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="quantity" class="col-sm-2 control-label">Количество</label>
+                        <div class="col-sm-10">
+                            <input name="quantity" type="text" id="quantity" placeholder="Количество" class="form-control" value="{{quantity}}"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="age-min" class="col-sm-2 control-label">Възраст от:</label>
+                        <div class="col-sm-10">
+                            <input name="minAge" type="text" id="age-min" placeholder="Възраст от" class="form-control" value="{{minAge}}"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="age-max" class="col-sm-2 control-label">Възраст до:</label>
+                        <div class="col-sm-10">
+                            <input name="maxAge" type="text" id="age-max" placeholder="Възраст до" class="form-control" value="{{maxAge}}"/>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
-
 </script>
 <!--Темплейт за добавяне на продукт-->
 <script id="addProduct_tmpl" type="text/x-handlebars-template">
@@ -209,7 +213,7 @@
                             <!--<input name="type" type="text" placeholder="Име на подкатегория" class="form-control">-->
                             <select>
                                 {{#each types as |type typeId}}
-                                    <option value="{{id}}">{{type.name}}</option>
+                                <option value="{{id}}">{{type.name}}</option>
                                 {{/each}}
                             </select>
                         </div>
@@ -260,6 +264,7 @@
 <script src="../../js/adminControllers/AdminIndexController.js"></script>
 <script src="../../js/adminControllers/product/ShowProductListController.js"></script>
 <script src="../../js/adminControllers/product/AdminProductController.js"></script>
+<script src="../../js/models/ProductModel.js"></script>
 <script src="../../js/models/TypeModel.js"></script>
 </body>
 </html>

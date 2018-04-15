@@ -77,6 +77,7 @@ var ProductModule = (function () {
         getPromoProducts: function(){
             return products.filter(product => product.hasPromo === true);
         },
+
         editProduct: function (prodID, image, name, price, description, brand, typeID, quantity, minAge, maxAge) {
             var prodIndex = this.findProductById(prodID);
             if(prodIndex !== -1){
@@ -87,8 +88,8 @@ var ProductModule = (function () {
                 if(name !== undefined && name != null && name !== ''){
                     prod.name = name;
                 }
-                if(isNaN(price)){
-                    prod.price = price;
+                if(price !== undefined && price != null && price !== ''){
+                    prod.price = parseFloat(price).toFixed(2);
                 }
                 if(description !== undefined && description != null && description !== ''){
                     prod.description = description;
@@ -96,23 +97,31 @@ var ProductModule = (function () {
                 if(brand !== undefined && brand != null && brand !== ''){
                     prod.brand = brand;
                 }
-                if(isNaN(typeID)){
-                    prod.typeID = typeID;
+                if(typeID !== undefined && typeID != null && typeID !== ''){
+                    prod.typeID = parseInt(typeID);
                 }
-                if(isNaN(quantity)){
-                    prod.quantity = quantity;
+                if(quantity !== undefined && quantity != null && quantity !== ''){
+                    prod.quantity = parseInt(quantity);
                 }
-                if(isNaN(minAge)){
-                    prod.minAge = minAge;
+                if(minAge !== undefined && minAge != null && minAge !== ''){
+                    prod.minAge = parseInt(minAge);
                 }
-                if(isNaN(maxAge)){
-                    prod.maxAge = maxAge;
+                if(maxAge !== undefined && maxAge != null && maxAge !== ''){
+                    prod.maxAge = parseInt(maxAge);
                 }
-
                 products[prodIndex] = prod;
+                window.localStorage.setItem('products', JSON.stringify(products));
+                var typesLocal = JSON.parse(window.localStorage.getItem('types'));
+                var typeIndex = typesLocal.findIndex(function (type) {
+                    return type.id === parseInt(typeID);
+                });
+                typesLocal[typeIndex].products[prodIndex] = prod;
+                window.localStorage.setItem('types', JSON.stringify(typesLocal));
             } else {
                 console.log('Не съществува продукт с това име!');
             }
+
+            return true;
         }
     }
 })();
@@ -147,5 +156,6 @@ var ProductModule = (function () {
 // var product28 = ProductModule.addProduct('../../images/products/babiesToys/igrachki/img44.jpg','Играчка за количка МАЙМУНА',19.9,'Игpaчĸaтa e изpaбoтeнa oт мaтepиaли c paзличнa пoвъpxнocт (caтeн, плюш, плacтмaca), ĸoитo пoдпoмaгaт paзвитиeтo нa ceтивнocттa нa дeтeтo. Двeтe ĸpaчeтa имaт paзлични peлeфни гpизaлĸи, чyдecни зa ycпoĸoявaнe нa бoлeзнeни вeнци; Яpĸитe цвeтoвe и шapĸи нacъpчaвaт paзвитиeтo нa зpeниeтo; Mъниcтaтa cтимyлиpaт cлyxoвитe ceтивa; C пoмoщтa нa щипĸaтa игpaчĸaтa лecнo ce зaĸaчa зa ĸoличĸи или cтoлчeтa зa ĸoлa; Moжe дa ce пepe caмo пoвъpxнocттa нa игpaчĸaтa','Playgro', 1, 10, 0, 3);
 // var product29 = ProductModule.addProduct('../../images/products/babiesToys/igrachki/img46.jpg','Пирамида',39,'Πиpaмидaтa ce cъcтoи oт 6 пpъcтeнa c paзличнa гoлeминa, ĸoитo тpябвa дa ce пoдpeдят в пpaвилния peд; Игpaчĸaтa paзвивa ĸoopдинaциятa нa дeтeтoΠoдxoдящa зa дeцa нaд 9 мeceцa','Chicco', 1, 10, 0, 3);
 // var product30 = ProductModule.addProduct('../../images/products/babiesToys/igrachki/img48.jpg','Мека дрънкалка ТЕЛЕФОНЧЕ',19,9,'Интepecнитe фopми и paзлични цвeтoвe зaвлaдявaт дeтcĸoтo внимaниe; Πoмaгaт зa paзвивaнe нa ĸoopдинaциятa; Движeщитe и издaвaщи звyĸ чacти ca cпeциaлнo нaпpaвeни дa oĸypaжaвaт дeцaтa дa игpaят и yпpaжнявaт; мeĸитe чacти ca oфopмeни зa yдoбcтвo. Πoдxoдящa зa дeцa нaд 3 мeceцa','Chicco', 1, 10, 0, 3);
-//var product10 = ProductModule.addProduct('../../images/products/babiesToys/igrachki/img19.jpg','',66,'','Fisher Price', 1, 10, 0, 3);
+// var product40 = ProductModule.addProduct('../../images/products/babiesToys/igrachki/img19.jpg','',66,'','Fisher Price', 1, 10, 0, 3);
 
+//var product41 = ProductModule.addProduct('../../images/products/kozmetikaAksesoari/zaBanqta/img1.jpg', 'Бебешки сапун с мляко Johnson’s 100гр.', 0.89, 'Сапун с мляко Johnson’s 100 ГР. е деликатен и лек към нежната детска кожа; Специално разработената му формула е предназначена за грижа за най-малките.', 'Johnson’s', 33, 5, 0, 3);

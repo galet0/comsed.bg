@@ -38,8 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 main.innerHTML = temp;
                 var inputCategory = main.querySelector('input[name="category"]');
                 inputCategory.value = categoryName;
-                inputCategory.disabled=true;
-
+                inputCategory.disabled = true;
 
                 main.querySelector('.btn-save').addEventListener('click', function (event) {
                     event.preventDefault();

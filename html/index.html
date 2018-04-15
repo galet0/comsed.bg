@@ -7,7 +7,9 @@
 
     <link rel="stylesheet" type="text/css" href="../css/main.css"></link>
 
-    <script defer="defer" src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+    <script defer="defer" src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"
+            integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
+            crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -37,7 +39,11 @@
             <div class="topnav">
                 <ul>
                     <!-- <li class="index"><a href="index.html" class="current">Начало</a></li><li class="about"><a href="about.html">За нас</a></li><li class="news"><a href="news.html">Новини</a></li><li class="promotions"><a href="promotions.html">Промоции</a></li><li class="contacts"><a href="contacts.html">Контакти</a></li> -->
-                    <li class="index"><a href="index.html" class="current">Начало</a></li><li class="about"><a href="about.html">За нас</a></li><li class="news"><a href="news.html">Новини</a></li><li class="promotions"><a href="promotions.html">Промоции</a></li><li class="contacts"><a href="contacts.html">Контакти</a></li>
+                    <li class="index"><a href="index.html" class="current">Начало</a></li>
+                    <li class="about"><a href="about.html">За нас</a></li>
+                    <li class="news"><a href="news.html">Новини</a></li>
+                    <li class="promotions"><a href="promotions.html">Промоции</a></li>
+                    <li class="contacts"><a href="contacts.html">Контакти</a></li>
                 </ul>
             </div>
         </div>
@@ -84,78 +90,25 @@
                 </div>
             </div>
         </div>
-        <div class ="row-slider">
+        <div class="row-slider">
             <div class='buttons'>
                 <button class='button'>
                     <i class="arrow left"></i>
                 </button>
                 <button class='button'>
                     <i class="arrow right"></i>
-                </button>           
+                </button>
             </div>
             <div class="firstCategory">
-            
+
             </div>
         </div>
-        <!-- <div class="row row-slider">
-            <div class="img-column">
-                <a href="#"><img src="../images/Lego1.jpg"></a>
-
-                <h3>Име на играчката</h3>
-
-                <p>Filtri kartinki</p>
-
-                <h2>Cena</h2>
-
-                <button>Купи</button>
-            </div>
-
-            <div class="img-column">
-                <a href="#"> <img src="../images/Lego2.jpg">
-                </a>
-
-                <h3>Име на играчката</h3>
-
-                <p>Filtri kartinki</p>
-
-                <h2>Cena</h2>
-
-                <button>Купи</button>
-            </div>
-
-            <div class="img-column">
-                <a href="#">
-                    <img src="../images/Lego3.jpg">
-                </a>
-
-                <h3>Име на играчката</h3>
-
-                <p>Filtri kartinki</p>
-
-                <h2>Cena</h2>
-
-                <button>Купи</button>
-            </div>
-
-            <div class="img-column">
-                <a href="#">
-                    <img src="../images/Lego4.jpg">
-                </a>
-
-                <h3>Име на играчката</h3>
-
-                <p>Filtri kartinki</p>
-
-                <h2>Cena</h2>
-
-                <button>Купи</button>
-            </div>
-        </div> -->
     </main>
 
     <footer></footer>
 </div>
 
+<script src="../js/handlebars.min.js"></script>
 <script id="indexProfile_tmpl" type="text/x-handlebars-template">
     <div class="dropdown">
         <a href="#" class="accountBtn dropbtn">Моят профил</a>
@@ -173,9 +126,8 @@
 </script>
 
 <script id="promo_tmpl" type="text/x-handlebars-template">
-    {{each promo}}</script>
-
-<script src="../js/handlebars.min.js"></script>
+    {{each promo}}
+</script>
 <script src="../js/AppController.js"></script>
 <script src="../js/AccountController.js"></script>
 <script src="../json/categories.json" type="application/json"></script>
