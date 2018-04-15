@@ -207,9 +207,9 @@
         var mainElement = pageElement.querySelector('main');
         console.log(mainElement);
         var currentPage = getUrlPage(location.href);
-console.log(currentPage);
+        console.log(currentPage);
         var navigations = document.querySelectorAll('a');
-console.log(navigations);
+    console.log(navigations);
 
     Array.from(document.querySelectorAll('a')).forEach(function(link) {
         link.addEventListener('click', function(event) {
@@ -223,34 +223,34 @@ console.log(navigations);
     });
 
     //JSON 
-    function sendRequest(url) {
-        return new Promise(function(resolve, reject) {
-            var xhr;
-            try {
-                xhr = new XMLHttpRequest();
-            } catch (err) {
-                try {
-                    // code for old IE browsers
-                    xhr = new ActiveXObject("Microsoft.XMLHTTP");
-                } catch (err) {
-                    error(new Error('no ajax sorry'));
-                }
-            }
+    // function sendRequest(url) {
+    //     return new Promise(function(resolve, reject) {
+    //         var xhr;
+    //         try {
+    //             xhr = new XMLHttpRequest();
+    //         } catch (err) {
+    //             try {
+    //                 // code for old IE browsers
+    //                 xhr = new ActiveXObject("Microsoft.XMLHTTP");
+    //             } catch (err) {
+    //                 error(new Error('no ajax sorry'));
+    //             }
+    //         }
     
-            if (xhr) {
-                xhr.addEventListener('readystatechange', function(event) {
-                    //console.log('readystatechange', xhr.readyState, xhr.status);
-                    if (xhr.readyState === 4) {
-                        if (xhr.status === 200) {
-                            resolve(JSON.parse(xhr.responseText));
-                        } else {
-                            reject(new Error(xhr.status));
-                        }
-                    }
-                });
-                xhr.open('GET', url, true);
-                xhr.send(null);
-           }
-        });
-    }
+    //         if (xhr) {
+    //             xhr.addEventListener('readystatechange', function(event) {
+    //                 //console.log('readystatechange', xhr.readyState, xhr.status);
+    //                 if (xhr.readyState === 4) {
+    //                     if (xhr.status === 200) {
+    //                         resolve(JSON.parse(xhr.responseText));
+    //                     } else {
+    //                         reject(new Error(xhr.status));
+    //                     }
+    //                 }
+    //             });
+    //             xhr.open('GET', url, true);
+    //             xhr.send(null);
+    //        }
+    //     });
+    // }
 
