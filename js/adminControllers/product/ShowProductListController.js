@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 inputBrand.value = product.brand;
                 var inputTypeID = main.childNodes[1].childNodes[1].childNodes[3].childNodes[1][2].value;
                 var inputType = types.find(function (type) {
-                    return type.id === inputTypeID;
+                    return type.id === parseInt(inputTypeID);
                 });
                 inputType.value = inputType.name;
                 var inputQuantity = main.querySelector('input[name="quantity"]');
