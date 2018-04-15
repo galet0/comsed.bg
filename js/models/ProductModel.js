@@ -115,3 +115,5 @@ var ProductModule = (function () {
     }
 })();
 
+var p1 = ProductModule.addProduct("../../images/products/kozmetikaAksesoari/zaBanqta/img1.jpg", "Бебешки сапун с мляко Johnson’s 100гр.", 0.89, "Сапун с мляко Johnson’s 100 ГР. е деликатен и лек към нежната детска кожа; Специално разработената му формула е предназначена за грижа за най-малките.", "Johnson’s", 33, 5, 0, 3);
+
