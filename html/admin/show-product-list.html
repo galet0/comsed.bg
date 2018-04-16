@@ -162,19 +162,19 @@
                     <div class="form-group">
                         <label for="quantity" class="col-sm-2 control-label">Количество</label>
                         <div class="col-sm-10">
-                            <input name="quantity" type="text" id="quantity" placeholder="Количество" class="form-control" value="{{quantity}}"/>
+                            <input name="quantity" type="number" id="quantity" placeholder="Количество" class="form-control" value="{{quantity}}"/>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="age-min" class="col-sm-2 control-label">Възраст от:</label>
                         <div class="col-sm-10">
-                            <input name="minAge" type="text" id="age-min" placeholder="Възраст от" class="form-control" value="{{minAge}}"/>
+                            <input name="minAge" type="number" id="age-min" placeholder="Възраст от" class="form-control" value="{{minAge}}"/>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="age-max" class="col-sm-2 control-label">Възраст до:</label>
                         <div class="col-sm-10">
-                            <input name="maxAge" type="text" id="age-max" placeholder="Възраст до" class="form-control" value="{{maxAge}}"/>
+                            <input name="maxAge" type="number" id="age-max" placeholder="Възраст до" class="form-control" value="{{maxAge}}"/>
                         </div>
                     </div>
                 </form>
@@ -211,9 +211,9 @@
                         <label class="col-sm-2 control-label">Подкатегория:</label>
                         <div class="col-sm-10">
                             <!--<input name="type" type="text" placeholder="Име на подкатегория" class="form-control">-->
-                            <select>
-                                {{#each types as |type typeId}}
-                                <option value="{{id}}">{{type.name}}</option>
+                            <select name="types" class="form-control">
+                                {{#each types}}
+                                    <option value="{{id}}">{{name}}</option>
                                 {{/each}}
                             </select>
                         </div>
