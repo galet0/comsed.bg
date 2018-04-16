@@ -2,53 +2,12 @@ var ShoppingCartModule = (function () {
 
     var cart = [];
 
-    function Order(productID, quantity, userID){
+    function Order(productID, price, quantity, userID){
         this.productList = [];
         this.productID = productID;
+        this.price = price;
         this.quantity = quantity;
         this.userID = userID;
-    }
-
-    return{
-        createOrder: function (productID, quantity) {
-            var product = this.productList.findIndex(function (prod) {
-                return prod === productID;
-            });
-            var order;
-            if(product === -1){
-                order = new Order(productID, quantity);
-                this.productList.push(productID);
-                cart.push(order);
-            } else {
-                order = cart.find(function (ord) {
-                    return ord.productList.findIndex(function (prod) {
-                        return prod === productID;
-                    });
-                });
-
-                order.quantity += quantity;
-            }
-
-        },
-
-        addProductToCart: function (productID, quantity) {
-            var order = new Order(productID, quantity);
-            cart.push(order);
-        }
-    }
-})();
-
-// ***************************************************
-// Shopping Cart functions
-
-var shoppingCart = (function () {
-    // Private methods and properties
-    var cart = [];
-
-    function Item(name, price, count) {
-        this.name = name
-        this.price = price
-        this.count = count
     }
 
     function saveCart() {
@@ -64,103 +23,73 @@ var shoppingCart = (function () {
 
     loadCart();
 
+    return{
+        findProductIndex: function (productID) {
+            return this.productList.findIndex(function (prod) {
+                return prod === productID;
+            });
+        },
 
+        createOrder: function (productID, price, quantity, userID) {
+            var productIndex = this.findProductIndex(productID);
+            var order;
+            if(productIndex === -1){
+                order = new Order(productID, price, quantity, userID);
+                this.productList.push(productID);
+                cart.push(order);
+            } else {
+                order = cart.find(function (ord) {
+                    return ord.productList.findIndex(function (prod) {
+                        return prod === productID;
+                    });
+                });
 
-    // Public methods and properties
-    var obj = {};
+                order.quantity += quantity;
+            }
 
-    obj.addItemToCart = function (name, price, count) {
-        for (var i in cart) {
-            if (cart[i].name === name) {
-                cart[i].count += count;
+            saveCart();
+        },
+
+        addProductToCart: function (productID, price, quantity) {
+            var order = new Order(productID, price, quantity);
+            cart.push(order);
+            saveCart();
+        },
+
+        removeProductFromCart: function (productID) {
+            var productIndex = this.findProductIndex(productID);
+
+            if(productIndex !== -1){
+                this.productList.splice(productIndex, 1);
                 saveCart();
-                return;
             }
-        }
+        },
 
-        console.log("addItemToCart:", name, price, count);
+        updateQuantityInCart: function (productID, quantity) {
+            var productIndex = this.findProductIndex(productID);
 
-        var item = new Item(name, price, count);
-        cart.push(item);
-        saveCart();
-    };
-
-    obj.setCountForItem = function (name, count) {
-        for (var i in cart) {
-            if (cart[i].name === name) {
-                cart[i].count = count;
-                break;
+            if(productIndex !== -1){
+                this.quantity = quantity;
             }
+
+            saveCart();
+        },
+
+        totalSumInCart: function () {
+            return cart.forEach(function (order) {
+                return order.quantity * order.price;
+            });
+        },
+
+        viewCart: function () {
+            cart.forEach(function (order) {
+                //TODO
+            })
+        },
+
+        clearCart: function () {
+            cart = [];
+            saveCart();
         }
-        saveCart();
-    };
-
-
-    obj.removeItemFromCart = function (name) { // Removes one item
-        for (var i in cart) {
-            if (cart[i].name === name) { // "3" === 3 false
-                cart[i].count--; // cart[i].count --
-                if (cart[i].count === 0) {
-                    cart.splice(i, 1);
-                }
-                break;
-            }
-        }
-        saveCart();
-    };
-
-
-    obj.removeItemFromCartAll = function (name) { // removes all item name
-        for (var i in cart) {
-            if (cart[i].name === name) {
-                cart.splice(i, 1);
-                break;
-            }
-        }
-        saveCart();
-    };
-
-
-    obj.clearCart = function () {
-        cart = [];
-        saveCart();
     }
-
-
-    obj.countCart = function () { // -> return total count
-        var totalCount = 0;
-        for (var i in cart) {
-            totalCount += cart[i].count;
-        }
-
-        return totalCount;
-    };
-
-    obj.totalCart = function () { // -> return total cost
-        var totalCost = 0;
-        for (var i in cart) {
-            totalCost += cart[i].price * cart[i].count;
-        }
-        return totalCost.toFixed(2);
-    };
-
-    obj.listCart = function () { // -> array of Items
-        var cartCopy = [];
-        console.log("Listing cart");
-        console.log(cart);
-        for (var i in cart) {
-            console.log(i);
-            var item = cart[i];
-            var itemCopy = {};
-            for (var p in item) {
-                itemCopy[p] = item[p];
-            }
-            itemCopy.total = (item.price * item.count).toFixed(2);
-            cartCopy.push(itemCopy);
-        }
-        return cartCopy;
-    };
-
-    // ----------------------------
-    return obj;
 })();

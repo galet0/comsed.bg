@@ -1,63 +1,68 @@
-document.addEventListener('DOMContentLoaded', function () {
-    var categories = JSON.parse(window.localStorage.getItem('categories'));
-    var types = JSON.parse(window.localStorage.getItem('types'));
-    //console.log(categories);
-    var indexCategory = getTemplate('showCategoriesList');
-    //console.log(indexCategory);
-    var template = Handlebars.compile(indexCategory);
-    //console.log(template);
-    var temp = template({categories: categories}, {types: types});
-    console.log(temp);
-    document.querySelector('tbody').innerHTML = temp;
+(function () {
 
-    var main = document.querySelector('main');
+    function initPage() {
+        var categories = JSON.parse(window.localStorage.getItem('categories'));
+        var types = JSON.parse(window.localStorage.getItem('types'));
+        //console.log(categories);
+        var indexCategory = AppController.getControllerTemplate('AdminCategoriesController', 'showCategoriesList');
+        //console.log(indexCategory);
+        var template = Handlebars.compile(indexCategory);
+        //console.log(template);
+        var temp = template({categories: categories}, {types: types});
+        console.log(temp);
+        document.querySelector('tbody').innerHTML = temp;
 
-    Array.from(document.querySelectorAll('.btn-edit-type')).forEach(function(btn){
-        btn.addEventListener('click', function (event) {
-            event.preventDefault();
+        var main = document.querySelector('main');
 
-            var typeInput ;//= document.querySelector('input[name="typeId"]');
+        Array.from(document.querySelectorAll('.btn-edit-type')).forEach(function(btn){
+            btn.addEventListener('click', function (event) {
+                event.preventDefault();
 
-            typeInput = btn.parentNode.parentNode.childNodes[1].children["0"].value;
-            // console.log(typeInput);
-            // console.log(typeInput.parentNode);
-            // console.log(typeInput.parentNode.firstChild);
-            // console.log(typeInput.parentNode.firstChild.nodeType);
+                var typeInput ;//= document.querySelector('input[name="typeId"]');
 
-            var typeID = parseInt(typeInput);
-            var types = JSON.parse(window.localStorage.getItem('types')) || [];
-            var type = types.find(type => type.id === typeID);
+                typeInput = btn.parentNode.parentNode.childNodes[1].children["0"].value;
+                // console.log(typeInput);
+                // console.log(typeInput.parentNode);
+                // console.log(typeInput.parentNode.firstChild);
+                // console.log(typeInput.parentNode.firstChild.nodeType);
 
-            var editCategoryTmpl = getTemplate('editCategory');
-            var template = Handlebars.compile(editCategoryTmpl);
-            var temp = template(type);
+                var typeID = parseInt(typeInput);
+                var types = JSON.parse(window.localStorage.getItem('types')) || [];
+                var type = types.find(type => type.id === typeID);
 
-            var categoryName = CategoryModule.findByCategoryID(type.categoryID).name;
+                var editCategoryTmpl = AppController.getControllerTemplate('ShowCategoryListController', 'editCategory');
+                var template = Handlebars.compile(editCategoryTmpl);
+                var temp = template(type);
 
-            if (editCategoryTmpl) {
-                main.innerHTML = temp;
-                var inputCategory = main.querySelector('input[name="category"]');
-                inputCategory.value = categoryName;
-                inputCategory.disabled = true;
+                var categoryName = CategoryModule.findByCategoryID(type.categoryID).name;
 
-                main.querySelector('.btn-save').addEventListener('click', function (event) {
-                    event.preventDefault();
-                    var newName = document.querySelector('input[name="type"]').value;
-                    var newDescription = document.querySelector('textarea').value;
-                    type.name = newName;
-                    type.description = newDescription;
+                if (editCategoryTmpl) {
+                    main.innerHTML = temp;
+                    var inputCategory = main.querySelector('input[name="category"]');
+                    inputCategory.value = categoryName;
+                    inputCategory.disabled = true;
 
-                    if(TypeModule.editType(type.categoryID, typeID, newName, newDescription)){
-                        window.location = '../../html/admin/show-categories-list.html';
-                    }
-                    window.localStorage.setItem('types', JSON.stringify(types));
-                });
+                    main.querySelector('.btn-save').addEventListener('click', function (event) {
+                        event.preventDefault();
+                        var newName = document.querySelector('input[name="type"]').value;
+                        var newDescription = document.querySelector('textarea').value;
+                        type.name = newName;
+                        type.description = newDescription;
 
-            }
+                        if(TypeModule.editType(type.categoryID, typeID, newName, newDescription)){
+                            window.location = '../../html/admin/show-categories-list.html';
+                        }
+                        window.localStorage.setItem('types', JSON.stringify(types));
+                    });
 
-
+                }
+            });
         });
+    }
 
-    });
-});
+    AppController.registerController('ShowCategoryListController', {
+        initPage: initPage
+    })
+})();
+
 
