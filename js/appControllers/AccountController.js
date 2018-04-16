@@ -1,28 +1,36 @@
-    document.addEventListener('DOMContentLoaded', function () {
- 
+   
+ (function(){
+
+
+
+    function initPage(){
+
+
+        
+    }
         // Get JSON
      
-         // sendRequest('../json/products.json')
-         //     .then(function(response) {
-         //         if(response.length){
-         //             window.localStorage.setItem('products',JSON.stringify(response));
-         //         }
-         //         return response;
-         //     });
-         // sendRequest('../json/types.json')
-         //     .then(function(response) {
-         //         if(response.length){
-         //             window.localStorage.setItem('types',JSON.stringify(response));
-         //         }
-         //         return response;
-         //     });
-         // sendRequest('../json/categories.json')
-         //     .then(function(response) {
-         //         if(response.length){
-         //             window.localStorage.setItem('categories',JSON.stringify(response));
-         //         }
-         //         return response;
-         //     });
+        //  sendRequest('../json/products.json')
+        //      .then(function(response) {
+        //          if(response.length){
+        //              window.localStorage.setItem('products',JSON.stringify(response));
+        //          }
+        //          return response;
+        //      });
+        //  sendRequest('../json/types.json')
+        //      .then(function(response) {
+        //          if(response.length){
+        //              window.localStorage.setItem('types',JSON.stringify(response));
+        //          }
+        //          return response;
+        //      });
+        //  sendRequest('../json/categories.json')
+        //      .then(function(response) {
+        //          if(response.length){
+        //              window.localStorage.setItem('categories',JSON.stringify(response));
+        //          }
+        //          return response;
+        //      });
      
                  
          var colorStyles = ['#f53434','#e88102','#3bc91f','#55068e','#069eeb','#069eeb','#069eeb','#069eeb'],
@@ -94,7 +102,7 @@
                  var childDiv = document.createElement('div');
                  childDiv.className = 'img-column';
                  childDiv.innerHTML = '<a href="/html/view-product.html" name="product" value="'+ firstCategoryProducts[i].id + '"><img src =' + firstCategoryProducts[i].image + '></a><h3>' 
-                                          + firstCategoryProducts[i].name +'</h3><h2>' + firstCategoryProducts[i].price.toFixed(2) +'лв'
+                                          + firstCategoryProducts[i].name +'</h3><h2>' + firstCategoryProducts[i].price +'лв'
                                           + '</h2><button> Купи </button>';
                  div.appendChild(childDiv);
              }
@@ -146,8 +154,7 @@
                  }
              }
              return productPage;
-         }
-        
+         }        
           // SHOW PRODUCTS PAGE 
  
          var links = document.querySelectorAll('a');
@@ -155,7 +162,7 @@
              link.addEventListener('click',function(event){
                  event.preventDefault();
                  var showProd,
-                     getHref = getUrlPage(link.href),
+                     getHref = AppController.getUrlPage(link.href),
                      aside = document.querySelector('.column-right');
                  // show all products in the cattegory   
                  if(link.name === 'category'){
@@ -180,22 +187,22 @@
                          var productTemplate = getTemplate('products'),
                          template = Handlebars.compile(productTemplate),
                          temp = template({products: prod});
-                     aside.innerHTML = temp;
+                         aside.innerHTML = temp;
                     
                      }else{
                          var h1 = '<h1> Няма намерени продукти </h1>';
                          aside.innerHTML = h1;
                          
                      }
-                     history.pushState({ getHref: getHref }, getHref.slice(0, 1).toUpperCase() + getHref.slice(1), link.href);
                  }
                  //show product page
-                 if(link.name === 'product'){
-     
+                 if(link.name === 'product'){     
      
                  }
              })
          })
-       
-     
-     });
+        
+        AppController.registerController('index', {
+            initPage : initPage
+        })    
+ })();

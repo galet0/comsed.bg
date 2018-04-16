@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Списък продукти</title>
-    <link rel="stylesheet" type="text/css" href="../../css/admin.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/admin.css"/>
     <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"
             integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
             crossorigin="anonymous"></script>
@@ -16,11 +16,11 @@
                 <a>Добре дошли, име админ!
                     <small>Администратор</small>
                 </a>
-                <a href="../admin/admin-index.html" class="dashboard-btn">Табло</a>
-                <a href="../admin/show-categories-list.html" class="category-btn">Категории</a>
+                <a href="admin/admin-index.html" class="dashboard-btn">Табло</a>
+                <a href="admin/show-categories-list.html" class="category-btn">Категории</a>
                 <a href="../admin/show-product-list.html" class="current product-btn">Продукти</a>
-                <a href="../admin/show-user-list.html" class="user-btn">Потребители</a>
-                <a href="../admin/show-sales.html" class="sales-btn">Продажби</a>
+                <a href="admin/show-user-list.html" class="user-btn">Потребители</a>
+                <a href="admin/show-sales.html" class="sales-btn">Продажби</a>
             </div>
         </div>
     </header>
@@ -73,7 +73,7 @@
         </div>
     </main>
 </div>
-<script src="../../js/handlebars.min.js"></script>
+<script src="../js/handlebars.min.js"></script>
 <script id="showProductList_tmpl" type="text/x-handlebars-template">
     <!--<tbody>-->
     {{#each products}}
@@ -260,11 +260,11 @@
     </div>
 </script>
 <!--Темплейт за обновяване на списъка с продукти -->
-<script src="../../js/AppController.js"></script>
-<script src="../../js/adminControllers/AdminIndexController.js"></script>
-<script src="../../js/adminControllers/product/ShowProductListController.js"></script>
-<script src="../../js/adminControllers/product/AdminProductController.js"></script>
-<script src="../../js/models/ProductModel.js"></script>
-<script src="../../js/models/TypeModel.js"></script>
+<script src="../js/appControllers/AppController.js"></script>
+<script src="../js/adminControllers/AdminIndexController.js"></script>
+<script src="../js/adminControllers/product/ShowProductListController.js"></script>
+<script src="../js/adminControllers/product/AdminProductController.js"></script>
+<script src="../js/models/ProductModel.js"></script>
+<script src="../js/models/TypeModel.js"></script>
 </body>
 </html>

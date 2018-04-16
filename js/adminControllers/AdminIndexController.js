@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelector('.product-btn').addEventListener('click', function (event) {
         event.preventDefault();
 
-        window.location = '../../html/admin/show-product-list.html'
+        window.location = '../../html/show-product-list.html'
     });
 
     document.querySelector('.user-btn').addEventListener('click', function (event) {

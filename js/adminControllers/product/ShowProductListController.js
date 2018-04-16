@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 var inputDescription = main.querySelector('textarea');
                 inputDescription.value = product.description;
                 var inputPrice = main.querySelector('input[name="price"]');
-                inputPrice.value = product.price;
+                inputPrice.value = parseFloat(product.price);
                 var inputBrand = main.querySelector('input[name="brand"]');
                 inputBrand.value = product.brand;
                 var inputTypeID = parseInt(main.childNodes[1].childNodes[1].childNodes[3].childNodes[1][2].value);
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         newInputMinAge = main.querySelector('input[name="minAge"]').value,
                         newInputMaxAge = main.querySelector('input[name="maxAge"]').value;
                     if(ProductModule.editProduct(productID, newInputImg, newInputName, newInputPrice, newInputDescription, newInputBrand, newInputType, newInputQuantity, newInputMinAge, newInputMaxAge)){
-                        window.location = '../../html/admin/show-product-list.html'
+                        window.location = 'html/show-product-list.html'
                     }
 
                     window.localStorage.setItem('products', JSON.stringify(products));
