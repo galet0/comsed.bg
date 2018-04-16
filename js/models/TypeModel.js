@@ -40,7 +40,9 @@ var TypeModule = (function () {
                 return type.name;
             });
         },
-
+        getTypesByCategoryId: function(categoryID){
+            return types.filter(type => type.categoryID === categoryID);
+        },
         addType: function (name, description, categoryID) {
             var typeIndex = this.findByTypeName(name);
             if(typeIndex === -1){
