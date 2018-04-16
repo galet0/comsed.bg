@@ -1,7 +1,7 @@
 var ProductModule = (function () {
 
     var products = JSON.parse(window.localStorage.getItem('products')) || [];
-    var productID = 0;
+    var productID = products.length || 0;
 
     function Product(image, name, price, description, brand, typeID, quantity, minAge, maxAge, hasPromo) {
         this.id = ++productID;
@@ -14,7 +14,7 @@ var ProductModule = (function () {
         this.quantity = quantity;
         this.minAge = minAge;
         this.maxAge = maxAge;
-        this.hasPromo = this.hasPromo ? this.hasPromo : false;
+        this.hasPromo = false;
     }
 
     Product.prototype.updateProductsList = function () {

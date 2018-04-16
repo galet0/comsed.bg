@@ -10,7 +10,7 @@ var CategoryModule = (function () {
 
     var types = JSON.parse(window.localStorage.getItem('types')) || [];
     var categories = JSON.parse(window.localStorage.getItem('categories')) || [];
-    var categoryID = 0;
+    var categoryID = categories.length || 0;
 
     function Category(name, description) {
         this.id = ++categoryID;

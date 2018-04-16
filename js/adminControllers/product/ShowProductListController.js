@@ -35,9 +35,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 inputPrice.value = product.price;
                 var inputBrand = main.querySelector('input[name="brand"]');
                 inputBrand.value = product.brand;
-                var inputTypeID = main.childNodes[1].childNodes[1].childNodes[3].childNodes[1][2].value;
+                var inputTypeID = parseInt(main.childNodes[1].childNodes[1].childNodes[3].childNodes[1][2].value);
                 var inputType = types.find(function (type) {
-                    return type.id === parseInt(inputTypeID);
+                    return type.id === inputTypeID;
                 });
                 inputType.value = inputType.name;
                 var inputQuantity = main.querySelector('input[name="quantity"]');

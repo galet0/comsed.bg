@@ -10,7 +10,7 @@ var TypeModule = (function () {
      // });
 
     var types = JSON.parse(window.localStorage.getItem('types')) || [];
-    var typeID = 0;
+    var typeID = types.length || 0;
 
     function Type(name, description, categoryID) {
         this.id = ++typeID;
