@@ -9,8 +9,9 @@
 
     <script defer="defer" src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"
             integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
-            crossorigin="anonymous"></script>    
+            crossorigin="anonymous"></script>
 </head>
+
 <body>
 <div class="container page index">
     <header>
@@ -123,53 +124,55 @@
         <a href="#"><i class="fas fa-cart-arrow-down"></i>Количка</a>
     </div>
 </script>
-<script id="products_tmpl" type="text/x-handlebars-template">
-    {{#each products}}
-    <ul class="product-container" id={{i}}>
-       {{#each prod}}
-        <li class="product-item" value={{id}}>
-            <a>
-               <img class="product-img" src= {{image}}>
-               <h4>{{name}}</h4>
-               <p class="price">{{price}} лв.</p>
-               <div class="button-group">
-                    <button><i class="fas fa-cart-arrow-down"></i>Купи</button>
-                    <button><i class="fas fa-heart"></i>Добави в любими</button>
-                </div>
-            </a>
-        </li>     
-       {{/each}}
-    </ul>
-    {{/each}}
-    {{#each products}}
-    <a>{{i}}</a>
-    {{/each}}
-    <!-- <a class="pages">{{i}}</a> -->
 
+<script id="promo_tmpl" type="text/x-handlebars-template">
+    {{each promo}}
 </script>
-<script id="navigation_tmpl" type="text/x-handlebars-template">
-    <ul>
-        {{#each categories}}
-        <li>
-            <a href="/html/products.html" name="category" id={{id}}> {{name}}
-            </a>
-            {{#each types}}
-            <ul>
-                <li><a href="/html/products.html" name="type" id={{id}}> {{name}}</a></li>
-            </ul>
-            {{/each}}
-        </li>
-        {{/each}}
-    </ul>
-    
-</script>
-<script src="../js/appControllers/AppController.js"></script>
-<script src="../js/appControllers/AccountController.js"></script>
+<script src="../js/AppController.js"></script>
+<script src="../js/AccountController.js"></script>
 <script src="../json/categories.json" type="application/json"></script>
 <script src="../json/types.json" type="application/json"></script>
-<script src="../js/models/UserModel.js"></script>
+<script src="../js/UserModel.js"></script>
 <script src="../js/models/CategoryModel.js"></script>
 <script src="../js/models/TypeModel.js"></script>
 <script src="../js/models/ProductModel.js"></script>
+<!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function() {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					head.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					head.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function(msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if(sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer'))
+			{
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
 </body>
 </html>

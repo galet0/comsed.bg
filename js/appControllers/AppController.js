@@ -152,7 +152,7 @@
     }
 
     function updateNavigations() {
-        Array.from(document.querySelectorAll('nav a')).forEach(function(link) {
+        Array.from(document.querySelectorAll('a')).forEach(function(link) {
             if (getUrlPage(link.href) === currentPage) {
                 link.parentNode.classList.add('current');
             } else {
@@ -189,7 +189,7 @@
         }
         if (xhr) {
             xhr.addEventListener('readystatechange', function(event) {
-                if (xhr.readyState === 4) {
+                if (xhr.readyState === 4) { 
                     if (xhr.status === 200) {
                         success(xhr);
                     } else {
@@ -203,14 +203,9 @@
     }
 
     var pageElement = document.querySelector('.page');
-        console.log(pageElement);
         var mainElement = pageElement.querySelector('main');
-        console.log(mainElement);
         var currentPage = getUrlPage(location.href);
-        console.log(currentPage);
         var navigations = document.querySelectorAll('a');
-    console.log(navigations);
-
     Array.from(document.querySelectorAll('a')).forEach(function(link) {
         link.addEventListener('click', function(event) {
             event.preventDefault();
@@ -236,7 +231,7 @@
     //                 error(new Error('no ajax sorry'));
     //             }
     //         }
-    //
+    
     //         if (xhr) {
     //             xhr.addEventListener('readystatechange', function(event) {
     //                 //console.log('readystatechange', xhr.readyState, xhr.status);
