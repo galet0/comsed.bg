@@ -12,8 +12,8 @@ body {
     color:#4c4242;
 }
 .container {
-    width: 100%;
-    margin:0;
+    width: 1300px;
+    margin:0 auto;
 }
 .header{
     width: 100%;
@@ -27,11 +27,13 @@ body {
 }
 /* top header for login/register buttons and cart */
 .topHeader{
-    background: rgb(86, 202, 248);
+    background-color: #dd042b;
+   /* background:  rgb(86, 202, 248);*/
     height: 45px;
     padding-top:4px;
     display:flex;
     flex-direction: row;
+    width:100%;
 }
 .topHeader a{
     color: #FFFFFF;
@@ -41,12 +43,12 @@ body {
     
 }
 .topHeader .headderAuth{
-    display:inline-block;
-    position: relative;
+    /* display:inline-block;
+    position: relative; */
     flex:1;
 }
 .topHeader .headderAuth .login-btn, .cart-btn{
-    display: inline-block;
+    display: inline-block; 
     padding-top:10px;
     height:40px;
 }
@@ -89,11 +91,12 @@ body {
 .topnav a {
     color: #fff;
     font-size: 20px;
+    float:left;
     line-height: 41px;
     height: 41px;
     padding: 6px 40px;
     text-decoration: none;
-    border-radius: 3px;
+    /* border-radius: 3px; */
 }
 .topnav .index a {
     background: rgb(245, 52, 52);
@@ -125,7 +128,8 @@ body {
 }
 .cart-btn a {
     font-size: 16px;
-    background-color: rgb(245, 52, 52);
+   /* background-color: rgb(245, 52, 52);*/
+   background-color: rgb(86, 202, 248);
 }
 .accountBtn {
     font-size: 16px;    
@@ -371,7 +375,7 @@ body {
 }
 .column-left .navigation li ul li a {
     display: block;
-    width: 100;
+    width: 100%;
     padding: 10px 20px;
     color: white;
     text-decoration: none;
@@ -390,6 +394,44 @@ body {
     list-style: none;
 }
 /* END NAVIGATION */
+
+/* NAV */
+
+/* NAVIGATION LEFT COLUMN - Cagetories, types */
+/* .column-left .navigation{
+    display:flex;
+    flex-direction: column;
+}
+.column-left .navigation>li{    
+    display:flex;  
+    background: skyblue;
+    border: 1px solid whitesmoke;
+}
+.column-left .navigation ul li a:hover{
+    background-color: rgb(233, 248, 99);
+    color: rgb(156, 5, 156);
+}
+.column-left .navigation li ul li a {
+    display: block;
+    width: 100;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.column-left .navigation ul{
+    position:relative;
+    display:none;
+}
+.column-left .navigation li:hover ul{
+    display:inline-block;
+    margin-left:-80px;
+    z-index:1;
+}
+.navigation li ul li{
+    list-style: none;
+} */
+
 
 
 /* PRODUCTS*/
@@ -434,7 +476,7 @@ body {
     margin-top: 5px;
     padding: 0 10px;
 }
-.product-item>li>a, h4 {
+.product-item li a, h4 {
     font-size: 18px;
     color: #1e91cf;
     text-align: center;
@@ -447,10 +489,16 @@ body {
     text-align: center;
     height:30px;
 }
-.product-item>li>a, p {
+.product-item>li>a{
     font-size: 16px;
     text-align: center;
     color:red;
+}
+.product-item>li>a,p {
+    font-size: 16px;
+    text-align: center;
+    color:red;
+
 }
 .product-img{
     width: 200px;
@@ -630,22 +678,54 @@ body {
 .promo-item>li>a, h3 {
     font-size: 20px;
     text-align: center;
-}
+}   
 .promo-item>li>a, p {
     font-size: 16px;
     text-align: center;
 }
-
+.auth-page{
+    text-align : left;
+    padding:0;
+}
 .aboutus p{
     font-size: 18px;
+    color:black;
 }
-
 footer{
     width: 100%;
     height: 200px;
     margin-top: 20px;
     background-color: #333;
 }
+/* little fixes for about, contact page */
+.about-page{
+    padding:30px;
+}
+.contactUs{
+    margin:50px;
+    display: flex;
+    flex-direction: row;
+}
+.contactUs .form-contacts{
+    flex:1;
+    padding-right:30px;  
+}
+.contactUs .form-contacts h3{
+    text-align: left;
+
+}
+.contactUs .form-contacts textarea{
+    width:70%;
+}
+.contactUs .form-contacts .submit{
+    background-color:rgb(14, 145, 71);
+    color:white;
+    text-transform: uppercase;
+}
+.contactUs #map{
+    flex:1;
+}
+
 
 
 
@@ -964,40 +1044,198 @@ footer{
    padding: 10px 15px
 }
 
+.auth-page p{
+    color:black;
+}
+
+
+/* footer */
+/*Footer Text*/
+#footer,
+#footer h2,
+#footer div,
+#footer div#pagetimestamp{
+    color: #fff;
+}
+#footer li a,
+#footer li a:link,
+#footer li a:visited,
+#footer a,
+#footer a:link,
+#footer a:visited {
+    color: #fff;
+}
+#footer li, #footer span {
+    display: block;
+    width: 100%;
+}
+
+/*Footer Links Hover*/
+#footer li a:hover,
+#footer li a:active,
+#footer a:hover,
+#footer a:active{
+    color: #ddd;
+}
+#footer div.footerDiv:after{
+    position: absolute;
+    content: "";
+    right: 0;
+    top: 0;
+    width: 1px;
+    height: 200px;
+    background: #ab0112;
+    background: -moz-linear-gradient(45deg, rgba(171,1,18,0) 0%, rgba(171,1,18,1) 50%, rgba(171,1,18,0) 100%);
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(171,1,18,0)), color-stop(50%,rgba(171,1,18,1)), color-stop(100%,rgba(171,1,18,0)));
+    background: -webkit-linear-gradient(45deg, rgba(171,1,18,0) 0%,rgba(171,1,18,1) 50%,rgba(171,1,18,0) 100%);
+    background: -o-linear-gradient(45deg, rgba(171,1,18,0) 0%,rgba(171,1,18,1) 50%,rgba(171,1,18,0) 100%);
+    background: -ms-linear-gradient(45deg, rgba(171,1,18,0) 0%,rgba(171,1,18,1) 50%,rgba(171,1,18,0) 100%);
+    background: linear-gradient(45deg, rgba(171,1,18,0) 0%,rgba(171,1,18,1) 50%,rgba(171,1,18,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ab0112', endColorstr='#00ab0112',GradientType=1 );
+}
+#footer{
+    background-color: #dd042b;
+    margin-top: 0;
+    height:auto;
+    display:flex;
+    flex-direction: row;
+}
+#footer div.footerTitle {
+    display: inline-block;
+    background: #ab0112;
+    width: 400px;
+    height: 50px;
+    line-height: 50px;
+    margin: 0 auto;
+    font-size: 2em;
+    position: relative;
+}
+#footer div.footerTitleHold {
+    text-align: center;
+    margin: 0 auto;
+    top: -35px;
+    width:100%;
+    position:relative;
+}
+#footer h2{
+    padding-bottom: 30px;
+    margin: 0;
+    font-size: 1.4em;
+}
+.secureLogos>img{
+    padding: 0 3px;
+    vertical-align: top;
+}
+#footer .secureLogos .payDiv{
+    display: inline-block;
+    height: 30px;
+    border-right: 1px solid #ddd;
+    margin: 0 3px;
+}
+#footer div.footerDiv2{
+    width: 250px;
+    height: 220px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    flex:1;
+    right: 0;
+    top: 15px;
+    background: #dd042b url('http://ddbf0fe6cadf9b0695e4-9ae525410704e16793bec54db22a8b1a.r30.cf3.rackcdn.com/Social.png') bottom center no-repeat;
+    text-align: left;
+    padding: 15px;
+}
+#footer div.inTouchTitle{
+    position: relative;
+    display: inline-block;
+    background: #ab0112;
+    text-align: center;
+    height: 30px;
+    width: 200px;
+}
+.footerImg{
+    flex:1;
+    display:relative;
+}
+.footerDivLinks{
+    flex:1;
+    margin-left:50px;
+}
+.footerDiv2{
+    flex:1;
+}
+#footer div.inTouchTitle:before{
+    content: "";
+    position: absolute;
+    left: 100%;
+    bottom: 0;
+    border-style: solid;
+    border-width: 30px 5px 0 0;
+    border-color: #ab0112 transparent transparent;
+}
+#footer div.inTouchTitle:after{
+    content: "";
+    position: absolute;
+    right: 100%;
+    bottom: 0;
+    border-style: solid;
+    border-width: 35px 0 0 8px;
+    border-color: #ab0112 transparent transparent;
+}
+.footerDiv{
+   flex:1;
+}
+.wrap{
+    display:flex;
+    flex-flow: row wrap;
+}
+.wrap > div * {
+    flex: 1 100%;
+}
 /*End of Account Template*/
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media screen and (max-width:600px) {
-    .column {
-        width: 100%;
+@media screen and (max-width: 960px) {
+    .container{
+        width:100%;
+    }
+    .topHeader{
+        flex-direction:column;
+    }
+    .input-group{
+        display:flex;
+    }
+    .topnav ul{
+        width:100%;
+        margin:0;
+    }
+    .footer{
+        width:100%;
     }
 }
-/* ----------------------- */
-/* REGISTER FORM */
-
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media screen and (max-width:600px) {
-    .column {
-        width: 100%;
+@media screen and (max-width: 821px) {
+    .topnav ul{
+        display:grid;
+    }
+    .topnav ul>li>a{
+        width:150px;
     }
 }
-
 @media only screen and (min-width:480px){
-.column-left ul{
-      flex-direction:column;
-  /*     justify-content:flex-end; */
+    .column-left ul{
+          flex-direction:column;
+      /*     justify-content:flex-end; */
+        }
+    .column-left ul li{
+          position:relative;
+          flex:1 0 auto;
+          text-align:left;
+        }
+    .column-left .navigation ul, .navigation ul li ul{
+          display:none;
+          width:100%;
+          position:absolute;
     }
-.column-left ul li{
-      position:relative;
-      flex:1 0 auto;
-      text-align:left;
+    .column-left ul li ul{
+        left:100%;
+    top:0;
+        }
     }
-.column-left .navigation ul, .navigation ul li ul{
-      display:none;
-      width:100%;
-      position:absolute;
-}
-.column-left ul li ul{
-    left:100%;
-top:0;
-    }
-}
