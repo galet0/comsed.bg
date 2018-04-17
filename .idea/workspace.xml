@@ -2,220 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="49be2c2b-4ac7-4dc9-9564-b1f6e7ea3304" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/css/main.css" afterPath="$PROJECT_DIR$/css/main.css" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/html/admin-products-list.html" afterPath="" />
       <change beforePath="$PROJECT_DIR$/html/admin/admin-index.html" afterPath="$PROJECT_DIR$/html/admin/admin-index.html" />
       <change beforePath="$PROJECT_DIR$/html/admin/show-categories-list.html" afterPath="$PROJECT_DIR$/html/admin/show-categories-list.html" />
-      <change beforePath="$PROJECT_DIR$/html/admin/show-product-list.html" afterPath="$PROJECT_DIR$/html/show-product-list.html" />
-      <change beforePath="$PROJECT_DIR$/html/admin/show-sales.html" afterPath="$PROJECT_DIR$/html/admin/show-sales.html" />
-      <change beforePath="$PROJECT_DIR$/html/admin/show-user-list.html" afterPath="$PROJECT_DIR$/html/admin/show-user-list.html" />
-      <change beforePath="$PROJECT_DIR$/html/index.html" afterPath="$PROJECT_DIR$/html/index.html" />
-      <change beforePath="$PROJECT_DIR$/images/WONDERLAND.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/igrachki/img1.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/igrachki/img10.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/igrachki/img11.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/igrachki/img12.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/igrachki/img13.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/igrachki/img14.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/igrachki/img15.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/igrachki/img16.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/igrachki/img17.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/igrachki/img18.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/igrachki/img19.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/igrachki/img2.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/igrachki/img20.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/igrachki/img21.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/igrachki/img22.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/igrachki/img23.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/igrachki/img24.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/igrachki/img25.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/igrachki/img26.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/igrachki/img27.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/igrachki/img28.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/igrachki/img29.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/igrachki/img3.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/igrachki/img30.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/igrachki/img31.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/igrachki/img32.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/igrachki/img33.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/igrachki/img34.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/igrachki/img35.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/igrachki/img36.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/igrachki/img37.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/igrachki/img38.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/igrachki/img39.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/igrachki/img4.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/igrachki/img40.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/igrachki/img41.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/igrachki/img42.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/igrachki/img43.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/igrachki/img44.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/igrachki/img45.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/igrachki/img46.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/igrachki/img47.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/igrachki/img48.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/igrachki/img49.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/igrachki/img5.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/igrachki/img50.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/igrachki/img51.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/igrachki/img52.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/igrachki/img6.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/igrachki/img7.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/igrachki/img8.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/igrachki/img9.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img1.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img10.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img11.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img12.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img13.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img14.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img15.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img16.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img17.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img18.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img19.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img2.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img20.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img21.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img22.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img23.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img24.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img25.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img26.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img27.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img28.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img29.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img3.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img30.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img31.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img32.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img33.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img34.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img35.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img36.JPG" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img37.JPG" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img38.JPG" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img39.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img4.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img40.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img41.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img42.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img43.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img44.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img45.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img46.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img47.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img48.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img49.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img5.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img50.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img51.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img52.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img53.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img54.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img55.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img56.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img57.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img58.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img59.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img6.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img60.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img61.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img62.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img63.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img64.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img65.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img7.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img8.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/kolichki/img9.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/koshari/img1.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/koshari/img10.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/koshari/img11.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/koshari/img12.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/koshari/img13.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/koshari/img14.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/koshari/img15.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/koshari/img16.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/koshari/img17.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/koshari/img18.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/koshari/img19.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/koshari/img2.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/koshari/img20.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/koshari/img21.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/koshari/img22.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/koshari/img23.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/koshari/img3.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/koshari/img4.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/koshari/img5.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/koshari/img6.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/koshari/img7.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/koshari/img8.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/koshari/img9.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/stolcheta/WONDERLAND.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/stolcheta/img1.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/stolcheta/img10.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/stolcheta/img11.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/stolcheta/img12.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/stolcheta/img13.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/stolcheta/img14.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/stolcheta/img15.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/stolcheta/img16.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/stolcheta/img17.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/stolcheta/img18.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/stolcheta/img2.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/stolcheta/img3.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/stolcheta/img4.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/stolcheta/img5.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/stolcheta/img6.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/stolcheta/img7.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/stolcheta/img8.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/stolcheta/img9.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/uredi/img1.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/uredi/img10.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/uredi/img11.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/uredi/img12.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/uredi/img13.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/uredi/img14.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/uredi/img15.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/uredi/img16.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/uredi/img17.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/uredi/img18.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/uredi/img19.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/uredi/img2.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/uredi/img20.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/uredi/img21.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/uredi/img22.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/uredi/img23.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/uredi/img24.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/uredi/img25.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/uredi/img26.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/uredi/img27.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/uredi/img28.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/uredi/img29.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/uredi/img3.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/uredi/img30.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/uredi/img31.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/uredi/img32.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/uredi/img33.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/uredi/img34.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/uredi/img35.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/uredi/img36.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/uredi/img37.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/uredi/img4.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/uredi/img5.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/uredi/img6.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/uredi/img7.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/uredi/img8.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/uredi/img9.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/babiesToys/zalygalki/0746937-1-1200x1000.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/kozmetikaAksesoari/zaBanqta/img1.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/products/kozmetikaAksesoari/zaBanqta/img2.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/images/wonderland.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/html/show-product-list.html" afterPath="" />
       <change beforePath="$PROJECT_DIR$/js/adminControllers/AdminIndexController.js" afterPath="$PROJECT_DIR$/js/adminControllers/AdminIndexController.js" />
+      <change beforePath="$PROJECT_DIR$/js/adminControllers/category/AdminCategoriesController.js" afterPath="$PROJECT_DIR$/js/adminControllers/category/AdminCategoriesController.js" />
+      <change beforePath="$PROJECT_DIR$/js/adminControllers/category/ShowCategoryListController.js" afterPath="$PROJECT_DIR$/js/adminControllers/category/ShowCategoryListController.js" />
+      <change beforePath="$PROJECT_DIR$/js/adminControllers/product/AdminProductController.js" afterPath="$PROJECT_DIR$/js/adminControllers/product/AdminProductController.js" />
       <change beforePath="$PROJECT_DIR$/js/adminControllers/product/ShowProductListController.js" afterPath="$PROJECT_DIR$/js/adminControllers/product/ShowProductListController.js" />
-      <change beforePath="$PROJECT_DIR$/js/appControllers/AccountController.js" afterPath="$PROJECT_DIR$/js/appControllers/AccountController.js" />
-      <change beforePath="$PROJECT_DIR$/js/appControllers/AppController.js" afterPath="$PROJECT_DIR$/js/appControllers/AppController.js" />
-      <change beforePath="$PROJECT_DIR$/js/models/ProductModel.js" afterPath="$PROJECT_DIR$/js/models/ProductModel.js" />
-      <change beforePath="$PROJECT_DIR$/json/products.json" afterPath="$PROJECT_DIR$/json/products.json" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -228,12 +24,105 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/html/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="107" column="26" lean-forward="true" selection-start-line="107" selection-start-column="26" selection-end-line="107" selection-end-column="26" />
+            <state relative-caret-position="-668">
+              <caret line="107" column="26" lean-forward="false" selection-start-line="107" selection-start-column="26" selection-end-line="107" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="about.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/html/about.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-66">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/html/edit.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="account.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/html/account.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-66">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="products.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/html/products.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1170">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="contacts.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/html/contacts.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AdminProductController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/adminControllers/product/AdminProductController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="110">
+              <caret line="5" column="12" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AdminCategoriesController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/adminControllers/category/AdminCategoriesController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="4" column="12" lean-forward="false" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show-product-list.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/html/admin/show-product-list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-644">
+              <caret line="30" column="58" lean-forward="false" selection-start-line="30" selection-start-column="51" selection-end-line="30" selection-end-column="58" />
+              <folding>
+                <element signature="n#script#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#script#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="view-product.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/html/view-product.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -243,6 +132,19 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/html/admin/show-product-list.html" />
+        <option value="$PROJECT_DIR$/js/adminControllers/category/ShowCategoryListController.js" />
+        <option value="$PROJECT_DIR$/js/adminControllers/product/ShowProductListController.js" />
+        <option value="$PROJECT_DIR$/js/adminControllers/AdminIndexController.js" />
+        <option value="$PROJECT_DIR$/html/admin/admin-index.html" />
+        <option value="$PROJECT_DIR$/js/adminControllers/category/AdminCategoriesController.js" />
+        <option value="$PROJECT_DIR$/js/adminControllers/product/AdminProductController.js" />
+      </list>
+    </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -271,6 +173,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -283,11 +186,53 @@
               <item name="comsed.bg" type="462c0819:PsiDirectoryNode" />
               <item name="html" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="comsed.bg" type="b2602c69:ProjectViewProjectNode" />
+              <item name="comsed.bg" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="comsed.bg" type="b2602c69:ProjectViewProjectNode" />
+              <item name="comsed.bg" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="comsed.bg" type="b2602c69:ProjectViewProjectNode" />
+              <item name="comsed.bg" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="adminControllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="comsed.bg" type="b2602c69:ProjectViewProjectNode" />
+              <item name="comsed.bg" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="adminControllers" type="462c0819:PsiDirectoryNode" />
+              <item name="category" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="comsed.bg" type="b2602c69:ProjectViewProjectNode" />
+              <item name="comsed.bg" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="adminControllers" type="462c0819:PsiDirectoryNode" />
+              <item name="product" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="comsed.bg" type="b2602c69:ProjectViewProjectNode" />
+              <item name="comsed.bg" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="appControllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="comsed.bg" type="b2602c69:ProjectViewProjectNode" />
+              <item name="comsed.bg" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -323,11 +268,12 @@
       <option name="presentableId" value="Default" />
       <updated>1523875472486</updated>
       <workItem from="1523875473779" duration="109000" />
+      <workItem from="1523952610473" duration="3620000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109000" />
+    <option name="totallyTimeSpent" value="3729000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="0" />
@@ -335,20 +281,20 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -359,14 +305,182 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/html/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="107" column="26" lean-forward="true" selection-start-line="107" selection-start-column="26" selection-end-line="107" selection-end-column="26" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/appControllers/AppController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3366">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/models/ProductModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/admin/show-categories-list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3418">
+          <caret line="10" column="6" lean-forward="true" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/appControllers/AccountController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2244">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/appControllers/ProductController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-482">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/adminControllers/category/ShowCategoryListController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="34" lean-forward="false" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/adminControllers/AdminIndexController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="30" column="34" lean-forward="false" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/admin/admin-index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-132">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#script#10;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#script#11;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/adminControllers/product/ShowProductListController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1650">
+          <caret line="75" column="30" lean-forward="false" selection-start-line="75" selection-start-column="30" selection-end-line="75" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/adminControllers/category/AdminCategoriesController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="12" lean-forward="false" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/adminControllers/product/AdminProductController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="12" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-668">
+          <caret line="107" column="26" lean-forward="false" selection-start-line="107" selection-start-column="26" selection-end-line="107" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/account.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-66">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/admin-products-list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3036">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/admin/show-product-list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-644">
+          <caret line="30" column="58" lean-forward="false" selection-start-line="30" selection-start-column="51" selection-end-line="30" selection-end-column="58" />
+          <folding>
+            <element signature="n#script#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#script#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/view-product.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/products.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1170">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/contacts.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/about.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-66">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

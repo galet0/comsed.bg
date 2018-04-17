@@ -1,15 +1,17 @@
 (function () {
+    var main = document.querySelector('main');
 
-    function initPage() {
-        var main = document.querySelector('main');
-
+    function showAllProductsPage() {
         var products = JSON.parse(window.localStorage.getItem('products'));
 
         var indexProducts = AppController.getControllerTemplate('EditCategoryController', 'showProductList');
         var template = Handlebars.compile(indexProducts);
-        var productListTemp = template({products: products});
-        document.querySelector('tbody').innerHTML = productListTemp;
+        document.querySelector('tbody').innerHTML = template({products: products});
 
+        editProduct();
+    }
+
+    function editProduct() {
         Array.from(document.querySelectorAll('.btn-edit')).forEach(function (btn) {
             btn.addEventListener('click', function (event) {
                 event.preventDefault();
@@ -70,8 +72,11 @@
             });
         });
     }
+    function initPage() {
+        showAllProductsPage();
+    }
 
-    AppController.registerController('ShowProductListController', {
+    AppController.registerController('editProduct', {
         initPage: initPage
     })
 })();

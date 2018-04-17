@@ -1,6 +1,7 @@
 (function () {
+    var main = document.querySelector('main');
 
-    function initPage() {
+    function showAllCategoriesPage() {
         var categories = JSON.parse(window.localStorage.getItem('categories'));
         var types = JSON.parse(window.localStorage.getItem('types'));
         //console.log(categories);
@@ -12,8 +13,10 @@
         console.log(temp);
         document.querySelector('tbody').innerHTML = temp;
 
-        var main = document.querySelector('main');
+        getEditCategoryPage()
+    }
 
+    function getEditCategoryPage() {
         Array.from(document.querySelectorAll('.btn-edit-type')).forEach(function(btn){
             btn.addEventListener('click', function (event) {
                 event.preventDefault();
@@ -60,7 +63,11 @@
         });
     }
 
-    AppController.registerController('ShowCategoryListController', {
+    function initPage() {
+        showAllCategoriesPage();
+    }
+
+    AppController.registerController('editCategory', {
         initPage: initPage
     })
 })();

@@ -14,11 +14,11 @@
         <div class="sidenav">
             <div>
                 <a>Добре дошли, име админ!<small>Администратор</small></a>
-                <a href="" class="current dashboard-btn">Табло</a>
-                <a href="" class="category-btn">Категории</a>
-                <a href="" class="product-btn">Продукти</a>
-                <a href="" class="user-btn">Потребители</a>
-                <a href="" class="sales-btn">Продажби</a>
+                <a href="/html/admin/admin-index.html" class="current dashboard-btn">Табло</a>
+                <a href="/html/admin/show-categories-list.html" class="category-btn">Категории</a>
+                <a href="/html/admin/show-product-list.html" class="product-btn">Продукти</a>
+                <a href="/html/admin/show-user-list.html" class="user-btn">Потребители</a>
+                <a href="/html/admin/show-sales.html" class="sales-btn">Продажби</a>
             </div>
         </div>
     </header>
@@ -86,6 +86,12 @@
 <script src="../../js/appControllers/AppController.js"></script>
 <script src="../../js/adminControllers/AdminIndexController.js"></script>
 <script src="../../js/adminControllers/category/ShowCategoryListController.js"></script>
+<script src="../../js/adminControllers/category/AdminCategoriesController.js"></script>
+<script src="../../js/adminControllers/product/AdminProductController.js"></script>
+<script src="../../js/adminControllers/product/ShowProductListController.js"></script>
+<script src="../../js/models/ProductModel.js"></script>
+<script src="../../js/models/TypeModel.js"></script>
+<script src="../../js/models/CategoryModel.js"></script>
 <script id="showCategoriesList_tmpl" type="text/x-handlebars-template">
     <!--<div class="pull-right top-background">-->
     <!--<h1>Категории</h1>-->
