@@ -334,7 +334,8 @@ var AppController = (function() {
         setControllerTemplates: setControllerTemplates,
         getTemplate: getTemplate,
         getUrlPage : getUrlPage,
-        getNumberPage: getNumberPage
+        getNumberPage: getNumberPage,
+        gotoPage : gotoPage
     };
 
 })();
