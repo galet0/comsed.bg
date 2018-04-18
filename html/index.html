@@ -38,7 +38,7 @@
             <div class="topnav">
                 <ul>
                     <!-- <li class="index"><a href="index.html" class="current">Начало</a></li><li class="about"><a href="about.html">За нас</a></li><li class="news"><a href="news.html">Новини</a></li><li class="promotions"><a href="promotions.html">Промоции</a></li><li class="contacts"><a href="contacts.html">Контакти</a></li> --> 
-                    <li class="index"><a href="index.html" class="current">Начало</a></li></a></li><li class="about"><a href="about.html">За нас</a></li><li class="news"><a href="news.html">Новини</a></li><li class="promotions"><a href="promotions.html">Промоции</a></li><li class="contacts"><a href="contacts.html">Контакти</a></li>
+                    <li class="index"><a href="index.html" class="current">Начало</a></li><li class="about"><a href="about.html">За нас</a></li><li class="news"><a href="news.html">Новини</a></li><li class="promotions"><a href="promotions.html">Промоции</a></li><li class="contacts"><a href="contacts.html">Контакти</a></li>
                
                 </ul>
             </div>
@@ -177,8 +177,12 @@
         <a href="#"><i class="fas fa-cart-arrow-down"></i>Количка</a>
     </div>
 </script>
+
 <script id="products_tmpl" type="text/x-handlebars-template">
     <div class="productList">
+        {{#with categoryType}}
+        <h2>{{name}} {{products.length}} резултата</h2> 
+        {{/with}}
         {{#with products.[0]}}
         <ul class="product-container" id={{i}}>
         {{#each prod}}
@@ -188,8 +192,8 @@
                 <h4>{{name}}</h4>
                 <p class="price">{{price}} лв.</p>
                 <div class="button-group">
-                        <button><i class="fas fa-cart-arrow-down"></i>Купи</button>
-                        <button><i class="fas fa-heart"></i>Добави в любими</button>
+                        <button><i class="fas fa-cart-arrow-down"  value={{id}}></i>Купи</button>
+                        <button><i class="fas fa-heart"  value={{id}}></i>Добави в любими</button>
                     </div>
                 </a>
             </li>     
@@ -206,6 +210,9 @@
 </script>
 <script id="productsPerPage_tmpl" type="text/x-handlebars-template">
     <ul class="product-container" id={{i}}>
+        {{#with categoryType}}
+        <h2>{{name}} {{products.length}} резултата</h2> 
+        {{/with}}
        {{#each products}}
         <li class="product-item" value={{id}}>
             <a>
@@ -213,8 +220,8 @@
                <h4>{{name}}</h4>
                <p class="price">{{price}} лв.</p>
                <div class="button-group">
-                    <button><i class="fas fa-cart-arrow-down"></i>Купи</button>
-                    <button><i class="fas fa-heart"></i>Добави в любими</button>
+                    <button><i class="fas fa-cart-arrow-down"  value={{id}}></i>Купи</button>
+                    <button><i class="fas fa-heart" value={{id}}></i>Добави в любими</button>
                 </div>
             </a>
         </li>     

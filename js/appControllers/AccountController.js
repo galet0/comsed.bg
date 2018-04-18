@@ -1,21 +1,23 @@
    
  (function(){
 
-
     function initPage(){
         //SHOW PRODUCTS FROM FIRST TYPE ON INDEX PAGE
-       if(categories){
-        showCategories();
+       if (categories){
+            showCategories();
         } 
-        getProductsSlider();
+        getProductsSlider();        
+       // AppController.navigatePages();
+    
     }
    
-
+    AppController.navigatePages();
     function getProductsSlider(){
         var firstCategoryProducts = products.filter(product => product.type === 1),
             div = document.querySelector('.firstCategory'),
             parent = document.querySelector('.row-slider');
-
+            console.log(div);
+            console.log(document);
         if(firstCategoryProducts.length > 5){
         // Add <h3> tag
             var header = document.createElement('a'),
@@ -29,7 +31,7 @@
                 childDiv.className = 'img-column';
                 childDiv.innerHTML = '<a href="/html/view-product.html" name="product" value="'+ firstCategoryProducts[i].id + '"><img src =' + firstCategoryProducts[i].image + '></a><h3>' 
                                     + firstCategoryProducts[i].name +'</h3><h2>' + firstCategoryProducts[i].price +'лв'
-                                    + '</h2><button> Купи </button>';
+                                    + '</h2><button  value="'+ firstCategoryProducts[i].id+'"> Купи </button>';
                 div.appendChild(childDiv);
             }
         }
@@ -75,58 +77,26 @@
             })
         })
 
-        var links = document.querySelectorAll('main .navigation a');
-        console.log(links);
-        console.log(nav);
-        Array.from(links).forEach(function (link) {
-            link.addEventListener('click', linkClick)});        
+        var links = document.querySelectorAll('main .navigation a');        
+        Array.from(links).forEach(function (item) {
+            item.addEventListener('click', linkClick)});  
     }
-
 
     function linkClick (event) {
         event.preventDefault();
-        var page = AppController.getUrlPage(this.href);
-        history.pushState({ page: page }, page.slice(0, 1).toUpperCase() + page.slice(1), this.href);
-        var showProd = [],
-            productsView = document.querySelector('.column-right');
-        // show all products in the cattegory   
-        if (this.name === 'category') {
-            var types = TypeModule.getTypesByCategoryId(parseInt(this.id));
-            for (var i = 0; i < types.length; i++) {
-                showProd = showProd.concat(products.filter(product => product.type === types[i].id));
-            }
-        }
-        //show all products for the clicked type
+        
         if (this.name === 'type') {
-            showProd = products.filter(product => product.type === parseInt(this.id));
-        }
+            AppController.gotoPage(this.href);
+        }if (this.name === 'category'){
+            AppController.gotoPage(this.href);
+        }if(this.name === 'view-product'){
 
-        if (showProd.length) {
-            var prod = AppController.getNumberPage(showProd),
-                productTemplate = AppController.getControllerTemplate('index', 'products'),
-                template = Handlebars.compile(productTemplate),
-                temp = template({ products: prod});
-                productsView.innerHTML = temp;
-                var itemsPages = productsView.querySelectorAll('a[id]');
-
-                if (itemsPages.length > 1){
-                    Array.from(itemsPages).forEach(function(page){
-                        page.addEventListener('click',function(event){
-                            event.preventDefault();
-                            var prod = AppController.getNumberPage(showProd),
-                                prods = prod[this.id - 1].prod;
-                            productTemplate = AppController.getControllerTemplate('index','productsPerPage');
-                            template = Handlebars.compile(productTemplate),
-                            temp = template({ products: prods});
-                            productsView.querySelector('.productList').innerHTML = temp;
-                        })
-                       
-                    });
-                }
-        } else {
-            productsView.innerHTML = '<h1> Няма намерени продукти </h1>';
         }
-    };
+        
+        // } else {
+        //     productsView.innerHTML = '<h1> Няма намерени продукти </h1>';
+        // }
+    }
    
     // SHOW GATEGORIES  
      if(loggedUser){
@@ -163,22 +133,21 @@
                     getAll[i].innerHTML = '<a href="/html/view-product.html value='+ firstCategoryProducts[count+i].id  
                     + '><img src =' + firstCategoryProducts[count+i].image + '></a><h3>' 
                     + firstCategoryProducts[count+i].name +'</h3><h2>' + firstCategoryProducts[count+i].price.toFixed(2) +'лв'
-                    + '</h2><button> Купи </button>';
+                    + '</h2><button value="'+ firstCategoryProducts[i].id+'"> Купи </button>';
                 }
             }else{
                 ++count;
                 for(var i = 0; i < 4; i++){
                     getAll[i].innerHTML = '<a href="/html/view-product.html value="' + firstCategoryProducts[count-i].id + '"><img src =' + firstCategoryProducts[count-i].image + '></a><h3>' 
                     + firstCategoryProducts[count-i].name +'</h3><h2>' + firstCategoryProducts[count-i].price.toFixed(2) +'лв'
-                    + '</h2><button> Купи </button>';
+                    + '</h2><button value="'+ firstCategoryProducts[i].id+'"> Купи </button>';
                 }
             }
         });
     }); 
     
    
-         function moveProducts()
-         {  
+         function moveProducts(){  
             var firstCategoryProducts = products.filter(product => product.type === 1);
              var arrowButtons = document.querySelectorAll('button');
              var count = 0;
@@ -209,11 +178,6 @@
                  });
              }); 
          }
-       
-        
-     
-
-        
         AppController.registerController('index', {
             initPage : initPage
         })    

@@ -79,7 +79,13 @@ var AppController = (function() {
     function showPage(page, pageContent){
         var controller = getController(page);
         if(controller){
-            mainElement.innerHTML = pageContent;
+            if(pageContent){
+                mainElement.innerHTML = pageContent;
+            }else{
+               
+                sendRequest(location.href, onPageSuccess.bind(this, getUrlPage(location.href)), onPageError);
+               
+            }
             controller.initPage();
         }else{
             pageElement.classList.remove(currentPage);

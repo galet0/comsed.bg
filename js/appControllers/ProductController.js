@@ -71,7 +71,7 @@
             }
         }        
         if (showProd.length) {
-            var selectItem = '<select id="select">Изберете<option value="date">Дата</option><option value="priceUp">Цена възх.</option><option value="priceDown">Цена низх.</option></select>'
+            var selectItem = '<select id="select"><option label="Изберете"><option value="date">Дата</option><option value="priceUp">Цена възх.</option><option value="priceDown">Цена низх.</option></select>'
             var div = document.createElement('div'); 
             div.setAttribute('class','selectItem');
             div.innerHTML = selectItem;           
@@ -115,8 +115,8 @@
                     newE.appendChild(div);
 
                     showList(showProd,productsView);
+
                 } 
-               
                 if(this.value === 'priceDown'){
                     showProd.sort((a,b) => b.price - a.price);
 
@@ -132,13 +132,21 @@
                     var newE = row.childNodes[3];
                     newE.appendChild(div);
 
-                    showList(showProd,productsView);
-        
-
+                    showList(showProd,productsView);    
                 }    
             });
-        
             
+            var linkProducts = document.querySelectorAll('.column-right ul li button');
+            
+            console.log(linkProducts);
+            Array.from(linkProducts.querySelectorAll('button')).forEach(function(button){
+                button.addEventListener('click', function(event){
+                    event.preventDefault();
+
+                    console.log(button.childNodes);
+                })
+            })
+
         } else {
             productsView.innerHTML = '<h1> Няма намерени продукти </h1>';
         } 
