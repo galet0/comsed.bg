@@ -209,9 +209,40 @@
         <a href="#"><i class="fas fa-cart-arrow-down"></i>Количка</a>
     </div>
 </script>
+
 <script id="products_tmpl" type="text/x-handlebars-template">
-    {{#each products}}
+    <div class="productList">
+        {{#with categoryType}}
+        <h2>{{name}} {{products.length}} резултата</h2> 
+        {{/with}}
+        {{#with products.[0]}}
+        <ul class="product-container" id={{i}}>
+        {{#each prod}}
+            <li class="product-item" value={{id}}>
+                <a>
+                <img class="product-img" src= {{image}}>
+                <h4>{{name}}</h4>
+                <p class="price">{{price}} лв.</p>
+                <div class="button-group">
+                        <button><i class="fas fa-cart-arrow-down"  value={{id}}></i>Купи</button>
+                        <button><i class="fas fa-heart"  value={{id}}></i>Добави в любими</button>
+                    </div>
+                </a>
+            </li>     
+        {{/each}}
+        </ul>
+    </div>
+    {{/with}}
+    <div class="pages"> Страници: 
+    {{#each products}}  
+        <a href=# id={{i}}>{{i}}</a>
+    {{/each}}
+    </div>
+    <!-- <a class="pages">{{i}}</a> -->
+</script>
+<script id="productsPerPage_tmpl" type="text/x-handlebars-template">
     <ul class="product-container" id={{i}}>
+<<<<<<< HEAD
         {{#each prod}}
         <li class="product-item" value={{id}}>
             <a>
@@ -221,17 +252,26 @@
                 <div class="button-group">
                     <button><i class="fas fa-cart-arrow-down"></i>Купи</button>
                     <button><i class="fas fa-heart"></i>Добави в любими</button>
+=======
+        {{#with categoryType}}
+        <h2>{{name}} {{products.length}} резултата</h2> 
+        {{/with}}
+       {{#each products}}
+        <li class="product-item" value={{id}}>
+            <a>
+               <img class="product-img" src= {{image}}>
+               <h4>{{name}}</h4>
+               <p class="price">{{price}} лв.</p>
+               <div class="button-group">
+                    <button><i class="fas fa-cart-arrow-down"  value={{id}}></i>Купи</button>
+                    <button><i class="fas fa-heart" value={{id}}></i>Добави в любими</button>
+>>>>>>> b6760eb78e85acd9aa7f787c412a9779240c7633
                 </div>
             </a>
         </li>
         {{/each}}
     </ul>
-    {{/each}}
-    {{#each products}}
-    <a>{{i}}</a>
-    {{/each}}
     <!-- <a class="pages">{{i}}</a> -->
-
 </script>
 <script id="navigation_tmpl" type="text/x-handlebars-template">
     <ul>
@@ -250,6 +290,7 @@
 
 </script>
 <script src="../js/appControllers/AppController.js"></script>
+<script src="../js/appControllers/ProductController.js"></script>
 <script src="../js/appControllers/AccountController.js"></script>
 <script src="../json/categories.json" type="application/json"></script>
 <script src="../json/types.json" type="application/json"></script>
