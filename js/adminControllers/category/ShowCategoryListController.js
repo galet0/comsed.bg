@@ -5,7 +5,7 @@
         var categories = JSON.parse(window.localStorage.getItem('categories'));
         var types = JSON.parse(window.localStorage.getItem('types'));
         //console.log(categories);
-        var indexCategory = AppController.getControllerTemplate('AdminCategoriesController', 'showCategoriesList');
+        var indexCategory = AppController.getControllerTemplate('show-categories-list', 'showCategoriesList');
         //console.log(indexCategory);
         var template = Handlebars.compile(indexCategory);
         //console.log(template);
@@ -33,7 +33,7 @@
                 var types = JSON.parse(window.localStorage.getItem('types')) || [];
                 var type = types.find(type => type.id === typeID);
 
-                var editCategoryTmpl = AppController.getControllerTemplate('ShowCategoryListController', 'editCategory');
+                var editCategoryTmpl = AppController.getControllerTemplate('show-categories-list', 'editCategory');
                 var template = Handlebars.compile(editCategoryTmpl);
                 var temp = template(type);
 
@@ -67,7 +67,7 @@
         showAllCategoriesPage();
     }
 
-    AppController.registerController('editCategory', {
+    AppController.registerController('show-categories-list', {
         initPage: initPage
     })
 })();

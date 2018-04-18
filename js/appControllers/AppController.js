@@ -132,6 +132,7 @@ var AppController = (function() {
     // controllers
     function registerController(name, controller) {
         if (!controllers[name]) {
+            console.log(name, controller);
             controllers[name] = {
                 controller: controller,
                 templates: {}
@@ -142,6 +143,7 @@ var AppController = (function() {
     }
 
     function getController(name) {
+        console.log(name);
         if (controllers[name]) {
             return controllers[name].controller;
         } else {
@@ -192,6 +194,10 @@ var AppController = (function() {
         mainElement.innerHTML = pageContent;
         // update the title
         document.head.getElementsByTagName('title')[0].textContent = page.slice(0, 1).toUpperCase() + page.slice(1);
+        var controller = getController(page);
+        if(controller){
+            controller.initPage();
+        }
     }
 
     // utils

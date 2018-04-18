@@ -1,7 +1,7 @@
 (function () {
     var main = document.querySelector('main');
 
-    function getAddProductPage(){
+    function getAddCategoryPage(){
         main.querySelector('.btn-add').addEventListener('click', function (event) {
             event.preventDefault();
 
@@ -32,10 +32,10 @@
     }
 
     function initPage() {
-        getAddProductPage();
+        getAddCategoryPage();
     }
 
-    AppController.registerController('show-categories-list',{
+    AppController.registerController('AdminCategoriesController',{
         initPage: initPage
     })
 })();

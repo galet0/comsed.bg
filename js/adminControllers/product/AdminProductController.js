@@ -6,7 +6,7 @@
         main.querySelector('.btn-add').addEventListener('click', function (event) {
             event.preventDefault();
             var types = JSON.parse(window.localStorage.getItem('types')),
-                addProductTmpl = AppController.getControllerTemplate('AdminProductController', 'addProduct'),
+                addProductTmpl = AppController.getControllerTemplate('show-product-list', 'addProduct'),
                 template = Handlebars.compile(addProductTmpl),
                 temp = template({types:types});
 
@@ -43,9 +43,9 @@
         showAddProductPage();
     }
 
-    AppController.registerController('show-product-list', {
-        initPage: initPage
-    })
+    // AppController.registerController('show-products-list', {
+    //     initPage: initPage
+    // })
 
 })();
 
