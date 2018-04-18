@@ -9,32 +9,33 @@
 </head>
 <body>
 <div class="container page products">
-    <div class="hidden"><a href ="../html/products.html" class="current"></a></div>
-        <header>
-                <div class="topHeader">
-                    <div class="input-group">
-                        <input type="text" placeholder="Търси по ключова дума"></input>
-                    </div>
-                    <div class="headderAuth">
-                        <div class="login-btn">
-                            <a href="auth.html"><i class="fas fa-sign-in-alt"></i>Вход/Регистрация</a>
-                            </div>
-                            <div class="cart-btn">
-                                <a href="#"><i class="fas fa-cart-arrow-down"></i>Количка</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="header">
-                        <img class="logo" src="../images/logo1.png">
+    <header>
+        <div class="topHeader">
+            <div class="input-group">
+                <input type="text" placeholder="Търси по ключова дума"></input>
+            </div>
+            <div class="headderAuth">
+                <div class="login-btn">
+                    <a href="auth.html"><i class="fas fa-sign-in-alt"></i>Вход/Регистрация</a>
+                </div>
+                <div class="cart-btn">
+                    <a href="#"><i class="fas fa-cart-arrow-down"></i>Количка</a>
+                </div>
+            </div>
+        </div>
+        <div class="header">
+            <img class="logo" src="../images/logo1.png">
                         <div class="topnav">
                             <ul>
                                 <!-- <li class="index"><a href="index.html" class="current">Начало</a></li><li class="about"><a href="about.html">За нас</a></li><li class="news"><a href="news.html">Новини</a></li><li class="promotions"><a href="promotions.html">Промоции</a></li><li class="contacts"><a href="contacts.html">Контакти</a></li> -->
-                                <li class="index"><a href="index.html">Начало</a></li><li class="about"><a href="about.html">За нас</a></li><li class="news"><a href="news.html">Новини</a></li><li class="promotions"><a href="promotions.html">Промоции</a></li><li class="contacts"><a href="contacts.html">Контакти</a></li>
+                                <li class="index"><a href="index.html" class="current">Начало</a></li><li class="about"><a href="about.html">За нас</a></li><li class="news"><a href="news.html">Новини</a></li><li class="promotions"><a href="promotions.html">Промоции</a></li><li class="contacts"><a href="contacts.html">Контакти</a></li>
+
                             </ul>
                         </div>
                     </div>
             </header>
         <main>
+            <div class="hidden"><a href ="products.html" class="current"></a></div>
             <div class="row ">
                 <div class="column-left">
                     <h3>Търси в:</h3>
@@ -45,13 +46,101 @@
             </div>
         </div>
     </main>
-</main>
-</div>
+    <footer>
+            <div id="footer">
+                <div class="wrap">
+                    <style>
+                        .pic1{opacity: 1;filter: alpha(opacity=100);background: url('/images/page4.png') no-repeat;}
+                        .pic1:hover{opacity: 0.5}
+        
+                        .pic2{opacity: 1;filter: alpha(opacity=100);background: url('/images/page3.png') no-repeat;}
+                        .pic2:hover{opacity: 0.5}
+        
+                        .pic3{opacity: 1;filter: alpha(opacity=100);background: url('/images/page2.png') no-repeat;}
+                        .pic3:hover{opacity: 0.5}
+        
+                        .pic4{opacity: 1;filter: alpha(opacity=100);background: url('/images/page1.png') no-repeat;}
+                        .pic4:hover{opacity: 0.5}
+                    </style>
+                     <div class="footerTitleHold">
+                            <div class="footerTitle">
+                                <span>...има и още много</span>
+                            </div>
+                    </div>
+                    <div class="footerImg">                       
+                            <div class="footerImg01">
+                                <img src="/images/footer002.png" width="350" height="260" />
+                            </div>
+                    </div>
+                    <div class="footerDivLinks">
+                            <div class="footerDiv">
+                                <ul>
+                                    <li><a href="products.html" class="current">Продукти</a></li>   
+                                    <li><a href="about.html"> За нас</a></li>
+                                    <li><a href="news.html">Новини</a></li> 
+                                    <li><a href="promotions.html">Промоции</a></li>                             
+                                    <li><a href="Контакти">Контакти</a></li>
+                                </ul>
+                            </div> 
+                    </div>
+                    <div class="footerDiv2" style="background: none;">
+                        <div class="inTouchTitle" style="margin-left: 40px;z-index:9999;">
+                            <h2>Последвай ни</h2>                                
+                            <div style="width:260px;margin-top:-20px;margin-left: -15px">
+                                <a href="https://facebook.com" title="View Wonderland Facebook Page">
+                                    <div class="pic1" style="width:124px;height:103px;float: left;"></div>
+                                </a>
+                                <a href="https://twitter.com/" title="View Wonderland Twitter Page" target="_blank">
+                                    <div class="pic2" style="width:124px;height:103px;float: left;"></div>
+                                </a>
+                                <div style="clear:both;"></div>
+                                <a href="https://www.youtube.com/" title="View Wonderland You Tube Page" target="_blank">
+                                    <div class="pic3" style="width:124px;height:103px;float: left;"></div>
+                                </a>
+                                <a href="https://www.instagram.com/" title="View Wonderland Instagram Page" target="_blank">
+                                    <div class="pic4" style="width:124px;height:103px;float: left;"></div>
+                                </a>           
+                            </div>
+                        </div> 
+                    </div> 
+    </footer>
 
 <script id="products_tmpl" type="text/x-handlebars-template">
-    {{#each products}}
+    <div class="productList">
+        {{#with categoryType}}
+        <h2>{{name}} {{products.length}} резултата</h2> 
+        {{/with}}
+        {{#with products.[0]}}
+        <ul class="product-container" id={{i}}>
+        {{#each prod}}
+            <li class="product-item" value={{id}}>
+                <a>
+                <img class="product-img" src= {{image}}>
+                <h4>{{name}}</h4>
+                <p class="price">{{price}} лв.</p>
+                <div class="button-group">
+                        <button><i class="fas fa-cart-arrow-down"></i>Купи</button>
+                        <button><i class="fas fa-heart"></i>Добави в любими</button>
+                    </div>
+                </a>
+            </li>     
+        {{/each}}
+        </ul>
+    </div>
+    {{/with}}
+    <div class="pages"> Страници: 
+    {{#each products}}  
+        <a href=# id={{i}}>{{i}}</a>
+    {{/each}}
+    </div>
+    <!-- <a class="pages">{{i}}</a> -->
+</script>
+<script id="productsPerPage_tmpl" type="text/x-handlebars-template">
     <ul class="product-container" id={{i}}>
-       {{#each prod}}
+        {{#with categoryType}}
+        <h2>{{name}} {{products.length}} резултата</h2> 
+        {{/with}}
+       {{#each products}}
         <li class="product-item" value={{id}}>
             <a>
                <img class="product-img" src= {{image}}>
@@ -65,16 +154,14 @@
         </li>     
        {{/each}}
     </ul>
-    {{/each}}
-    {{#each products}}
-    <a>{{i}}</a>
-    {{/each}}
     <!-- <a class="pages">{{i}}</a> -->
 </script>
-
+<script id="sort_tmpl" type="text/x-handlebars-template">
+ </script>
 <script src="../js/handlebars.min.js"></script>
 <script src="../js/appControllers/AppController.js"></script>
 <script src="../js/appControllers/ProductController.js"></script>
+<script src="../js/appControllers/AccountController.js"></script>
 <script src="../json/categories.json" type="application/json"></script>
 <script src="../json/types.json" type="application/json"></script>
 <script src="../js/models/UserModel.js"></script>

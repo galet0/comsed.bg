@@ -4,8 +4,9 @@
         products = JSON.parse(window.localStorage.getItem('products')),
         loggedUser = sessionStorage.getItem('logged'),
         users,
-        user;
-        
+        user,
+        selectOption;
+
     // SHOW CATEGORIES AND TYPES   
     function initCategoriesNavigation(){    
         categories.forEach(function(category){
@@ -34,45 +35,140 @@
         // clicked first link
         links[0].click();
     }
+   
+    function getAllProducts(){
+        var prod = AppController.getNumberPage(showProd),
+        prod
+        uctTemplate = AppController.getControllerTemplate('products', 'products'),
+        template = Handlebars.compile(productTemplate),
+        temp = template({ products: prod });
+        productsView.innerHTML = temp;        
+
+    }
 
     function linkClick (event) {
         event.preventDefault();
+        var page = AppController.getUrlPage(this.href);
         var showProd = [],
+            categoryType,
             productsView = document.querySelector('.column-right');
         // show all products in the cattegory   
         if (this.name === 'category') {
             var types = TypeModule.getTypesByCategoryId(parseInt(this.id));
             for (var i = 0; i < types.length; i++) {
-                showProd = showProd.concat(products.filter(product => product.type === types[i].id));
+                showProd = showProd.concat(products.filter(product => product.type === types[i].id));                
+                if(showProd.length){
+                    categoryType = TypeModule.findByTypeID(showProd[0].type);  
+                } 
             }
         }
         //show all products for the clicked type
         if (this.name === 'type') {
             showProd = products.filter(product => product.type === parseInt(this.id));
-        }
-        
+            if(showProd.length){
+                var getType = TypeModule.findByTypeID(showProd[0].type); 
+                categoryType = TypeModule.findByTypeID(getType.products[0].type);                
+            }
+        }        
         if (showProd.length) {
+            var selectItem = '<select id="select">Изберете<option value="date">Дата</option><option value="priceUp">Цена възх.</option><option value="priceDown">Цена низх.</option></select>'
+            var div = document.createElement('div'); 
+            div.setAttribute('class','selectItem');
+            div.innerHTML = selectItem;           
+            productsView.innerHTML = div;
+
             var prod = AppController.getNumberPage(showProd),
-                productTemplate = AppController.getControllerTemplate('products', 'products'),
-                template = Handlebars.compile(productTemplate),
-                temp = template({ products: prod });
-                productsView.innerHTML = temp;
-                
-                var items = productsView.querySelectorAll('a');
-                console.log(items);
-                
+            productTemplate = AppController.getControllerTemplate('products', 'products'),
+            template = Handlebars.compile(productTemplate),
+            temp = template({ products: prod, categoryType : categoryType});
+            productsView.innerHTML = temp;
+
+            //insert select for sorting products price, date
+            var row= document.querySelector('.row');
+            var newE = row.childNodes[3];
+            newE.appendChild(div);
+
+
+            showList(showProd, productsView, categoryType);
+
+            selectOption = document.getElementById('select');
+            selectOption.addEventListener('change', function(event){
+                event.preventDefault();
+                var result = [],
+                    listProducts;
+                if(this.value === 'date'){
+                    
+                }
+                if(this.value === 'priceUp'){
+                    showProd.sort((a,b) => a.price - b.price);
+
+                    
+                    var prod = AppController.getNumberPage(showProd),
+                    productTemplate = AppController.getControllerTemplate('products', 'products'),
+                    template = Handlebars.compile(productTemplate),
+                    temp = template({ products: prod, categoryType : categoryType});
+                    productsView.innerHTML = temp;
+
+                    //insert select for sorting products price, date
+                    var row= document.querySelector('.row');
+                    var newE = row.childNodes[3];
+                    newE.appendChild(div);
+
+                    showList(showProd,productsView);
+                } 
+               
+                if(this.value === 'priceDown'){
+                    showProd.sort((a,b) => b.price - a.price);
+
+                    
+                    var prod = AppController.getNumberPage(showProd),
+                    productTemplate = AppController.getControllerTemplate('products', 'products'),
+                    template = Handlebars.compile(productTemplate),
+                    temp = template({ products: prod, categoryType : categoryType});
+                    productsView.innerHTML = temp;
+
+                    //insert select for sorting products price, date
+                    var row= document.querySelector('.row');
+                    var newE = row.childNodes[3];
+                    newE.appendChild(div);
+
+                    showList(showProd,productsView);
+        
+
+                }    
+            });
+        
+            
         } else {
             productsView.innerHTML = '<h1> Няма намерени продукти </h1>';
-        }
-    };
-
-    function initPage() {
-        if (categories) {
-            initCategoriesNavigation();
-        }
+        } 
     }
-
+       function showList(showProd, productsView, categoryType){
+           
+            var itemsPages = productsView.querySelectorAll('a[id]');
+            if (itemsPages.length > 1){
+                Array.from(itemsPages).forEach(function(page){
+                    page.addEventListener('click',function(event){
+                        event.preventDefault();
+                        prod = AppController.getNumberPage(showProd);
+                        prod = prod[this.id - 1].prod;
+                        productTemplate = AppController.getControllerTemplate('products','productsPerPage');
+                        template = Handlebars.compile(productTemplate),
+                        temp = template({ products: prod});
+                        productsView.querySelector('.productList').innerHTML = temp;
+                    })                       
+            });   
+        }
+        return productsView;              
+    } 
+    
+   
+    function initPage() {
+        AppController.navigatePages();
+        initCategoriesNavigation();        
+    }
     AppController.registerController('products', {
         initPage: initPage
+        
     });
 })();

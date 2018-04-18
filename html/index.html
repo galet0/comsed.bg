@@ -38,7 +38,7 @@
             <div class="topnav">
                 <ul>
                     <!-- <li class="index"><a href="index.html" class="current">Начало</a></li><li class="about"><a href="about.html">За нас</a></li><li class="news"><a href="news.html">Новини</a></li><li class="promotions"><a href="promotions.html">Промоции</a></li><li class="contacts"><a href="contacts.html">Контакти</a></li> --> 
-                    <li class="index"><a href="index.html" class="current">Начало</a></li><li class="about"><a href="about.html">За нас</a></li><li class="news"><a href="news.html">Новини</a></li><li class="promotions"><a href="promotions.html">Промоции</a></li><li class="contacts"><a href="contacts.html">Контакти</a></li>
+                    <li class="index"><a href="index.html" class="current">Начало</a></li></a></li><li class="about"><a href="about.html">За нас</a></li><li class="news"><a href="news.html">Новини</a></li><li class="promotions"><a href="promotions.html">Промоции</a></li><li class="contacts"><a href="contacts.html">Контакти</a></li>
                
                 </ul>
             </div>
@@ -178,9 +178,35 @@
     </div>
 </script>
 <script id="products_tmpl" type="text/x-handlebars-template">
-    {{#each products}}
+    <div class="productList">
+        {{#with products.[0]}}
+        <ul class="product-container" id={{i}}>
+        {{#each prod}}
+            <li class="product-item" value={{id}}>
+                <a>
+                <img class="product-img" src= {{image}}>
+                <h4>{{name}}</h4>
+                <p class="price">{{price}} лв.</p>
+                <div class="button-group">
+                        <button><i class="fas fa-cart-arrow-down"></i>Купи</button>
+                        <button><i class="fas fa-heart"></i>Добави в любими</button>
+                    </div>
+                </a>
+            </li>     
+        {{/each}}
+        </ul>
+    </div>
+    {{/with}}
+    <div class="pages"> Страници: 
+    {{#each products}}  
+        <a href=# id={{i}}>{{i}}</a>
+    {{/each}}
+    </div>
+    <!-- <a class="pages">{{i}}</a> -->
+</script>
+<script id="productsPerPage_tmpl" type="text/x-handlebars-template">
     <ul class="product-container" id={{i}}>
-       {{#each prod}}
+       {{#each products}}
         <li class="product-item" value={{id}}>
             <a>
                <img class="product-img" src= {{image}}>
@@ -194,12 +220,7 @@
         </li>     
        {{/each}}
     </ul>
-    {{/each}}
-    {{#each products}}
-    <a>{{i}}</a>
-    {{/each}}
     <!-- <a class="pages">{{i}}</a> -->
-
 </script>
 <script id="navigation_tmpl" type="text/x-handlebars-template">
     <ul>
@@ -218,6 +239,7 @@
     
 </script>
 <script src="../js/appControllers/AppController.js"></script>
+<script src="../js/appControllers/ProductController.js"></script>
 <script src="../js/appControllers/AccountController.js"></script>
 <script src="../json/categories.json" type="application/json"></script>
 <script src="../json/types.json" type="application/json"></script>
