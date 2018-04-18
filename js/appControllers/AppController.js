@@ -16,7 +16,6 @@ var AppController = (function() {
     // controllers
     function registerController(name, controller) {
         if (!controllers[name]) {
-            console.log(name, controller);
             controllers[name] = {
                 controller: controller,
                 templates: {}
@@ -27,7 +26,6 @@ var AppController = (function() {
     }
 
     function getController(name) {
-        console.log(name);
         if (controllers[name]) {
             return controllers[name].controller;
         } else {
@@ -62,7 +60,7 @@ var AppController = (function() {
     function gotoPage(address) {
         var page = getUrlPage(address);
         if (page !== currentPage) {
-           //showPage(page);
+            //showPage(page);
             sendRequest(address, onPageSuccess.bind(this, page), onPageError);
             history.pushState({ page: page }, page.slice(0, 1).toUpperCase() + page.slice(1), address);
         }
@@ -84,9 +82,9 @@ var AppController = (function() {
             if(pageContent){
                 mainElement.innerHTML = pageContent;
             }else{
-               
+
                 sendRequest(location.href, onPageSuccess.bind(this, getUrlPage(location.href)), onPageError);
-               
+
             }
             controller.initPage();
         }else{
@@ -96,27 +94,15 @@ var AppController = (function() {
             mainElement.innerHTML = pageContent;
             // update the title
             document.head.getElementsByTagName('title')[0].textContent = page.slice(0, 1).toUpperCase() + page.slice(1);
-        }        
-        updateNavigations();
-<<<<<<< HEAD
-        //var template = Handlebars.compile(getTemplate(page));
-        //mainElement.innerHTML = template({});
-        mainElement.innerHTML = pageContent;
-        // update the title
-        document.head.getElementsByTagName('title')[0].textContent = page.slice(0, 1).toUpperCase() + page.slice(1);
-        var controller = getController(page);
-        if(controller){
-            controller.initPage();
         }
-=======
->>>>>>> b6760eb78e85acd9aa7f787c412a9779240c7633
+        updateNavigations();
     }
-    
+
     // utils
     function getUrlPage(address) {
         return address.split('/').pop().split('.')[0];
     }
-    
+
     function getNumberPage(list) {
         var itemsPerPage = 12;
         var result = [];
@@ -126,11 +112,11 @@ var AppController = (function() {
                 result.push({
                     i : i + 1,
                     prod : list.slice(i * itemsPerPage, itemsPerPage * (i + 1))
-                });       
+                });
             }
         }
         return result;
-    }   
+    }
 
     // nav
     function updateNavigations() {
@@ -171,7 +157,7 @@ var AppController = (function() {
         }
         if (xhr) {
             xhr.addEventListener('readystatechange', function(event) {
-                if (xhr.readyState === 4) { 
+                if (xhr.readyState === 4) {
                     if (xhr.status === 200) {
                         success(xhr);
                     } else {
@@ -193,12 +179,12 @@ var AppController = (function() {
             })
         })
     }
- 
+
     var pageElement = document.querySelector('.page');
     var mainElement = pageElement.querySelector('main');
     var currentPage = getUrlPage(location.href);
     var navigations = document.querySelectorAll('a');
-    
+
 
     Array.from(document.querySelectorAll('a')).forEach(function(link) {
         link.addEventListener('click', function(event) {
@@ -216,7 +202,7 @@ var AppController = (function() {
         console.log(getUrlPage(location.href));
         var page = getUrlPage(location.href),
             controller = getController(page);
-        
+
         if (controller) {
             setControllerTemplates(page, document.querySelectorAll('script[type="text/x-handlebars-template"]'));
             controller.initPage();
