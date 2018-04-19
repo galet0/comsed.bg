@@ -100,7 +100,7 @@ body {
 }
 
 /*.column-left>ul{*/
-    /*list-style-type: none;*/
+    /*list-style-typeID: none;*/
     /*margin: 0;*/
     /*padding: 0;*/
 /*}*/
@@ -360,7 +360,7 @@ body {
     background-color: rgba(221, 221, 221, 0.4);
 }
 
-/*Add category, type, product*/
+/*Add category, typeID, product*/
 form{
     display: block;
     margin-top: 0;

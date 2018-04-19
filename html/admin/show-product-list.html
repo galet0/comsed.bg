@@ -28,8 +28,8 @@
         <div class="main">
             <div class="pull-right top-background">
                 <h1>Продукти</h1>
-                <a href="#" class="btn btn-primary btn-add"><i class="fas fa-plus"></i></a>
-                <button class="btn btn-danger btn-delete"><i class="far fa-trash-alt"></i></button>
+                <a href="#" title="Добави продукт" class="btn btn-primary btn-add"><i class="fas fa-plus"></i></a>
+                <button title="Изтрий продукт" class="btn btn-danger btn-delete"><i class="far fa-trash-alt"></i></button>
             </div>
             <div>
                 <div class="panel panel-default">
@@ -40,11 +40,11 @@
                         </div>
                     </div>
                     <div class="panel-body">
-                        <table class="table table-bordered table-hover">
+                        <table class="table table-bordered table-hover productTable">
                             <thead>
                             <tr>
                                 <td class="table-data text-center">
-                                    <input type="checkbox">
+                                    <input type="checkbox" class="check-control">
                                 </td>
                                 <td class="text-left">
                                     Картинка
@@ -74,6 +74,16 @@
     </main>
 </div>
 <script src="../../js/handlebars.min.js"></script>
+<!--Темплейт за обновяване на списъка с продукти -->
+<script src="../../js/appControllers/AppController.js"></script>
+<script src="../../js/adminControllers/AdminIndexController.js"></script>
+<script src="../../js/adminControllers/category/ShowCategoryListController.js"></script>
+<script src="../../js/adminControllers/product/ShowProductListController.js"></script>
+<script src="../../js/adminControllers/user/ShowUserListController.js"></script>
+<script src="../../js/models/ProductModel.js"></script>
+<script src="../../js/models/TypeModel.js"></script>
+<script src="../../js/models/CategoryModel.js"></script>
+<script src="../../js/models/UserModel.js"></script>
 <script id="showProductList_tmpl" type="text/x-handlebars-template">
     <!--<tbody>-->
     {{#each products}}
@@ -94,9 +104,9 @@
             {{quantity}}
         </td>
         <td class="text-right">
-            <a href="#" class="btn btn-primary btn-edit"><i
+            <a href="#" title="Редактирай" class="btn btn-primary btn-edit"><i
                     class="fas fa-pencil-alt"></i></a>
-            <a href="#" class="btn btn-danger btn-delete"><i
+            <a href="#" title="Изтрий" class="btn btn-danger btn-delete"><i
                     class="far fa-trash-alt"></i></a>
         </td>
     </tr>
@@ -111,8 +121,8 @@
                 <div class="panel-title">
                     Редактирай продукт:
                 </div>
-                <a href="#" class="btn btn-primary btn-save"><i class="far fa-save"></i></a>
-                <button class="btn btn-danger btn-cancel"><i class="far fa-trash-alt"></i></button>
+                <a href="#" title="Запази" class="btn btn-primary btn-save"><i class="far fa-save"></i></a>
+                <button title="Отмени" class="btn btn-danger btn-cancel"><i class="fas fa-times"></i></button>
             </div>
             <div class="panel-body">
                 <form action="#" method="post" class="form-horizontal">
@@ -131,7 +141,7 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Подкатегория:</label>
                         <div class="col-sm-10">
-                            <!--<input id="product-name" type="text" placeholder="Име на подкатегория" class="form-control">-->
+                            <!--<input id="product-name" typeID="text" placeholder="Име на подкатегория" class="form-control">-->
                             <select name="types" class="form-control">
                                 {{#each types}}
                                 <option value="{{id}}">
@@ -210,7 +220,7 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Подкатегория:</label>
                         <div class="col-sm-10">
-                            <!--<input name="type" type="text" placeholder="Име на подкатегория" class="form-control">-->
+                            <!--<input name="typeID" typeID="text" placeholder="Име на подкатегория" class="form-control">-->
                             <select name="types" class="form-control">
                                 {{#each types}}
                                     <option value="{{id}}">{{name}}</option>
@@ -259,15 +269,6 @@
         </div>
     </div>
 </script>
-<!--Темплейт за обновяване на списъка с продукти -->
-<script src="../../js/appControllers/AppController.js"></script>
-<script src="../../js/adminControllers/AdminIndexController.js"></script>
-<script src="../../js/adminControllers/category/AdminCategoriesController.js"></script>
-<script src="../../js/adminControllers/category/ShowCategoryListController.js"></script>
-<script src="../../js/adminControllers/product/AdminProductController.js"></script>
-<script src="../../js/adminControllers/product/ShowProductListController.js"></script>
-<script src="../../js/models/ProductModel.js"></script>
-<script src="../../js/models/TypeModel.js"></script>
-<script src="../../js/models/CategoryModel.js"></script>
+
 </body>
 </html>

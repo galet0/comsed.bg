@@ -45,8 +45,12 @@ var AppController = (function() {
     }
 
     function getControllerTemplate(name, tmplName) {
+        console.log(name);
+        console.log(tmplName);
         if (controllers[name]) {
+            console.log(controllers[name]);
             if (controllers[name].templates[tmplName]) {
+                console.log(controllers[name].templates[tmplName]);
                 return controllers[name].templates[tmplName];
             } else {
                 console.error(`Template "${tmplName}" doesn't exists for controller "${name}"!`);
@@ -136,7 +140,7 @@ var AppController = (function() {
         var endIndex = xhr.responseText.indexOf('</body>');
         var container = document.createElement('div');
         container.innerHTML = xhr.responseText.slice(startIndex, endIndex);
-        setControllerTemplates(page, container.querySelectorAll('script[type="text/x-handlebars-template"]'));
+        setControllerTemplates(page, container.querySelectorAll('script[typeID="text/x-handlebars-template"]'));
         showPage(page, container.querySelector('main').innerHTML);
     }
 
@@ -204,7 +208,7 @@ var AppController = (function() {
             controller = getController(page);
 
         if (controller) {
-            setControllerTemplates(page, document.querySelectorAll('script[type="text/x-handlebars-template"]'));
+            setControllerTemplates(page, document.querySelectorAll('script[typeID="text/x-handlebars-template"]'));
             controller.initPage();
         }
     });

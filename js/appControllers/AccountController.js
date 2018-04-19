@@ -13,7 +13,7 @@
    
     AppController.navigatePages();
     function getProductsSlider(){
-        var firstCategoryProducts = products.filter(product => product.type === 1),
+        var firstCategoryProducts = products.filter(product => product.typeID === 1),
             div = document.querySelector('.firstCategory'),
             parent = document.querySelector('.row-slider');
             console.log(div);
@@ -21,7 +21,7 @@
         if(firstCategoryProducts.length > 5){
         // Add <h3> tag
             var header = document.createElement('a'),
-                textContent = document.createTextNode(TypeModule.findByTypeID(firstCategoryProducts[0].type).name);
+                textContent = document.createTextNode(TypeModule.findByTypeID(firstCategoryProducts[0].typeID).name);
             header.setAttribute('href', 'products.html');
             header.appendChild(textContent);
             console.log(parent);
@@ -60,7 +60,7 @@
                 var ulIN= document.createElement('ul');             
                 category.types.forEach(function(type){
                     var li = document.createElement('li');
-                    li.innerHTML = '<a href="/html/products.html" name="type" id='+ type.id + '>' + type.name +'</a>';
+                    li.innerHTML = '<a href="/html/products.html" name="typeID" id='+ type.id + '>' + type.name +'</a>';
                     li.style.backgroundColor = colorStyles[id];              
                     ulIN.appendChild(li);                    
                     id++;
@@ -85,7 +85,7 @@
     function linkClick (event) {
         event.preventDefault();
         
-        if (this.name === 'type') {
+        if (this.name === 'typeID') {
             AppController.gotoPage(this.href);
         }if (this.name === 'category'){
             AppController.gotoPage(this.href);
@@ -148,7 +148,7 @@
     
    
          function moveProducts(){  
-            var firstCategoryProducts = products.filter(product => product.type === 1);
+            var firstCategoryProducts = products.filter(product => product.typeID === 1);
              var arrowButtons = document.querySelectorAll('button');
              var count = 0;
              Array.from(arrowButtons).forEach(function(button){
@@ -198,7 +198,7 @@
     //                 error(new Error('no ajax sorry'));
     //             }
     //         }
-    
+    //
     //         if (xhr) {
     //             xhr.addEventListener('readystatechange', function(event) {
     //                 //console.log('readystatechange', xhr.readyState, xhr.status);
@@ -215,7 +215,7 @@
     //        }
     //     });
     // }
-     
+    //
     //      sendRequest('../json/products.json')
     //          .then(function(response) {
     //              if(response.length){
@@ -237,4 +237,4 @@
     //              }
     //              return response;
     //          });
-     
+    //
