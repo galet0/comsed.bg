@@ -208,7 +208,7 @@ var AppController = (function() {
             controller = getController(page);
 
         if (controller) {
-            setControllerTemplates(page, document.querySelectorAll('script[typeID="text/x-handlebars-template"]'));
+            setControllerTemplates(page, document.querySelectorAll('script[type="text/x-handlebars-template"]'));
             controller.initPage();
         }
     });

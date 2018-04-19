@@ -71,10 +71,16 @@ var ProductModule = (function () {
             if(prodIndex !== -1){
                 var type = TypeModule.findTypeByProductID(productID);
                 products.splice(prodIndex, 1);
-                type.products.splice(prodIndex, 1);
+                var prodTypeIndex = type.products.findIndex(function (p) {
+                    return p.id === productID;
+                });
+                type.products.splice(prodTypeIndex, 1);
+                window.localStorage.setItem('products', JSON.stringify(products));
             } else {
                 console.log('Не съществува продукт с това име!');
             }
+
+            return true;
         },
         getPromoProducts: function(){
             return products.filter(function (p) {
@@ -85,8 +91,6 @@ var ProductModule = (function () {
         editProduct: function (prodID, image, name, price, description, brand, typeID, quantity, minAge, maxAge) {
             var prodIndex = this.findProductById(prodID);
             if(prodIndex !== -1){
-                console.log(products);
-                console.log(products.slice(prodIndex)[0]);
                 var prod = products.slice(prodIndex)[0];
                 if(image !== undefined && image !== null && image !== ''){
                     prod.image = image;
@@ -117,11 +121,23 @@ var ProductModule = (function () {
                 }
                 products[prodIndex] = prod;
                 window.localStorage.setItem('products', JSON.stringify(products));
+                //take items from localStorage
                 var typesLocal = JSON.parse(window.localStorage.getItem('types'));
                 var typeIndex = typesLocal.findIndex(function (type) {
                     return type.id === parseInt(typeID);
                 });
-                typesLocal[typeIndex].products[prodIndex] = prod;
+                //search productIndex in current type
+                var prodTypeIndex = typesLocal[typeIndex].products.findIndex(function (prod) {
+                    return prod.id === productID;
+                });
+                //if prodIndex !== -1
+                if(prodTypeIndex !== -1){
+                    //- replace product with new parameters
+                    typesLocal[typeIndex].products[prodTypeIndex] = prod;
+                } else {
+                    //push product in current type
+                    typesLocal[typeIndex].products.push(prod);
+                }
                 window.localStorage.setItem('types', JSON.stringify(typesLocal));
             } else {
                 this.addProduct(image, name, price, description, brand, typeID, quantity, minAge, maxAge);

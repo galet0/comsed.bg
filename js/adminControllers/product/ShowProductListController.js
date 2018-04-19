@@ -10,6 +10,7 @@
 
         editProduct();
 
+        deleteProduct();
     }
 
     function showAddProductPage() {
@@ -92,7 +93,11 @@
                     var inputType = types.find(function (type) {
                         return type.id === inputTypeID;
                     });
-                    inputType.value = inputType.name;
+                    var inputTypeIndex = types.findIndex(function (type) {
+                        return type.id === inputTypeID;
+                    });
+                    //inputType.value = inputType.name;
+                    document.querySelector('.selected').selectedIndex = inputTypeIndex;
                     var inputQuantity = main.querySelector('input[name="quantity"]');
                     //if(inputQuantity !== undefined && inputQuantity !== null && inputQuantity !== '') {
                         inputQuantity.value = product.quantity;
@@ -118,6 +123,13 @@
                             newInputQuantity = main.querySelector('input[name="quantity"]').value,
                             newInputMinAge = main.querySelector('input[name="minAge"]').value,
                             newInputMaxAge = main.querySelector('input[name="maxAge"]').value;
+                        if(newInputType !== inputTypeID){
+                            var productIndex = inputType.products.findIndex(function (p) {
+                                return p.id === productID;
+                            });
+                            var deletedProd = inputType.products.splice(productIndex, 1);
+                            window.localStorage.setItem('types', JSON.stringify(types));
+                        }
                         if(ProductModule.editProduct(productID, newInputImg, newInputName, newInputPrice, newInputDescription, newInputBrand, newInputType, newInputQuantity, newInputMinAge, newInputMaxAge)){
                             window.location = '../../html/admin/show-product-list.html';
                         }
@@ -130,6 +142,20 @@
                 }
             });
         });
+    }
+
+    function deleteProduct() {
+        Array.from(document.querySelectorAll('.btn-delete')).forEach(function (btn) {
+            btn.addEventListener('click', function (event) {
+                event.preventDefault();
+                var productID = parseInt(btn.parentNode.parentNode.childNodes[1].children["0"].value);
+                if(ProductModule.deleteProduct(productID)){
+                    // var typesLocal = JSON.parse(window.localStorage.getItem('types'));
+                    // window.localStorage.setItem('types',JSON.stringify(typesLocal));
+                    window.location = '../../html/admin/show-product-list.html';
+                }
+            })
+        })
     }
 
     function initPage() {

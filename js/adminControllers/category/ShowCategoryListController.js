@@ -47,7 +47,7 @@
     }
 
     function getEditCategoryPage() {
-        Array.from(document.querySelectorAll('.btn-edit-typeID')).forEach(function(btn){
+        Array.from(document.querySelectorAll('.btn-edit-type')).forEach(function(btn){
             btn.addEventListener('click', function (event) {
                 event.preventDefault();
 
@@ -61,7 +61,9 @@
 
                 var typeID = parseInt(typeInput);
                 var types = JSON.parse(window.localStorage.getItem('types')) || [];
-                var type = types.find(type => type.id === typeID);
+                var type = types.find(function (type) {
+                    return type.id === typeID;
+                });
 
                 var editCategoryTmpl = AppController.getControllerTemplate('show-categories-list', 'editCategory');
                 var template = Handlebars.compile(editCategoryTmpl);
@@ -77,7 +79,7 @@
 
                     main.querySelector('.btn-save').addEventListener('click', function (event) {
                         event.preventDefault();
-                        var newName = document.querySelector('input[name="typeID"]').value;
+                        var newName = document.querySelector('input[name="type"]').value;
                         var newDescription = document.querySelector('textarea').value;
                         type.name = newName;
                         type.description = newDescription;
