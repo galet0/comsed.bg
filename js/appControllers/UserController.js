@@ -146,6 +146,7 @@
                             error = document.querySelector('.error');
                             
                         if (validateInputs(firstName, lastName, phone, error)){
+                            var getUserIndex = users.findIndex(us => us.email === user.email); 
                             if (!password) {
                                 if(newPassword || passwordConfirmNew){
                                     error.textContent = "Не може да смените паролата, без да въведете текущата";

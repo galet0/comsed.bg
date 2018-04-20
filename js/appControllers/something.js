@@ -74,8 +74,7 @@ var something = (function(){
             var users = JSON.parse(window.localStorage.getItem('users')),
             user = users.find(x => x.email === loggedUser);
             if(user){        
-                AppController.setControllerTemplates('user-page', container.querySelectorAll('script[type="text/x-handlebars-template"]'));
-                var targetTemplate = AppController.getControllerTemplate('user-page', link.className),
+                var targetTemplate = AppController.getControllerTemplate('user-page', link.className);
                 template = Handlebars.complile(targetTemplate),
                 temp = template(user);
         
