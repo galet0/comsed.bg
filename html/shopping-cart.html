@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>КОМСЕД Количка</title>
-    <link rel="stylesheet" type="text/css" href="../css/shopping-cart.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/main.css"/>
     <script defer
             src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"
             integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
@@ -11,33 +11,127 @@
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 </head>
 <body>
-<div class="container age index">
+<div class="page shopping-cart">
     <header>
-        <div class='topHeader'>
-            <div class="input-group">
-                <input type="text" placeholder="Търси по ключова дума">
+            <div class="topHeader">
+                <div class="input-group">
+                    <input class="search" type="text" placeholder="Търси по ключова дума">
+                </div>
+                <div class="headderAuth">               
+                    
+                </div>
             </div>
-            <div class="headderAuth">
-                <div class="login-btn"><a href="auth.html"><i class="fas fa-sign-in-alt"></i>Вход/Регистрация</a></div>
-                <div class="cart-btn"><a href="#"><i class="fas fa-cart-arrow-down"></i>Количка</a></div>
+            <div class="header">
+                <img class="logo" src="../images/logo1.png">
+                <div class="topnav">
+                    <ul>
+                        <!-- <li class="index"><a href="index.html" class="current">Начало</a></li><li class="about"><a href="about.html">За нас</a></li><li class="news"><a href="news.html">Новини</a></li><li class="promotions"><a href="promotions.html">Промоции</a></li><li class="contacts"><a href="contacts.html">Контакти</a></li> -->
+                        <li class="index"><a href="index.html" class="current">Начало</a></li><li class="about"><a href="about.html">За нас</a></li><li class="news"><a href="products.html">Продукти</a></li><li class="promotions"><a href="promotions.html">Промоции</a></li><li class="contacts"><a href="contacts.html">Контакти</a></li>
+    
+                    </ul>
+                </div>
             </div>
-        </div>
-        <div class="header">
-            <img class="logo" src='../images/logo1.png'/>
-            <div class="topnav">
-                <ul>
-                    <li class="index"><a href="index.html" class="current">Начало</a></li>
-                    <li class="about"><a href="about.html">За нас</a></li>
-                    <li class="news"><a href="news.html">Новини</a></li>
-                    <li class="promotions"><a href="promotions.html">Промоции</a></li>
-                    <li class="contacts"><a href="contacts.html">Контакти</a></li>
-                </ul>
-            </div>
-        </div>
     </header>
     <main>
-        <div class="container">
-            <h1>Количка</h1>
+        <div class="container page shopping-cart">            
+        </div>
+    </main>
+    <footer>
+            <div id="footer">
+                <div class="wrap">
+                    <style>
+                        .pic1{opacity: 1;filter: alpha(opacity=100);background: url('../images/page4.png') no-repeat;}
+                        .pic1:hover{opacity: 0.5}
+    
+                        .pic2{opacity: 1;filter: alpha(opacity=100);background: url('../images/page3.png') no-repeat;}
+                        .pic2:hover{opacity: 0.5}
+    
+                        .pic3{opacity: 1;filter: alpha(opacity=100);background: url('../images/page2.png') no-repeat;}
+                        .pic3:hover{opacity: 0.5}
+    
+                        .pic4{opacity: 1;filter: alpha(opacity=100);background: url('../images/page1.png') no-repeat;}
+                        .pic4:hover{opacity: 0.5}
+                    </style>
+                    <div class="footerTitleHold">
+                        <div class="footerTitle">
+                            <span>...има и още много</span>
+                        </div>
+                    </div>
+                    <div class="footerImg">
+                        <div class="footerImg01">
+                            <img src="../images/footer002.png" width="350" height="260" />
+                        </div>
+                    </div>
+                    <div class="footerDivLinks">
+                        <div class="footerDiv">
+                            <ul>
+                                <li><a href="products.html">Продукти</a></li>
+                                <li><a href="about.html"> За нас</a></li>
+                                <li><a href="news.html">Новини</a></li>
+                                <li><a href="promotions.html">Промоции</a></li>
+                                <li><a href="Контакти">Контакти</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footerDiv2" style="background: none;">
+                        <div class="inTouchTitle" style="margin-left: 40px;z-index:9999;">
+                            <h2>Последвай ни</h2>
+                            <div style="width:260px;margin-top:-20px;margin-left: -15px">
+                                <a href="https://facebook.com" title="View Wonderland Facebook Page">
+                                    <div class="pic1" style="width:124px;height:103px;float: left;"></div>
+                                </a>
+                                <a href="https://twitter.com/" title="View Wonderland Twitter Page" target="_blank">
+                                    <div class="pic2" style="width:124px;height:103px;float: left;"></div>
+                                </a>
+                                <div style="clear:both;"></div>
+                                <a href="https://www.youtube.com/" title="View Wonderland You Tube Page" target="_blank">
+                                    <div class="pic3" style="width:124px;height:103px;float: left;"></div>
+                                </a>
+                                <a href="https://www.instagram.com/" title="View Wonderland Instagram Page" target="_blank">
+                                    <div class="pic4" style="width:124px;height:103px;float: left;"></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+</div>
+
+<script src="../js/handlebars.min.js"></script>
+<script id="indexProfile_tmpl" type="text/x-handlebars-template">  
+    {{#unless user.email}}
+    <div class="dropdown">
+        <a href="user-page.html" class="accountBtn dropbtn">Моят профил</a>
+        <div class="dropdown-content">
+            <a href="user-page.html" class="info accountBtn">Информация</a><a href="" class="logout">Изход</a>
+        </div>
+    </div>
+    <div class="cart-btn">
+            <a class="current basket" href="shopping-cart.html">
+                    <i class="fas fa-cart-arrow-down"></i>
+                    Количка <span class="prodCart"></span>
+            </a>
+            <span class="mess"></span>
+    </div>
+    {{/unless}}
+</script>
+<script id="indexProfile1_tmpl" type="text/x-handlebars-template">
+    <div class="login-btn">
+        <a class="auth" href="auth.html">
+            <i class="fas fa-sign-in-alt"></i>
+            Вход/Регистрация
+        </a>
+    </div>
+    <a class="current basket" href="shopping-cart.html" >
+            <i class="fas fa-cart-arrow-down"></i>
+            Количка <span class="prodCart"></span>
+    </a>
+    <span class="mess"></span>
+</script>
+<script id="cart_tmpl" type="text/x-handlebars-template">
+    {{#if cart.length}}
+    <h1 style="margin-left: 30px; margin-top:50px" >Количка</h1>
             <div class="table-responsive">
                 <table class="table table-bordered">
                     <thead>
@@ -50,30 +144,53 @@
                     </tr>
                     </thead>
                     <tbody>
+                    {{#each cart}}
                     <tr>
-                        <td class="text-center">Снимка</td>
-                        <td class="text-left">Име на продукт</td>
+                        <td class="text-center"><img style="width:100px"src="{{image}}"/></td>
+                        <td class="text-left" style="width: 350px">{{name}}</td>
                         <td class="text-left">
-                            <div class="input-group btn-block" style="max-width: 0">
-                                <input type="text" name="quantity" class="form-control input-quantity">
-                                <span class="input-group-btn">
-                                <button type="submit" class="btn btn-primary" title="Обнови"><i
+                            <div class="input-group btn-block">
+                                <input type="text" name="quantity" style="height: 34px" value={{quantity}} class="form-control input-quantity">
+                                <span class="input-group-btn" >
+                                <button id={{productID}} type="submit" class="btn btn-primary" title="Обнови"><i
                                         class="fas fa-sync-alt"></i></button>
-                                <button type="button" class="btn btn-danger" title="Премахни"><i
+                                <button id={{productID}} type="button" class="btn btn-danger"style="width: 10px background-image:cover" title="Премахни"><i
                                         class="fa fa-times-circle"></i></button>
                             </span>
                             </div>
                         </td>
-                        <td class="text-right">Ед. цена</td>
-                        <td class="text-right">Общо</td>
+                        <td class="text-right" style="width:50px">{{price}} лв.</td>
+                        <td class="text-right">{{totalPrice}} лв.</td>
                     </tr>
+                    {{/each}}
+                    <tr>                        
+                        <td colspan="3" style="font-size:20px;text-align:right">Обща сума </td>
+                        <td colspan="2" style="font-size:20px;text-align:right"> {{total}} лв.</td>
+                    </tr>                                   
                     </tbody>
                 </table>
+                <span style="margin-left: 720px"> Потвърдете поръчката като натиснете бутона "Поръчай"</span>
+                <span class="error"></span>
+                <button class="order">Поръчай</button>     
             </div>
-        </div>
-    </main>
-    <footer>
+            {{/if}}
+</script>
 
-    </footer>
+<script src="../js/appControllers/AppController.js"></script>
+<script src="../js/appControllers/something.js"></script>
+<script src="../js/appControllers/UserController.js"></script>
+<script src="../js/appControllers/AccountController.js"></script>
+<script src="../js/appControllers/ProductController.js"></script>
+<script src="../js/appControllers/AuthController.js"></script>
+<script src="../js/appControllers/RegisterController.js"></script>
+<script src="../js/appControllers/CartController.js"></script>
+<script src="../json/categories.json" type="application/json"></script>
+<script src="../json/types.json" type="application/json"></script>
+
+<script src="../js/models/ProductModel.js"></script>
+<script src="../js/models/ShoppingCartModel.js"></script>
+<script src="../js/models/UserModel.js"></script>
+<script src="../js/models/TypeModel.js"></script>
+<script src="../js/models/CategoryModel.js"></script>
 </body>
 </html>

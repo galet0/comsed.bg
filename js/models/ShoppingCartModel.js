@@ -1,21 +1,35 @@
 var ShoppingCartModule = (function () {
+   
+    
+    var cart = JSON.parse(window.localStorage.getItem('cart')) || [];
+    var products = JSON.parse(window.localStorage.getItem('products')) || [];
+   
 
-    var cart = [];
-
-    function Order(productID, price, quantity, userID){
-        this.productList = [];
+    function Product(productID, image, name, price, quantity){
         this.productID = productID;
         this.price = price;
         this.quantity = quantity;
+        this.name = name;
+        this.image = image;
+        this.totalPrice = parseInt(quantity) * parseFloat(price).toFixed(2);
+    }
+    
+
+    function Order(userID, price, date, productList){
         this.userID = userID;
+        this.price = price;
+        this.date = new Date();
+        this.productList = [];
     }
 
     function saveCart() {
-        localStorage.setItem("shoppingCart", JSON.stringify(cart));
+        if(window.localStorage){
+            window.localStorage.setItem('cart',JSON.stringify(cart));
+        }       
     }
 
     function loadCart() {
-        cart = JSON.parse(localStorage.getItem("shoppingCart"));
+        cart = JSON.parse(localStorage.getItem("cart"));
         if (cart === null) {
             cart = []
         }
@@ -34,7 +48,7 @@ var ShoppingCartModule = (function () {
             var productIndex = this.findProductIndex(productID);
             var order;
             if(productIndex === -1){
-                order = new Order(productID, price, quantity, userID);
+                order = new Order(userId, price, date, productList);
                 this.productList.push(productID);
                 cart.push(order);
             } else {
@@ -50,10 +64,27 @@ var ShoppingCartModule = (function () {
             saveCart();
         },
 
-        addProductToCart: function (productID, price, quantity) {
-            var order = new Order(productID, price, quantity);
-            cart.push(order);
-            saveCart();
+        addProductToCart: function (productID, image, name, price, quantity) {
+            var result = cart.find(product => product.productID === productID);
+                if(result){
+                        var product = products.find(item => item.id === productID);
+                        if(product.quantity > result.quantity){
+                            result.quantity += quantity;
+                            result.totalPrice = price * result.quantity;
+                            saveCart();
+                            loadCart();
+                            return true;
+                        }else{
+                            return false;
+                        }
+                      
+                }else{
+                    product = new Product(productID, image, name, price, quantity);      
+                    cart.push(product);
+                    saveCart();
+                    loadCart();
+                    return true;
+                }
         },
 
         removeProductFromCart: function (productID) {
@@ -66,13 +97,25 @@ var ShoppingCartModule = (function () {
         },
 
         updateQuantityInCart: function (productID, quantity) {
-            var productIndex = this.findProductIndex(productID);
-
-            if(productIndex !== -1){
-                this.quantity = quantity;
+            var product = ProductModule.findProdID(productID);
+            for(var i = 0; i < cart.length; i++){
+                if(cart[i] === productID){
+                    if( quantity < product.quantity )
+                        cart[i].quantity === quantity;
+                        saveCart();
+                        loadCart();
+                    }else{
+                       break;
+                    }                      
+                
             }
+            // var productIndex = this.findProductIndex(productID);
 
-            saveCart();
+            // if(productIndex !== -1){
+            //     this.quantity = quantity;
+            // }
+
+            // saveCart();
         },
 
         totalSumInCart: function () {

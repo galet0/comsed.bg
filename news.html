@@ -104,45 +104,34 @@
         
     })
 </script>
-<script id="indexProfile_tmpl" type="text/x-handlebars-template">
+
+    <script id="indexProfile_tmpl" type="text/x-handlebars-template">
          
-    {{#unless user.email}}
-    <div class="dropdown">
-        <a href="user-page.html" class="accountBtn dropbtn">Моят профил</a>
-        <div class="dropdown-content">
-            <a href="user-page.html" class="info accountBtn">Информация</a><a href="" class="logout">Изход</a>
+        {{#unless user.email}}
+        <div class="dropdown">
+            <a href="user-page.html" class="accountBtn dropbtn">Моят профил</a>
+            <div class="dropdown-content">
+                <a href="user-page.html" class="info">Информация</a><a href="" class="edit">Изход</a>
+            </div>
         </div>
-    </div>
-    <div class="cart-btn">
-            <a class="basket" href="shopping-cart.html">
-                    <i class="fas fa-cart-arrow-down"></i>
-                    Количка <span class="prodCart"></span>
-            </a>
-            <span class="mess"></span>
-    </div>
-    {{/unless}}
-</script>
-<script id="indexProfile1_tmpl" type="text/x-handlebars-template">
-    <div class="login-btn">
-        <a href="auth.html" class="auth">
-            <i class="fas fa-sign-in-alt"></i>
-            Вход/Регистрация
-        </a>
-    </div>
-    <div class="cart-btn">
-            <a class="basket" href="shopping-cart.html">
-                    <i class="fas fa-cart-arrow-down"></i>
-                    Количка <span class="prodCart"></span>
-            </a>
-            <span class="mess"></span>
-    </div>
-</script>
+        <div class="cart-btn">
+            <a href="#"><i class="fas fa-cart-arrow-down"></i>Количка</a>
+        </div>
+        {{else}}
+        <div class="login-btn">
+            <a href="auth.html"><i class="fas fa-sign-in-alt"></i> Вход/Регистрация </a>
+        </div>
+        <div class="cart-btn">
+            <a href="#"><i class="fas fa-cart-arrow-down"></i> Количка</a>
+        </div>
+        {{/unless}}
+          
+    </script>
 <script src="../js/appControllers/AppController.js"></script>   
 <script src="../js/appControllers/something.js"></script> 
 <script src="../js/appControllers/RegisterController.js"></script>     
 <script src="../js/appControllers/AuthController.js"></script>
 <script src="../js/appControllers/AccountController.js"></script>
-<script src="../js/appControllers/CartController.js"></script>  
 <script src="../js/appControllers/ProductController.js"></script>
     
 </body>

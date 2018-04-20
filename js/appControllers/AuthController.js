@@ -1,96 +1,109 @@
-document.addEventListener('DOMContentLoaded', function () {
+(function(){
 
+    var loginBtn = document.querySelector('.login-button');
+    var registerBrn = document.querySelector('.register-link');
+    //console.log(loginBtn);
+  
+    
+  
+    links = document.querySelectorAll('footer a, header a');
+    
+    Array.from(links).forEach(function(link){
+        link.addEventListener('click', function(event){
+            event.preventDefault();
+            AppController.navigatePages(link.href);
+        });
+        
+    })
 
-    // Register button clicked
-    document.querySelector('.register-btn').addEventListener('click', function (event) {
-        event.preventDefault();
-        var form = document.querySelector('form'),
-            firstName = form.querySelector('input[name="firstName"]').value,
-            lastName = form.querySelector('input[name="lastName"]').value,
-            email = form.querySelector('input[name="email"]').value,
-            phone = form.querySelector('input[name="phone"]').value,
-            addressForm = form.querySelector('input[name="address"]').value,
-            town = form.querySelector('input[name="town"]').value,
-            county = form.querySelector('select').value,
-            password = form.querySelector('input[name="password"]'),
-            passwordConfirm = form.querySelector('input[name="passwordConfirm"]'),
-            error = document.querySelector('.error');
+    if(loginBtn){
+        loginBtn.addEventListener('click', function(event){
+            event.preventDefault();
 
-        if (validateForm()) {
-            if (password.value.length > 5) {
-                if (password.value === passwordConfirm.value) {
-                    if (user = UserModel.register(firstName, lastName, email, phone, addressForm, town, county, password.value)) {
-                        
+        })
+    }
+    function initPage(){
+        
+          something.checkLogged('auth');
+          loginBtn = document.querySelector('.login-button');
+          loginBtn.addEventListener('click',initLogin);
+          registerBrn = document.querySelector('.register-link');
+          registerBrn.addEventListener('click',initRegister);
+
+          // Login button clicked
+          var main = document.querySelector('form'),
+          email = main.querySelector('input[name="email"]'),
+          password = main.querySelector('input[name="password"]'),
+          error = document.querySelector('.error');
+
+          if(loginBtn){
+              loginBtn.addEventListener('click',function(event){
+                  event.preventDefault();
+                  initLogin();
+              })
+          }
+    }
+    
+    // function login(){
+    
+    
+    // document.querySelector('form').addEventListener('focus',function(event){
+    //     event.preventDefault();
+    //     AppController.getControler('auth');
+    // })
+    
+    
+    function initLogin() {
+                    //event.preventDefault();
+                    var main = document.querySelector('form'),
+                    email = main.querySelector('input[name="email"]'),
+                    password = main.querySelector('input[name="password"]'),
+                    error = document.querySelector('.error');
+                    if (email.value) {
+                        if (password.value) {
+                            if (user = UserModel.login(email.value, password.value)) {
+                                //start session for logged user
+                                window.sessionStorage.setItem('isLogged',true);
+                                window.sessionStorage.setItem('logged', email.value);
+                                AppController.gotoPage('user-page.html');
+            
+                            } else {
+                                email.value = '';
+                                password.value = '';
+                                error.textContent = "Няма такъв потребител";
+                                error.style.display = 'block';
+                                error.style.color = 'red';
+                            }
+                        } else {
+                            email.value = '';
+                            password.value = '';
+                            error.textContent = "Моля, въведете парола!";
+                            error.style.display = 'block';                
+                            error.style.color = 'red';
+                        }
                     } else {
-                        firstName = '';
-                        lastName = '';
+                        email.value = '';
                         password.value = '';
-                        email = '';
-                        addressForm = '';
-                        town = '';
-                        phone = '';
-                        passwordConfirm.value = '';
-                        error.textContent = 'Има такъв регистриран потребител';
-                        error.style.display = 'block';
-                    }
-                } else {
-                    password.value = '';
-                    passwordConfirm.value = '';
-                    error.textContent = "Паролите не съвпадат";
-                    error.style.display = 'block';
-                }
-            } else {
-                password = '';
-                passwordConfirm = '';
-                error.textContent = "Паролaта е твърде кратка.";
-                error.style.display = 'block';
-            }
-        }
+                        error.textContent = "Моля, въведете е-поща!";
+                        error.style.display = 'block';            
+                        error.style.color = 'red';
+                    }   
 
-        // Form validation
-        function validateForm() {
-            var re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-            if (!firstName) {
-                error.textContent = "Моля, въведете име";
-                error.style.display = 'block';
-                return false;
-            }
-            if (!lastName) {
-                error.textContent = "Моля, въведете фамилия";
-                error.style.display = 'block';
-                return false;
-            }
-            if (!re.test(email)) {
-                error.textContent = "Моля, въведете валиден адрес на е-поща.";
-                error.style.display = 'block';
-                return false;
-            }
-            if (!phone.match(/^\d{10}$/)) {
-                error.textContent = "Моля, въведете валиден телефонен номер";
-                error.style.display = 'block';
-                return false;
-            }
-            if (!addressForm) {
-                error.textContent = "Моля, въведете адрес";
-                error.style.display = 'block';
-                return false;
-            }
-            if (!town) {
-                error.textContent = "Моля, въведете населено място";
-                error.style.display = 'block';
-                return false;
-            }
-            if (!county) {
-                error.textContent = "Моля, изберете област";
-                error.style.display = 'block';
-                return false;
-            }
-            if (!password.value) {
-                error.textContent = "Моля, въведете парола";
-                error.style.display = 'block';
-                return false;
-            }
-            return true;
+
+    }
+
+
+    //********************REGISTER********************
+
+    //    Register button clicked  
+        function initRegister(event){
+            event.preventDefault();
+            
+            AppController.gotoPage('register.html');
         }
+  
+    AppController.registerController('auth', {
+        initPage : initPage
     });
-});
+
+})();

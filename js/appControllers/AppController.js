@@ -13,6 +13,7 @@ var AppController = (function() {
         return tmpls[tmplName];
     }
 
+   
     // controllers
     function registerController(name, controller) {
         if (!controllers[name]) {
@@ -170,14 +171,15 @@ var AppController = (function() {
         }
     }
 
-    function navigatePages(){
-        var nav = pageElement.querySelectorAll('header a');
-        Array.from(nav).forEach(function (link) {
-            link.addEventListener('click', function(event){
-                console.log(link.href);
-                AppController.gotoPage(link.href);
-            })
-        })
+    function navigatePages(link){
+        // var nav = pageElement.querySelectorAll('header a');
+        // Array.from(nav).forEach(function (link) {
+        //     link.addEventListener('click', function(event){
+        //         console.log(link.href);
+        //         AppController.gotoPage(link.href);
+        //     })
+        // })
+        AppController.gotoPage(link);
     }
 
     var pageElement = document.querySelector('.page');

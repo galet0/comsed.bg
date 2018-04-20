@@ -1,6 +1,7 @@
    
  (function(){
 
+    var accountBtn;
     function initPage(){
         //SHOW PRODUCTS FROM FIRST TYPE ON INDEX PAGE
        if (categories){
@@ -8,28 +9,95 @@
         } 
         getProductsSlider();        
        // AppController.navigatePages();
-    
+        //loggedNav();
+       
+        something.checkLogged('index');
+        var count = document.querySelector('.prodCart');
+        console.log(count);
+
+        accountBtn = document.querySelectorAll('.accountBtn');
+         
+        if(accountBtn){
+            Array.from(accountBtn).forEach(function(link){
+                link.addEventListener('click', function(event){
+                    event.preventDefault();
+                    AppController.gotoPage('user-page.html');
+                });
+            });
+        }  
+        
+        var count = document.querySelector('.prodCart');
+        cart = JSON.parse(window.localStorage.getItem('cart'));
+        
+     var count = document.querySelector('.prodCart');
+     cart = JSON.parse(window.localStorage.getItem('cart'));
+     if(cart !== null){
+        if(count){
+            count.textContent = '(' + cart.length + ')';
+        }
     }
+       
+           
+        basketBtn = document.querySelector('.basket');
+        if(basketBtn){
+            basketBtn.addEventListener('click',function(event){
+                event.preventDefault();
+                AppController.gotoPage('shopping-cart.html');
+                history.pushState('user-page', 'Shopping Cart', 'shopping-cart.html');  
+            })
+        }
+        Array.from(document.querySelectorAll('div.dropdown-content a')).forEach(function(link){
+            link.addEventListener('click',function(evenet){
+                event.preventDefault();
+                something.getCheckTemplate(link)
+            });
+        });
+
+        if (document.querySelector('.auth')){
+            document.querySelector('.auth').addEventListener('click',function(event){
+                event.preventDefault();
+                AppController.gotoPage('auth.html');
+            });
+        }
+
+
+            //************************IF LOGGED USER LISTEN FOR LOGOUT***********************
+        if(loggedUser){
+            document.querySelector('.logout').addEventListener('click',function(event){
+                event.preventDefault();
+         //     // ДА СЕ ПРАВИ ПРОВЕРКА ЗА КОШНИЦАТА
+                sessionStorage.clear();
+                something.checkLogged('index');
+         // });
+            });     
+        }
+}
    
-    AppController.navigatePages();
+    links = document.querySelectorAll('footer a, header a');
+    
+    Array.from(links).forEach(function(link){
+        link.addEventListener('click', function(event){
+            event.preventDefault();
+            AppController.navigatePages(link.href);
+        }); 
+    })
+    //************************ ROW SLIDER ******************************* */
     function getProductsSlider(){
         var firstCategoryProducts = products.filter(product => product.type === 1),
             div = document.querySelector('.firstCategory'),
             parent = document.querySelector('.row-slider');
-            console.log(div);
-            console.log(document);
+
         if(firstCategoryProducts.length > 5){
         // Add <h3> tag
             var header = document.createElement('a'),
                 textContent = document.createTextNode(TypeModule.findByTypeID(firstCategoryProducts[0].type).name);
             header.setAttribute('href', 'products.html');
             header.appendChild(textContent);
-            console.log(parent);
             parent.insertBefore(header, parent.children[0]);
             for (var i = 0; i < 15; i++){
                 var childDiv = document.createElement('div');
                 childDiv.className = 'img-column';
-                childDiv.innerHTML = '<a href="/html/view-product.html" name="product" value="'+ firstCategoryProducts[i].id + '"><img src =' + firstCategoryProducts[i].image + '></a><h3>' 
+                childDiv.innerHTML = '<a href="view-product.html" name="product" value="'+ firstCategoryProducts[i].id + '"><img src =' + firstCategoryProducts[i].image + '></a><h3>' 
                                     + firstCategoryProducts[i].name +'</h3><h2>' + firstCategoryProducts[i].price +'лв'
                                     + '</h2><button  value="'+ firstCategoryProducts[i].id+'"> Купи </button>';
                 div.appendChild(childDiv);
@@ -39,8 +107,13 @@
     }
     // Get JSON
     
-   
-                 
+    document.querySelector('input').addEventListener('focus',function(event){
+        event.preventDefault();
+        AppController.gotoPage('products.html');
+    });
+         
+  
+    //****************************some inits*************************** */
     var colorStyles = ['#f53434','#e88102','#3bc91f','#55068e','#069eeb','#069eeb','#069eeb','#069eeb'],
         categories = JSON.parse(window.localStorage.getItem('categories')),
         products = JSON.parse(window.localStorage.getItem('products')),
@@ -48,19 +121,31 @@
         users,
         user;
        
-    // SHOW CATEGORIES AND TYPES   
+
+    //****************************BUTTON CLICKED*************************      
+    if(accountBtn){
+        Array.from(accountBtn).forEach(function(link){
+            link.addEventListener('click', function(event){
+                event.preventDefault();
+                AppController.gotoPage('user-page.html');
+            });
+        });
+    }    
+    
+
+    // *******************SHOW CATEGORIES AND TYPES**************************** 
     function showCategories(){    
         categories.forEach(function(category){
             var ul = document.querySelector('.navigation'),
                 id = 0,
                 li = document.createElement('li');
-            li.innerHTML = '<a href="/html/products.html" name="category" id=' + category.id +'>' + category.name +'</a>';
+            li.innerHTML = '<a href="products.html" name="category" id=' + category.id +'>' + category.name +'</a>';
             ul.appendChild(li);
             if (category.types){                  
                 var ulIN= document.createElement('ul');             
                 category.types.forEach(function(type){
                     var li = document.createElement('li');
-                    li.innerHTML = '<a href="/html/products.html" name="type" id='+ type.id + '>' + type.name +'</a>';
+                    li.innerHTML = '<a href="products.html" name="type" id='+ type.id + '>' + type.name +'</a>';
                     li.style.backgroundColor = colorStyles[id];              
                     ulIN.appendChild(li);                    
                     id++;
@@ -68,14 +153,6 @@
                 li.appendChild(ulIN);
             }
         });
-       
-        var nav = document.querySelectorAll('header a');
-        Array.from(nav).forEach(function (link) {
-            link.addEventListener('click', function(event){
-                console.log(link.href);
-                AppController.gotoPage(link.href);
-            })
-        })
 
         var links = document.querySelectorAll('main .navigation a');        
         Array.from(links).forEach(function (item) {
@@ -97,13 +174,14 @@
         //     productsView.innerHTML = '<h1> Няма намерени продукти </h1>';
         // }
     }
-   
+    
     // SHOW GATEGORIES  
-     if(loggedUser){
+    function loggedNav(){
+        if(loggedUser){
             users = JSON.parse(window.localStorage.getItem('users'));
             user = users.find(x => x.email === loggedUser);
             if(user){
-                var indexProfile = getTemplate('indexProfile');
+                var indexProfile = AppController.getControllerTemplate('index','indexProfile');
                 var template = Handlebars.compile(indexProfile);
                 var temp = template(user);
                 document.querySelector('.headderAuth').innerHTML = temp;    
@@ -112,9 +190,19 @@
                 event.preventDefault();
                 window.location = 'account.html';
             });    
+        }else{
+              var indexProfile1 = AppController.getControllerTemplate('index','indexProfile1');
+                document.querySelector('.headderAuth').innerHTML = indexProfile1;
+
+                document.querySelector('.auth').addEventListener('click',function(event){
+                    event.preventDefault();
+                    AppController.gotoPage('auth.html');
+                })
         }     
+    }
+    
   
-  
+    
     // WHEN ARROWS CLICKED CHANGE ITEMS
     var arrowButtons = document.querySelectorAll('button');
     var count = 0;
@@ -130,7 +218,7 @@
             if(narrow === "left"){
                 ++count;
                for(var i = 0; i < 4; i++){
-                    getAll[i].innerHTML = '<a href="/html/view-product.html value='+ firstCategoryProducts[count+i].id  
+                    getAll[i].innerHTML = '<a href="view-product.html value='+ firstCategoryProducts[count+i].id  
                     + '><img src =' + firstCategoryProducts[count+i].image + '></a><h3>' 
                     + firstCategoryProducts[count+i].name +'</h3><h2>' + firstCategoryProducts[count+i].price.toFixed(2) +'лв'
                     + '</h2><button value="'+ firstCategoryProducts[i].id+'"> Купи </button>';
@@ -138,7 +226,7 @@
             }else{
                 ++count;
                 for(var i = 0; i < 4; i++){
-                    getAll[i].innerHTML = '<a href="/html/view-product.html value="' + firstCategoryProducts[count-i].id + '"><img src =' + firstCategoryProducts[count-i].image + '></a><h3>' 
+                    getAll[i].innerHTML = '<a href="view-product.html value="' + firstCategoryProducts[count-i].id + '"><img src =' + firstCategoryProducts[count-i].image + '></a><h3>' 
                     + firstCategoryProducts[count-i].name +'</h3><h2>' + firstCategoryProducts[count-i].price.toFixed(2) +'лв'
                     + '</h2><button value="'+ firstCategoryProducts[i].id+'"> Купи </button>';
                 }
@@ -146,41 +234,42 @@
         });
     }); 
     
-   
-         function moveProducts(){  
-            var firstCategoryProducts = products.filter(product => product.type === 1);
-             var arrowButtons = document.querySelectorAll('button');
-             var count = 0;
-             Array.from(arrowButtons).forEach(function(button){
-                 button.addEventListener('click',function(event){
-                     event.preventDefault();   
-                     var narrow = button.firstElementChild.classList["1"];           
-                     getAll = document.querySelectorAll('.img-column');
-                     if(count === getAll.length){
-                         count = 0;
-                     }
-                     //console.log(getAll);            
-                     if(narrow === "left"){
-                         ++count;
-                        for(var i = 0; i < 4; i++){
-                             getAll[i].innerHTML = '<a href="/html/view-product.html value="'+ firstCategoryProducts[count+i].id + '"><img src =' + firstCategoryProducts[count+i].image + '></a><h3>' 
-                             + firstCategoryProducts[count+i].name +'</h3><h2>' + firstCategoryProducts[count+i].price.toFixed(2) +'лв'
-                             + '</h2><button> Купи </button>';
-                         }
-                     }else{
-                         ++count;
-                         for(var i = 0; i < 4; i++){
-                             getAll[i].innerHTML = '<a href="/html/view-product.html value="' + firstCategoryProducts[count-i].id + '"><img src =' + firstCategoryProducts[count-i].image + '></a><h3>' 
-                             + firstCategoryProducts[count-i].name +'</h3><h2>' + firstCategoryProducts[count-i].price.toFixed(2) +'лв'
-                             + '</h2><button> Купи </button>';
-                         }
-                     }
-                 });
-             }); 
-         }
-        AppController.registerController('index', {
-            initPage : initPage
-        })    
+    // ***************** ROW SLIDER *****************
+    function moveProducts(){  
+    var firstCategoryProducts = products.filter(product => product.type === 1);
+        var arrowButtons = document.querySelectorAll('button');
+        var count = 0;
+        Array.from(arrowButtons).forEach(function(button){
+            button.addEventListener('click',function(event){
+                event.preventDefault();   
+                var narrow = button.firstElementChild.classList["1"];           
+                getAll = document.querySelectorAll('.img-column');
+                if(count === getAll.length){
+                    count = 0;
+                }
+                //console.log(getAll);            
+                if(narrow === "left"){
+                    ++count;
+                for(var i = 0; i < 4; i++){
+                        getAll[i].innerHTML = '<a href="view-product.html value="'+ firstCategoryProducts[count+i].id + '"><img src =' + firstCategoryProducts[count+i].image + '></a><h3>' 
+                        + firstCategoryProducts[count+i].name +'</h3><h2>' + firstCategoryProducts[count+i].price.toFixed(2) +'лв'
+                        + '</h2><button> Купи </button>';
+                    }
+                }else{
+                    ++count;
+                    for(var i = 0; i < 4; i++){
+                        getAll[i].innerHTML = '<a href="view-product.html value="' + firstCategoryProducts[count-i].id + '"><img src =' + firstCategoryProducts[count-i].image + '></a><h3>' 
+                        + firstCategoryProducts[count-i].name +'</h3><h2>' + firstCategoryProducts[count-i].price.toFixed(2) +'лв'
+                        + '</h2><button> Купи </button>';
+                    }
+                }
+            });
+        }); 
+    }
+    AppController.registerController('index', {
+        initPage : initPage
+ })
+        
  })();
 
 

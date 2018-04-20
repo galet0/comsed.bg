@@ -135,6 +135,7 @@ body {
     font-size: 16px;    
     background-color: rgb(5, 201, 90);
 }
+
 /* main*/
 .row{
     display: flex;
@@ -450,6 +451,9 @@ body {
     margin-top:60px;
 }
 /*show products on page*/
+.auth-page {
+    color:black;
+}
 
 .product-container{
     list-style: none;
@@ -523,11 +527,18 @@ body {
     color:red;
 
 }
+.table-responsive {
+    margin:0 auto;
+    width:900px;
+}
+
 .product-img{
     height: 160px;
     padding-top:10px;
 }
-
+.price{
+    text-align:center;
+}
 .price{
     font-size: 20px;
     font-weight: bold;
@@ -673,6 +684,16 @@ body {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
+    margin-top:100px;
+}
+.mess{
+    display:none;
+    font-size:16px;
+    padding: 20px 30px;
+    background-color: rgb(220, 220, 189);
+    border:1px solid #333;
+    margin:0 auto;
+    top:700px;
 }
 
 .promo-item{
@@ -716,7 +737,7 @@ body {
 footer{
     width: 100%;
     height: 200px;
-    margin-top: 20px;
+    margin-top: 100px;
     background-color: #333;
 }
 /* little fixes for about, contact page */
@@ -725,19 +746,23 @@ footer{
 }
 .contactUs{
     margin:50px;
+    width:1000px;
     display: flex;
     flex-direction: row;
 }
 .contactUs .form-contacts{
-    flex:1;
-    padding-right:30px;  
+    flex:1;  
 }
 .contactUs .form-contacts h3{
     text-align: left;
+    margin-top:0;
 
 }
 .contactUs .form-contacts textarea{
-    width:70%;
+    width:80%;
+}
+.contactUs .form-contacts input{
+    width:80%;
 }
 .contactUs .form-contacts .submit{
     background-color:rgb(14, 145, 71);
@@ -746,6 +771,31 @@ footer{
 }
 .contactUs #map{
     flex:1;
+}
+#map{
+    margin-top:50px;
+}
+.contactUs .contacts-info{
+    margin-top:0;
+    display: inline-block;
+}
+.contacts-info h1{
+    margin-top:0;
+    margin-left:60px;
+}
+.contacts-info>h4{
+    text-align: left;
+    margin-left: 60px;
+    margin-top:0;
+    margin-bottom:10px;
+}
+.contacts-info>p{
+    margin:0;
+    padding:0;
+    text-align:left;
+    margin-left:60px;
+    color:black;
+    display:inline-block;
 }
 
 
@@ -783,8 +833,9 @@ footer{
 .dropdown-content .info {
     background: #f53434;
 }
-.dropdown-content .edit {
+.dropdown-content .logout {
     background:#e88102;
+    margin-top:0;
 }
 .dropdown-content .address {
     background: #3bc91f;
@@ -831,14 +882,44 @@ footer{
 
 /* REGISTER FORM */
 /* ---------------------------------*/
+.registerF {
+    width:70%;
+    margin-left:100px;
+}
+.registerF .register-btn{
+    width: 120px;
+    padding: 15px 20px;
+    position: relative;
+    margin-top:50px;
+    border:none;
+    border-radius: 4px;
+    left:80%;
+    align-items: center;
+    font-size:14px;
+    color:white;
+    background-color: lightcoral
 
+}
+.require{
+color:red;
+}
+.error{
+    margin-left:20px;
+    font-size:18px;
+    padding-top:20px;
+}
+.registerF>p{
+    color:#333;
+    text-align: left;
+    font-size:17px;
+}
 /* take off the default values of fieldset */
-.register fieldset{
+.registerF fieldset{
     padding: 0;
     margin: 0;
     border: 0;
 }
-.register legend{
+.registerF legend{
     display: block;
     width: 100%;
     padding-top: 40px;
@@ -848,12 +929,12 @@ footer{
     border: 0;
     border-bottom: 1px solid #e5e5e5;
 }
-.register label{
+.registerF label{
     display: inline-block;
     width:20%;
     text-align: right;
 }
-.register input, select{
+.registerF input, select{
     display: inline-block;
     width: 70%;
     padding: 12px;
@@ -912,6 +993,8 @@ footer{
     font-weight: bold;
     margin:0 10px;
     padding:20px 0 0;
+    display:inline-block;
+    margin-left:80px;
 }
 .row{
     display: flex;
@@ -967,36 +1050,125 @@ footer{
     border:none;
 }
 /* Account Template */
+.account .flex{
+    display:flex;
+    flex-direction: row;
+}
 .account{
     background-color: #daf0f8;
     padding:20px;
     margin: 0 0 40px;
     font-size:16px;
 }
+
 .account h2{
     display: block;
     padding-left:10px;
     color:#333;
 }
 .account .row{
-    display: flex;
-    flex-direction: row;
+    flex:3;
     background-color: white;
     color:#333;
     align-items: flex-start;
     margin-bottom: 20px;
 }
+.account aside{
+    flex:1;
+    max-width: 280px;
+}
 .account .clm-left{   
-    flex: 1;
     padding: 20px;
     border-radius: 5px;
     background-color:white;
     box-shadow: 
 		0 5px 15px 1px rgba(0, 0, 0, 0.6), 
-		0 0 200px 1px rgba(255, 255, 255, 0.5);
+        0 0 200px 1px rgba(255, 255, 255, 0.5);
+}
+.account-info p{
+    color:#333;
+    font-size:22px;
+}
+.account-info p:last-of-type{
+    font-size:16px;
+    text-align:left;
+    padding-left:0;
+}
+.account-orders p{
+    color: #333;
+    font-size: 20px;
+    text-align: left;
+    padding: 0;
+    border-bottom: 1px solid #1e91cf;
+    padding-bottom:6px; 
+}
+.account-orders a{
+    text-decoration: none;
+    color:skyblue;
+    font-weight: bold;
+}
+.editProfile{
+    color:#333;
+    font-size:20px;
+    text-align: left;
+    padding:0;
+    display:block;
+    border-bottom: 1px solid #1e91cf;
+    padding-bottom: 6px;     
+}
+.account-profile {
+    display:flex;
+    flex-direction: row;
+}
+.account-profile .profileTitle{
+    flex:1;
+}
+.account-profile .profileTitle h3{
+    padding:0;
+    text-align: left;
 }
 .account .clm-right{
     flex:3;
+}
+.account-addressBook {
+    flex:1;
+}
+.account-addressBook h3{
+    padding:0;
+    text-align: left;
+}
+.account-addressBook {
+    background-color:rgb(238, 238, 238);
+}
+div.account-orders p:first-of-type{
+    color:rgb(121, 119, 119);
+}
+.account-addressBook>.primary p:first-of-type, p{
+    padding-top:0;
+    padding-left:20px;
+    text-align: left;
+    font-size:15px;
+    color:#333;
+}
+div.account-orders h3:first-of-type{
+    padding-left:0;
+    color:rgb(121, 119, 119);
+}
+.account-addressBook h3{
+    margin-left:10px;
+    color:rgb(121, 119, 119);
+    font-weight: bolder;
+}
+.account .profile-account .clm-right{
+    height:500px;
+}
+.profile-account a{
+    text-decoration:none;
+    color:rgb(28, 28, 138);
+    padding:0;
+    margin:0;
+    height:15px;
+    display:inline-block;
 }
 .account .clm-left h2{
     font-size: 16px;
@@ -1019,8 +1191,7 @@ footer{
 .account .clm-left li{
     list-style-type: none;
     font-size:16px;
-    display:inline-block;
-    
+    display:inline-block;    
 }
 .account ul li a:first-child{
     margin-top:5px;
@@ -1039,28 +1210,169 @@ footer{
     color: white;
     background: rgba(240, 128, 128, 0.9);
 }
-.edit{
+
+/* EDIT */
+.account a{
+    cursor:pointer;
+}
+.flex ul li.active a {
+    color: white;
+    background: rgba(240, 128, 128, 0.9);
+}
+.flex{
     border-radius: 10px;
     margin-top:20px;
-    border:2px solid lightcoral;
+ 
 }
-.edit p:first-child{
+.flex .clm-right{
+    border : 2px solid lightcoral;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px 1px rgba(0, 0, 0, 0.6), 
+                0 0 200px 1px rgba(255, 255, 255, 0.5);
+} 
+
+.flex p:first-child{
     font-size:24px;
     color:rgb(69, 168, 201);
     font-weight: bold;
     padding: 24px 0 0;
     margin-bottom: 0;
 }
-.edit form legend:first-child{
+.edit .flex{
+    display:flex;
+    flex-direction: row;
+}
+.flex{ 
+    padding:20px;
+    margin: 0 0 40px;
+    font-size:16px;
+}
+
+.flex h2{
+    display: block;
+    padding-left:10px;
+    color:#333;
+}
+.flex .row{
+    flex:3;
+    background-color: white;
+    color:#333;
+    margin: 0 auto;
+    /* align-items: flex-start; */
+    margin-bottom: 20px;
+}
+.flex aside{
+    flex:1;
+    max-width: 280px;
+}
+.flex .clm-left{   
+    padding: 20px;
+    border-radius: 5px;
+    background-color:white;
+    box-shadow: 
+		0 5px 15px 1px rgba(0, 0, 0, 0.6), 
+        0 0 200px 1px rgba(255, 255, 255, 0.5);
+}
+.flex .clm-left h2{
+    font-size: 16px;
+	line-height: 34px;
+    padding: 0 10px;
+    width: 210px;
+    cursor: pointer;
+    color: white;
+    background: lightcoral;
+    margin-bottom: 0;	
+    text-transform: uppercase;
+}
+.flex .clm-left h3:hover{
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.7);
+}
+.flex .clm-left ul{
+    margin:0;
+    padding:0;
+}
+.flex {
+    list-style-type: none;
+    font-size:16px;
+    /* display:inline-block;     */
+}
+.flex ul li a:first-child{
+    margin-top:5px;
+}
+.flex .clm-left ul{
+    list-style: none;
+}
+.flex .clm-left ul li a {
+    text-decoration: none;
+    color:rgba(240, 128, 128, 0.9);
+    font-weight: bold;
+    font-size:14px;
+    text-transform: uppercase;
+    display:inline-block;
+    width: 210px;
+    padding: 15px 10px 15px 5px;
+}
+
+.flex ul li.active a {
+    color: white;
+    background: rgba(240, 128, 128, 0.9);
+}
+.flex form legend:first-child{
     margin:0;
     padding:30px 0 5px;
 }
-.edit form{
-    color:rgb(83, 80, 80)
+.flex form{
+    color:rgb(83, 80, 80);
+    padding-left:20px;
 }
-.save-btn {
+.require{
+    color:red;
+    }
+    .error{
+        margin-left:20px;
+        font-size:18px;
+    }
+    .flex form>p{
+        color:#333;
+        text-align: left;
+        font-size:17px;
+    }
+    /* take off the default values of fieldset */
+    .flex fieldset{
+        padding: 0;
+        margin: 0;
+        border: 0;
+    }
+    .flex  legend{
+        display: block;
+        width: 100%;
+        padding-top: 40px;
+        margin: 20px 0;
+        font-size: 21px;
+        color: #333;
+        border: 0;
+        border-bottom: 1px solid #e5e5e5;
+    }
+    .flex form label{
+        display: inline-block;
+        width:20%;
+        text-align: right;
+    }
+    .flex input, select{
+        display: inline-block;
+        width: 70%;
+        padding: 12px;
+        margin: 10px 20px 0 10px; ;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    /* subscribe radio*/
+
+
+.flex .save-btn {
    margin:20px 30px 20px 0px;
    font-size:13px;
+   border:none;
    text-transform: uppercase;
    border-radius: 5px;
    padding: 10px 15px
@@ -1069,6 +1381,160 @@ footer{
 .auth-page p{
     color:black;
 }
+
+/**************************CART******************************/
+
+
+/*Cart*/
+.table tr{
+    border: 1px solid #ddd;
+}
+
+.table{
+    display: table;
+    /* width: 60%; */
+    /* max-width: 100%; */
+    margin-bottom: 17px;
+    background-color: transparent;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.table-responsive{
+    background-color: #fff;
+    width:100%;
+    margin:0 auto;
+    margin-left:30px;
+    
+}
+
+.order {
+    border-radius: 4px;
+    color: white;
+    background-color: rgb(79, 189, 79);
+    border: none;
+    font-size: 20px;
+    padding: 10px 15px;
+    margin-left:1033px;
+    display:inline-block;
+    margin-top:50px;
+    
+}
+.table thead{
+    font-size: 16px;
+    font-weight: bold;
+    background-color: rgba(59, 201, 31, 0.5);
+}
+
+.table td{
+    padding: 10px 10px;
+    border: 1px solid #ddd;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.text-left{
+    text-align: left;
+}
+
+.text-right{
+    text-align: right;
+}
+
+.input-group .form-control[name^=quantity]{
+    min-width: 50px;
+    width: 100px;
+}
+
+.form-control{
+    display: block;
+    width: 100%;
+    height: 35px;
+    padding: 8px 13px;
+    font-size: 13px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, .075);
+}
+
+
+.input-group .form-control{
+    display: table-cell;
+    position: relative;
+    z-index: 2;
+    float: left;
+    width: 100%;
+    margin-bottom: 0;
+}
+.input-group .form-control:first-child{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.input-group-btn {
+    position: relative;
+    font-size: 0;
+    white-space: nowrap;
+}
+
+.btn{
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.42857;
+    border-radius: 3px;
+}
+
+.btn{
+    padding: 7.5px 12px;
+    font-size: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+}
+
+.input-group-btn:last-child>.btn, .input-group-btn:last-child>.btn-group>.btn{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.input-group-btn:last-child>.btn:not(:last-child):not(.dropdown-toggle) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.btn-primary {
+    color: #ffffff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    background-color: #229ac8;
+    background-image: linear-gradient(to bottom, #23a1d1, #1f90bb);
+    background-repeat: repeat-x;
+    border-color: #1f90bb #1f90bb #145e7a;
+}
+.btn-block{
+    display: block;
+    width: 100%;
+}
+.btn-danger {
+    color: #ffffff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    background-color: #da4f49;
+    background-image: linear-gradient(to bottom, #ee5f5b, #bd362f);
+    background-repeat: repeat-x;
+    border-color: #bd362f #bd362f #802420;
+}
+
+
+/************************END OF CART ************************/
+
+
 
 
 /* footer */

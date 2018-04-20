@@ -64,7 +64,7 @@
                 </div>
             </main>
         </div>
-        <script src="../js/handlebars.min.js"></script>
+        <script src="/js/handlebars.min.js"></script>
         <script id="edit_tmpl" type="text/x-handlebars-template">
             <div class="account edit">
                 <div class="row page">
@@ -190,7 +190,8 @@
 
                 </div>
             </div>
-        </script>  
+        </script>
+        <script src="../js/handlebars.min.js"></script>
         <script id="indexProfile_tmpl" type="text/x-handlebars-template">
          
             {{#unless user.email}}
@@ -201,36 +202,32 @@
                 </div>
             </div>
             <div class="cart-btn">
-                <a href="shopping-cart.html" class="basket"><i class="fas fa-cart-arrow-down"></i>Количка<span class="count"></span></a>
-                <span class="mess"></span>
+                <a href="#"><i class="fas fa-cart-arrow-down"></i>Количка</a>
             </div>
             {{/unless}}
         </script>
         <script id="indexProfile1_tmpl" type="text/x-handlebars-template">
             <div class="login-btn">
-                <a href="auth.html" class="current auth">
+                <a class="auth" href="auth.html">
                     <i class="fas fa-sign-in-alt"></i>
                     Вход/Регистрация
                 </a>
             </div>
             <div class="cart-btn">
-                <a class="basket" href="shopping-cart.html">
-                        <i class="fas fa-cart-arrow-down"></i>
-                        Количка <span class="prodCart"></span>
+                <a href="#">
+                    <i class="fas fa-cart-arrow-down"></i>
+                    Количка
                 </a>
-                <span class="mess"></span>
             </div>
         </script>
+        <script src="/js/appControllers/AppController.js"></script>
+        <script src="/js/appControllers/AuthController.js"></script>        
+        <script src="/js/appControllers/RegisterController.js"></script>  
+        <script src="/js/appControllers/AccountController.js"></script> 
+        <script src="/js/appControllers/ProductController.js"></script>     
+        <sctipt src="/js/appControllers/something.js"></sctipt>
 
-        <script src="../js/appControllers/AppController.js"></script>
-        <script src="../js/appControllers/AuthController.js"></script>        
-        <script src="../js/appControllers/RegisterController.js"></script>  
-        <script src="../js/appControllers/AccountController.js"></script> 
-        <script src="../js/models/ShoppingCartModel.js"></script>
-        <script src="../js/appControllers/ProductController.js"></script>   
-        <script src="../js/appControllers/CartController.js"></script>  
-        <sctipt src="../js/appControllers/something.js"></sctipt>
-        <script src="../js/models/UserModel.js"></script>
-        <script src="../js/models/TypeModel.js"></script>
+        <script src="/js/models/UserModel.js"></script>
+        <script src="/js/models/TypeModel.js"></script>
     </body>
 </html>

@@ -34,7 +34,7 @@
                 <div class="topnav">
                     <ul>
                             <!-- <li class="index"><a href="index.html" class="current">Начало</a></li><li class="about"><a href="about.html">За нас</a></li><li class="news"><a href="news.html">Новини</a></li><li class="promotions"><a href="promotions.html">Промоции</a></li><li class="contacts"><a href="contacts.html">Контакти</a></li> -->
-                        <li class="index"><a href="index.html">Начало</a></li><li class="about"><a href="about.html" class="current">За нас</a></li><li class="products"><a href="products.html">Продукти</a></li><li class="promotions"><a href="promotions.html">Промоции</a></li><li class="contacts"><a href="contacts.html">Контакти</a></li>
+                        <li class="index"><a href="index.html">Начало</a></li><li class="about"><a href="about.html" class="current">За нас</a></li><li class="news"><a href="products.html">Продукти</a></li><li class="promotions"><a href="promotions.html">Промоции</a></li><li class="contacts"><a href="contacts.html">Контакти</a></li>
 
                     </ul>
                 </div>
@@ -92,43 +92,36 @@
                 </div>
             </div>
             <div class="cart-btn">
-                    <a class="basket" href="shopping-cart.html">
-                            <i class="fas fa-cart-arrow-down"></i>
-                            Количка <span class="prodCart"></span>
-                        </a>
-                        <span class="mess"></span>
+                <a href="#"><i class="fas fa-cart-arrow-down"></i>Количка</a>
             </div>
             {{/unless}}
         </script>
         <script id="indexProfile1_tmpl" type="text/x-handlebars-template">
             <div class="login-btn">
-                <a href="auth.html" class="auth">
+                <a class="auth" href="auth.html">
                     <i class="fas fa-sign-in-alt"></i>
                     Вход/Регистрация
                 </a>
             </div>
             <div class="cart-btn">
-                <a class="basket" href="shopping-cart.html">
-                        <i class="fas fa-cart-arrow-down"></i>
-                        Количка <span class="prodCart"></span>
+                <a href="#">
+                    <i class="fas fa-cart-arrow-down"></i>
+                    Количка
                 </a>
-                <span class="mess"></span>
             </div>
         </script>
-        <script src="../js/appControllers/AppController.js"></script>
-<script src="../js/appControllers/AccountController.js"></script>
-<script src="../js/appControllers/ProductController.js"></script>
-<script src="../js/appControllers/AuthController.js"></script>
-<script src="../js/appControllers/RegisterController.js"></script>
-<script src="../js/appControllers/UserController.js"></script>
-<script src="../js/appControllers/CartController.js"></script>
-<sctipt src="../js/appControllers/something.js"></sctipt>
-<script src="../js/models/ShoppingCartModel.js"></script>
-<script src="../json/categories.json" type="application/json"></script>
-<script src="../json/types.json" type="application/json"></script>
-<script src="../js/models/UserModel.js"></script>
-<script src="../js/models/TypeModel.js"></script>
-<script src="../js/models/CategoryModel.js"></script>
-<script src="../js/models/ProductModel.js"></script>
+<script src="/js/appControllers/AppController.js"></script>
+<script src="/js/appControllers/AccountController.js"></script>
+<script src="/js/appControllers/ProductController.js"></script>
+<script src="/js/appControllers/AuthController.js"></script>
+<script src="/js/appControllers/RegisterController.js"></script>
+<script src="/js/appControllers/UserController.js"></script>
+<sctipt src="/js/appControllers/something.js"></sctipt>
+<script src="/json/categories.json" type="application/json"></script>
+<script src="/json/types.json" type="application/json"></script>
+<script src="/js/models/UserModel.js"></script>
+<script src="/js/models/TypeModel.js"></script>
+<script src="/js/models/CategoryModel.js"></script>
+<script src="/js/models/ProductModel.js"></script>
 </body>
 </html>

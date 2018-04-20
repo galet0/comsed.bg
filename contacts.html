@@ -63,7 +63,7 @@
     <div class="container contactUs">
         <div class="register form-contacts">
             <h3>Форма за контакт</h3>
-            <form action="" method="post" class="contact-form">
+            <form action="" method="post" class="register-form">
                 <input type="text" name="fullName" placeholder="Вашето име">
                 <input type="email" name="email" placeholder="e-mail">
                 <textarea  placeholder="Съобщение"></textarea>
@@ -145,7 +145,7 @@
 
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBfic-CYt3lGO1lTxhJZjOdZRHaA2sJ-o&callback=initMap">
 </script>
-<script src="../js/handlebars.min.js"></script>
+<script src="/js/handlebars.min.js"></script>
 <!--<script>-->
     <!--// Note: This example requires that you consent to location sharing when-->
     <!--// prompted by your browser. If you see the error "The Geolocation service-->
@@ -201,43 +201,37 @@
         </div>
     </div>
     <div class="cart-btn">
-            <a class="basket" href="shopping-cart.html">
-                    <i class="fas fa-cart-arrow-down"></i>
-                    Количка <span class="prodCart"></span>
-            </a>
-            <span class="mess"></span>
+        <a href="#"><i class="fas fa-cart-arrow-down"></i>Количка</a>
     </div>
     {{/unless}}
 </script>
 <script id="indexProfile1_tmpl" type="text/x-handlebars-template">
     <div class="login-btn">
-        <a href="auth.html"class="auth">
+        <a class="auth" href="auth.html">
             <i class="fas fa-sign-in-alt"></i>
             Вход/Регистрация
         </a>
     </div>
     <div class="cart-btn">
-            <a class="basket" href="shopping-cart.html">
-                    <i class="fas fa-cart-arrow-down"></i>
-                    Количка <span class="prodCart"></span>
-            </a>
-            <span class="mess"></span>
+        <a href="#">
+            <i class="fas fa-cart-arrow-down"></i>
+            Количка
+        </a>
     </div>
 </script>
-<script src="../js/appControllers/AppController.js"></script>
-<script src="../js/appControllers/AccountController.js"></script>
-<script src="../js/appControllers/ProductController.js"></script>
-<script src="../js/appControllers/AuthController.js"></script>
-<script src="../js/appControllers/RegisterController.js"></script>
-<script src="../js/appControllers/UserController.js"></script>
-<sctipt src="../js/appControllers/something.js"></sctipt>
-<script src="../js/appControllers/CartController.js"></script>
-<script src="../js/models/ShoppingCartModel.js"></script>
-<script src="../json/categories.json" type="application/json"></script>
-<script src="../json/types.json" type="application/json"></script>
-<script src="../js/models/UserModel.js"></script>
-<script src="../js/models/TypeModel.js"></script>
-<script src="../js/models/CategoryModel.js"></script>
-<script src="../js/models/ProductModel.js"></script>
+<script src="/js/appControllers/AppController.js"></script>
+<script src="/js/appControllers/AccountController.js"></script>
+<script src="/js/appControllers/ProductController.js"></script>
+<script src="/js/appControllers/AuthController.js"></script>
+<script src="/js/appControllers/RegisterController.js"></script>
+<script src="/js/appControllers/UserController.js"></script>
+<sctipt src="/js/appControllers/something.js"></sctipt>
+
+<script src="/json/categories.json" type="application/json"></script>
+<script src="/json/types.json" type="application/json"></script>
+<script src="/js/models/UserModel.js"></script>
+<script src="/js/models/TypeModel.js"></script>
+<script src="/js/models/CategoryModel.js"></script>
+<script src="/js/models/ProductModel.js"></script>
 </body>
 </html>

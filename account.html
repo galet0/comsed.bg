@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>КОМСЕД</title>
-        <link rel="stylesheet" type="text/css" href="../css/register.css" />
+        <link rel="stylesheet" type="text/css" href="../css/main.css" />
         <script defer
             src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"
             integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
@@ -30,37 +30,37 @@
                         <div class="topnav">
                             <ul>
                                 <!-- <li class="index"><a href="index.html" class="current">Начало</a></li><li class="about"><a href="about.html">За нас</a></li><li class="news"><a href="news.html">Новини</a></li><li class="promotions"><a href="promotions.html">Промоции</a></li><li class="contacts"><a href="contacts.html">Контакти</a></li> -->
-                                <li class="index"><a href="index.html">Начало</a></li><li class="about"><a href="about.html">За нас</a></li><li class="news"><a href="news.html">Новини</a></li><li class="promotions"><a href="promotions.html">Промоции</a></li><li class="contacts"><a href="contacts.html">Контакти</a></li>
+                                <li class="index"><a href="index.html">Начало</a></li><li class="about"><a href="about.html">За нас</a></li><li class="news"><a href="products.html">Продукти</a></li><li class="promotions"><a href="promotions.html">Промоции</a></li><li class="contacts"><a href="contacts.html">Контакти</a></li>
                             </ul>
                         </div>
                     </div>
             </header>
-            <aside>
-                <div class="column clm-left">
-                            <ul>
-                                <h2>Вашият профил</h2>
-                                <ul class="settings">
-                                    <li class="active"><a
-                                            href="../html/account.html"
-                                            class="current">Общa информация</a></li>
-                                    <li><a href="../html/edit.html">Редакция на профил</a></li>
-                                    <li><a href=#>Управление на адреси</a></li>
-                                    <li><a href=#>История на поръчки</a></li>
-                                    <li><a href=#>Любими продукти</a></li>
-                                </ul>
-                            </ul>
-                        </div>
-            </aside>
             <main>
-                <div class="account">
-                    <div class="row">                        
+            <div class="flex row">
+                <aside>
+                    <div class="column clm-left">
+                        <ul>
+                            <h2>Вашият профил</h2>
+                            <ul class="settings">
+                                <li class="active"><a href="../html/account.html"
+                                        class="current">Общa информация</a></li>
+                                <li><a href="../html/edit.html">Редакция на профил</a></li>
+                                <li><a href=#>Управление на адреси</a></li>
+                                <li><a href=#>История на поръчки</a></li>
+                                <li><a href=#>Любими продукти</a></li>
+                            </ul>
+                        </ul>
+                    </div>
+                </aside>
+                <div class="row">    
+                    <div class="profile-account">
                         <div class="column clm-right">
-                            <div class="info">
+                            <div class="account-info">
                                 <p> Обща информация</p>
                                 <h1>Здравей!</h1>
                                 <p>От менюто на "Моят профил" може да разгледав активността ти и да актуализираш информацията в него.</p>
                             </div>
-                            <div class="orders">
+                            <div class="account-orders">
                                 <p>Последни поръчки <a href=#> Виж всичко</a></p>
                                 <table class="tableOrders">
                                     <tr>
@@ -72,36 +72,97 @@
                                     </tr>
                                 </table>
                             </div>
-                            <div class="profile">
-                                <p> Редакция на профил</p>
+                            <p class="editProfile"> Редакция на профил</p>
+                            <div class="account-profile">
                                 <div class="profileTitle">
                                     <h3> Лични данни</h3>
                                     <a href="../html/edit.html"> Редактирай</a>
+                                    <div class="profileContent">
+                                        <br><a href=#>Промени парола</a>
+                                     </div>                                
                                 </div>
-                                <div class="profileContent">
-                                    <p class="profileInfo"></p>
-                                    <a href=#>Промени парола</a>
-                                </div>
+                                <div class="account-addressBook">
+                                    <h3>Адресна книга</h3>
+                                    <a href=#>Редакция на адресна книга</a>
+                                    <div class="primary">
+                                        <p></p>
+                                        <a href=#>Редактирай адрес</a>
+                                    </div>
+                                    <div class="secondary">
+                                        <p></p>
+                                        <a href=#>Редактирай адрес</a>
+                                    </div>
+                                 </div>                                
                             </div>
-                            <div class="addressBook">
-                                <p>Адресна книга</p>
-                                <a href=#>Редакция на адресна книга</a>
-                                <div class="primary">
-                                    <p></p>
-                                    <a href=#>Редактирай адрес</a>
-                                </div>
-                                <div class="secondary">
-                                    <p></p>
-                                    <a href=#>Редактирай адрес</a>
-                                </div>
-                            </div>
+                           
                             <div class="profile-right"></div>
                         </div>
     
                     </div>
                 </div>
-            </main>
-        </div>
+            </main>  
+            </div>    
+             <footer>
+                <div id="footer">
+                    <div class="wrap">
+                        <style>
+                            .pic1{opacity: 1;filter: alpha(opacity=100);background: url('../images/page4.png') no-repeat;}
+                            .pic1:hover{opacity: 0.5}
+
+                            .pic2{opacity: 1;filter: alpha(opacity=100);background: url('../images/page3.png') no-repeat;}
+                            .pic2:hover{opacity: 0.5}
+
+                            .pic3{opacity: 1;filter: alpha(opacity=100);background: url('../images/page2.png') no-repeat;}
+                            .pic3:hover{opacity: 0.5}
+
+                            .pic4{opacity: 1;filter: alpha(opacity=100);background: url('../images/page1.png') no-repeat;}
+                            .pic4:hover{opacity: 0.5}
+                        </style>
+                        <div class="footerTitleHold">
+                            <div class="footerTitle">
+                                <span>...има и още много</span>
+                            </div>
+                        </div>
+                        <div class="footerImg">
+                            <div class="footerImg01">
+                                <img src="../images/footer002.png" width="350" height="260" />
+                            </div>
+                        </div>
+                        <div class="footerDivLinks">
+                            <div class="footerDiv">
+                                <ul>
+                                    <li><a href="products.html">Продукти</a></li>
+                                    <li><a href="about.html"> За нас</a></li>
+                                    <li><a href="news.html">Новини</a></li>
+                                    <li><a href="promotions.html">Промоции</a></li>
+                                    <li><a href="Контакти">Контакти</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="footerDiv2" style="background: none;">
+                            <div class="inTouchTitle" style="margin-left: 40px;z-index:9999;">
+                                <h2>Последвай ни</h2>
+                                <div style="width:260px;margin-top:-20px;margin-left: -15px">
+                                    <a href="https://facebook.com" title="View Wonderland Facebook Page">
+                                        <div class="pic1" style="width:124px;height:103px;float: left;"></div>
+                                    </a>
+                                    <a href="https://twitter.com/" title="View Wonderland Twitter Page" target="_blank">
+                                        <div class="pic2" style="width:124px;height:103px;float: left;"></div>
+                                    </a>
+                                    <div style="clear:both;"></div>
+                                    <a href="https://www.youtube.com/" title="View Wonderland You Tube Page" target="_blank">
+                                        <div class="pic3" style="width:124px;height:103px;float: left;"></div>
+                                    </a>
+                                    <a href="https://www.instagram.com/" title="View Wonderland Instagram Page" target="_blank">
+                                        <div class="pic4" style="width:124px;height:103px;float: left;"></div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </footer>
+    </div>       
         <script id="edit_tmpl" type="text/x-handlebars-template">
             <div class="row page edit">
                 <div class="edit register clm-right">
@@ -204,8 +265,16 @@
                 </div>
             </div>
         </script>
-        <script src="../js/handlebars.min.js"></script>        
+        <script src="../js/appControllers/AppController.js"></script>
         <script src="../js/appControllers/AccountController.js"></script>
+        <script src="../js/appControllers/AuthController.js"></script>
+        <script src="../js/appControllers/RegisterController.js"></script>
+        <script src="../js/appControllers/ProductController.js"></script>
+        <script src="../json/categories.json" type="application/json"></script>
+        <script src="../json/types.json" type="application/json"></script>
         <script src="../js/models/UserModel.js"></script>
+        <script src="../js/models/TypeModel.js"></script>
+        <script src="../js/models/CategoryModel.js"></script>
+        <script src="../js/models/ProductModel.js"></script>
     </body>
-</html>>>
+</html>
