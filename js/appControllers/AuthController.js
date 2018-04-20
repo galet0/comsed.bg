@@ -19,7 +19,6 @@
     if(loginBtn){
         loginBtn.addEventListener('click', function(event){
             event.preventDefault();
-
         })
     }
     function initPage(){
@@ -63,10 +62,14 @@
                         if (password.value) {
                             if (user = UserModel.login(email.value, password.value)) {
                                 //start session for logged user
+                                //  ------- user.isAdmin  ---------
+                                if(user.isAdmin){
+                                    AppController.gotoPage('admin-index.html');
+                                }
                                 window.sessionStorage.setItem('isLogged',true);
                                 window.sessionStorage.setItem('logged', email.value);
                                 AppController.gotoPage('user-page.html');
-            
+                                            
                             } else {
                                 email.value = '';
                                 password.value = '';
