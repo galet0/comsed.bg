@@ -46,8 +46,12 @@ var AppController = (function() {
     }
 
     function getControllerTemplate(name, tmplName) {
+        console.log(name);
+        console.log(tmplName);
         if (controllers[name]) {
+            console.log(controllers[name]);
             if (controllers[name].templates[tmplName]) {
+                console.log(controllers[name].templates[tmplName]);
                 return controllers[name].templates[tmplName];
             } else {
                 console.error(`Template "${tmplName}" doesn't exists for controller "${name}"!`);

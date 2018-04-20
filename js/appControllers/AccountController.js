@@ -83,14 +83,14 @@
     })
     //************************ ROW SLIDER ******************************* */
     function getProductsSlider(){
-        var firstCategoryProducts = products.filter(product => product.type === 1),
+        var firstCategoryProducts = products.filter(product => product.typeID === 1),
             div = document.querySelector('.firstCategory'),
             parent = document.querySelector('.row-slider');
 
         if(firstCategoryProducts.length > 5){
         // Add <h3> tag
             var header = document.createElement('a'),
-                textContent = document.createTextNode(TypeModule.findByTypeID(firstCategoryProducts[0].type).name);
+                textContent = document.createTextNode(TypeModule.findByTypeID(firstCategoryProducts[0].typeID).name);
             header.setAttribute('href', 'products.html');
             header.appendChild(textContent);
             parent.insertBefore(header, parent.children[0]);
@@ -162,7 +162,7 @@
     function linkClick (event) {
         event.preventDefault();
         
-        if (this.name === 'type') {
+        if (this.name === 'typeID') {
             AppController.gotoPage(this.href);
         }if (this.name === 'category'){
             AppController.gotoPage(this.href);
@@ -272,6 +272,42 @@
         
  })();
 
+/*
+function moveProducts(){  
+            var firstCategoryProducts = products.filter(product => product.typeID === 1);
+             var arrowButtons = document.querySelectorAll('button');
+             var count = 0;
+             Array.from(arrowButtons).forEach(function(button){
+                 button.addEventListener('click',function(event){
+                     event.preventDefault();   
+                     var narrow = button.firstElementChild.classList["1"];           
+                     getAll = document.querySelectorAll('.img-column');
+                     if(count === getAll.length){
+                         count = 0;
+                     }
+                     //console.log(getAll);            
+                     if(narrow === "left"){
+                         ++count;
+                        for(var i = 0; i < 4; i++){
+                             getAll[i].innerHTML = '<a href="/html/view-product.html value="'+ firstCategoryProducts[count+i].id + '"><img src =' + firstCategoryProducts[count+i].image + '></a><h3>' 
+                             + firstCategoryProducts[count+i].name +'</h3><h2>' + firstCategoryProducts[count+i].price.toFixed(2) +'лв'
+                             + '</h2><button> Купи </button>';
+                         }
+                     }else{
+                         ++count;
+                         for(var i = 0; i < 4; i++){
+                             getAll[i].innerHTML = '<a href="/html/view-product.html value="' + firstCategoryProducts[count-i].id + '"><img src =' + firstCategoryProducts[count-i].image + '></a><h3>' 
+                             + firstCategoryProducts[count-i].name +'</h3><h2>' + firstCategoryProducts[count-i].price.toFixed(2) +'лв'
+                             + '</h2><button> Купи </button>';
+                         }
+                     }
+                 });
+             }); 
+         }
+        AppController.registerController('index', {
+            initPage : initPage
+        })    
+*/
 
         // //JSON 
     // function sendRequest(url) {
@@ -287,7 +323,7 @@
     //                 error(new Error('no ajax sorry'));
     //             }
     //         }
-    
+    //
     //         if (xhr) {
     //             xhr.addEventListener('readystatechange', function(event) {
     //                 //console.log('readystatechange', xhr.readyState, xhr.status);
@@ -304,7 +340,7 @@
     //        }
     //     });
     // }
-     
+    //
     //      sendRequest('../json/products.json')
     //          .then(function(response) {
     //              if(response.length){
@@ -326,4 +362,4 @@
     //              }
     //              return response;
     //          });
-     
+    //

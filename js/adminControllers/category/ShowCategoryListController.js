@@ -1,6 +1,36 @@
 (function () {
     var main = document.querySelector('main');
 
+    function showAddCategoryPage(){
+        main.querySelector('.btn-add').addEventListener('click', function (event) {
+            event.preventDefault();
+
+            var addCategoryTmpl = AppController.getControllerTemplate('show-categories-list', 'addCategory');
+            if(addCategoryTmpl){
+                main.innerHTML = addCategoryTmpl;
+            }
+
+            saveCategoryOnBtnClick();
+        });
+    }
+
+    function saveCategoryOnBtnClick() {
+        document.querySelector('.btn-save').addEventListener('click', function () {
+            var form = document.querySelector('form'),
+                categoryName = form.querySelector('input[name="categoryName"]').value,
+                typeName = form.querySelector('input[name="typeName"]').value,
+                description = form.querySelector('textarea[name="description"]').value;
+            if(categoryName) {//if it has category name
+                var category = CategoryModule.findByCategoryName(categoryName);
+                //да помислякъде трябва да стои проверката има ли категория с такова име или не-в модела или в контролера
+            } else {
+                CategoryModule.addCategory(typeName, description);
+            }
+
+            window.location = '../html/admin/show-categories-list.html';
+        })
+    }
+
     function showAllCategoriesPage() {
         var categories = JSON.parse(window.localStorage.getItem('categories'));
         var types = JSON.parse(window.localStorage.getItem('types'));
@@ -31,7 +61,9 @@
 
                 var typeID = parseInt(typeInput);
                 var types = JSON.parse(window.localStorage.getItem('types')) || [];
-                var type = types.find(type => type.id === typeID);
+                var type = types.find(function (type) {
+                    return type.id === typeID;
+                });
 
                 var editCategoryTmpl = AppController.getControllerTemplate('show-categories-list', 'editCategory');
                 var template = Handlebars.compile(editCategoryTmpl);
@@ -64,6 +96,7 @@
     }
 
     function initPage() {
+        showAddCategoryPage();
         showAllCategoriesPage();
     }
 

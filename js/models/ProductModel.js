@@ -49,15 +49,17 @@ var ProductModule = (function () {
         addProduct: function (image, name, price, description, brand, typeID, quantity, minAge, maxAge) {
             var prodIndex = this.findProductByName(name);
             if(prodIndex === -1){
-                var product = new Product(image, name, price.toFixed(2), description, brand, typeID, quantity, minAge, maxAge);
+                var product = new Product("../" + image, name, price, description, brand, typeID, quantity, minAge, maxAge);
                 products.push(product);
                 window.localStorage.setItem('products', JSON.stringify(products));
                 var getTypes = JSON.parse(window.localStorage.getItem('types'));
-                //var type = TypeModule.findByTypeID(typeID);
+                //var typeID = TypeModule.findByTypeID(typeID);
                 if(getTypes){
-                    var index = getTypes.findIndex(type => type.id === typeID);
+                    var index = getTypes.findIndex(function (t) {
+                        return t.id === typeID;
+                    });
                     getTypes[index].products.push(product);
-                   // type.products.push(product);
+                   // typeID.products.push(product);
                     window.localStorage.setItem('types',JSON.stringify(getTypes));
                 }
                 window.localStorage.setItem('products', JSON.stringify(products));
@@ -68,60 +70,81 @@ var ProductModule = (function () {
             }
         },
 
-        deleteProduct: function (productID, typeID) {
+        deleteProduct: function (productID) {
             var prodIndex = this.findProductById(productID);
             if(prodIndex !== -1){
-                var type = TypeModule.findByTypeID(typeID);
+                var type = TypeModule.findTypeByProductID(productID);
                 products.splice(prodIndex, 1);
-                type.products.splice(prodIndex, 1);
+                var prodTypeIndex = type.products.findIndex(function (p) {
+                    return p.id === productID;
+                });
+                type.products.splice(prodTypeIndex, 1);
+                window.localStorage.setItem('products', JSON.stringify(products));
             } else {
                 console.log('Не съществува продукт с това име!');
             }
+
+            return true;
         },
         getPromoProducts: function(){
-            return products.filter(product => product.hasPromo === true);
+            return products.filter(function (p) {
+                return p.hasPromo === true;
+            });
         },
 
         editProduct: function (prodID, image, name, price, description, brand, typeID, quantity, minAge, maxAge) {
             var prodIndex = this.findProductById(prodID);
             if(prodIndex !== -1){
-                var prod = products.slice(prodIndex, 1)[0];
-                if(image !== undefined && image != null && image !== ''){
+                var prod = products.slice(prodIndex)[0];
+                if(image !== undefined && image !== null && image !== ''){
                     prod.image = image;
                 }
-                if(name !== undefined && name != null && name !== ''){
+                if(name !== undefined && name !== null && name !== ''){
                     prod.name = name;
                 }
-                if(price !== undefined && price != null && price !== ''){
+                if(price !== undefined && price !== null && price !== ''){
                     prod.price = parseFloat(price).toFixed(2);
                 }
-                if(description !== undefined && description != null && description !== ''){
+                if(description !== undefined && description !== null && description !== ''){
                     prod.description = description;
                 }
-                if(brand !== undefined && brand != null && brand !== ''){
+                if(brand !== undefined && brand !== null && brand !== ''){
                     prod.brand = brand;
                 }
-                if(typeID !== undefined && typeID != null && typeID !== ''){
+                if(typeID !== undefined && typeID !== null && typeID !== ''){
                     prod.typeID = parseInt(typeID);
                 }
-                if(quantity !== undefined && quantity != null && quantity !== ''){
+                if(quantity !== undefined && quantity !== null && quantity !== ''){
                     prod.quantity = parseInt(quantity);
                 }
-                if(minAge !== undefined && minAge != null && minAge !== ''){
+                if(minAge !== undefined && minAge !== null && minAge !== ''){
                     prod.minAge = parseInt(minAge);
                 }
-                if(maxAge !== undefined && maxAge != null && maxAge !== ''){
+                if(maxAge !== undefined && maxAge !== null && maxAge !== ''){
                     prod.maxAge = parseInt(maxAge);
                 }
                 products[prodIndex] = prod;
                 window.localStorage.setItem('products', JSON.stringify(products));
+                //take items from localStorage
                 var typesLocal = JSON.parse(window.localStorage.getItem('types'));
                 var typeIndex = typesLocal.findIndex(function (type) {
                     return type.id === parseInt(typeID);
                 });
-                typesLocal[typeIndex].products[prodIndex] = prod;
+                //search productIndex in current type
+                var prodTypeIndex = typesLocal[typeIndex].products.findIndex(function (prod) {
+                    return prod.id === productID;
+                });
+                //if prodIndex !== -1
+                if(prodTypeIndex !== -1){
+                    //- replace product with new parameters
+                    typesLocal[typeIndex].products[prodTypeIndex] = prod;
+                } else {
+                    //push product in current type
+                    typesLocal[typeIndex].products.push(prod);
+                }
                 window.localStorage.setItem('types', JSON.stringify(typesLocal));
             } else {
+                this.addProduct(image, name, price, description, brand, typeID, quantity, minAge, maxAge);
                 console.log('Не съществува продукт с това име!');
             }
 

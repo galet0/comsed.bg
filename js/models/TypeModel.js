@@ -35,6 +35,14 @@ var TypeModule = (function () {
             })
         },
 
+        findTypeByProductID: function (prodID) {
+            return types.find(function (type) {
+                return type.products.find(function (p) {
+                    return p.id === prodID;
+                })
+            })
+        },
+
         getAllTypes: function () {
             return types.forEach(function (type) {
                 return type.name;

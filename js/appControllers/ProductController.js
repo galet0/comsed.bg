@@ -130,7 +130,7 @@
                 var ulIN= document.createElement('ul');             
                 category.types.forEach(function(type){
                     var li = document.createElement('li');
-                    li.innerHTML = '<a href="/html/products.html" name="type" id='+ type.id + '>' + type.name +'</a>';
+                    li.innerHTML = '<a href="/html/products.html" name="typeID" id='+ type.id + '>' + type.name +'</a>';
                     li.style.backgroundColor = colorStyles[id];              
                     ulIN.appendChild(li);                    
                     id++;
@@ -182,18 +182,18 @@
         if (this.name === 'category') {
             var types = TypeModule.getTypesByCategoryId(parseInt(this.id));
             for (var i = 0; i < types.length; i++) {
-                showProd = showProd.concat(products.filter(product => product.type === types[i].id));                
+                showProd = showProd.concat(products.filter(product => product.typeID === types[i].id));
                 if(showProd.length){
-                    categoryType = TypeModule.findByTypeID(showProd[0].type);  
+                    categoryType = TypeModule.findByTypeID(showProd[0].typeID);
                 } 
             }
         }
-        //show all products for the clicked type
-        if (this.name === 'type') {
-            showProd = products.filter(product => product.type === parseInt(this.id));
+        //show all products for the clicked typeID
+        if (this.name === 'typeID') {
+            showProd = products.filter(product => product.typeID === parseInt(this.id));
             if(showProd.length){
-                var getType = TypeModule.findByTypeID(showProd[0].type); 
-                categoryType = TypeModule.findByTypeID(getType.products[0].type);                
+                var getType = TypeModule.findByTypeID(showProd[0].typeID);
+                categoryType = TypeModule.findByTypeID(getType.products[0].typeID);
             }
         }        
         if (showProd.length) {

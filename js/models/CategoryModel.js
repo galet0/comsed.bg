@@ -64,9 +64,9 @@ var CategoryModule = (function () {
         },
 
         editCategory: function (categoryID, name, description) {
-            var category = this.findByCategoryID(categoryID);
-            if(category !== -1){
-                var category = categories.slice(category, 1)[0];
+            var currCategory = this.findByCategoryID(categoryID);
+            if(currCategory){
+                var category = categories.slice(currCategory)[0];
                 if(name !== undefined && name !== null && name !== ''){
                     category.name = name;
                 }
