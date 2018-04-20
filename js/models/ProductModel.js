@@ -49,7 +49,7 @@ var ProductModule = (function () {
         addProduct: function (image, name, price, description, brand, typeID, quantity, minAge, maxAge) {
             var prodIndex = this.findProductByName(name);
             if(prodIndex === -1){
-                var product = new Product("../" + image, name, price, description, brand, typeID, quantity, minAge, maxAge);
+                var product = new Product(image, name, price, description, brand, typeID, quantity, minAge, maxAge);
                 products.push(product);
                 window.localStorage.setItem('products', JSON.stringify(products));
                 var getTypes = JSON.parse(window.localStorage.getItem('types'));
@@ -112,7 +112,7 @@ var ProductModule = (function () {
                     prod.brand = brand;
                 }
                 if(typeID !== undefined && typeID !== null && typeID !== ''){
-                    prod.typeID = parseInt(typeID);
+                    prod.type = parseInt(typeID);
                 }
                 if(quantity !== undefined && quantity !== null && quantity !== ''){
                     prod.quantity = parseInt(quantity);
@@ -152,6 +152,163 @@ var ProductModule = (function () {
         }
     }
 })();
+
+
+
+// var ProductModule = (function () {
+
+//     var products = JSON.parse(window.localStorage.getItem('products')) || [];
+//     var productID = products.length || 0;
+
+//     function Product(image, name, price, description, brand, typeID, quantity, minAge, maxAge, hasPromo) {
+//         this.id = ++productID;
+//         this.image = image;
+//         this.name = name;
+//         this.price = price;
+//         this.description = description;
+//         this.brand = brand;
+//         this.type = typeID;
+//         this.quantity = quantity;
+//         this.minAge = minAge;
+//         this.maxAge = maxAge;
+//         this.hasPromo = false;
+//     }
+
+//     Product.prototype.updateProductsList = function () {
+//         window.localStorage.setItem('products', products);
+//     };
+
+//     return {
+//         findProductByName: function (name) {
+//             return products.findIndex(function (product) {
+//                 return product.name === name;
+//             });
+//         },
+
+//         findProductById: function (prodID) {
+//             return products.findIndex(function (prod) {
+//                 return prod.id === prodID;
+//             })
+//         },
+//         findProdID: function (productID) {
+//             return products.find(function (prod) {
+//                 return prod.id === productID;
+//             })
+//         },
+//         getAllProducts: function () {
+//             var products = window.localStorage.getItem('products');
+//             console.log(products);
+//             products = JSON.parse(products);
+//             console.log(products);
+//             return products;
+//         },
+
+//         addProduct: function (image, name, price, description, brand, typeID, quantity, minAge, maxAge) {
+//             var prodIndex = this.findProductByName(name);
+//             if(prodIndex === -1){
+//                 var product = new Product(image, name, price, description, brand, typeID, quantity, minAge, maxAge);
+//                 products.push(product);
+//                 window.localStorage.setItem('products', JSON.stringify(products));
+//                 var getTypes = JSON.parse(window.localStorage.getItem('types'));
+//                 //var typeID = TypeModule.findByTypeID(typeID);
+//                 if(getTypes){
+//                     var index = getTypes.findIndex(function (t) {
+//                         return t.id === typeID;
+//                     });
+//                     getTypes[index].products.push(product);
+//                    // typeID.products.push(product);
+//                     window.localStorage.setItem('types',JSON.stringify(getTypes));
+//                 }
+//                 window.localStorage.setItem('products', JSON.stringify(products));
+//                 console.log(product.id);
+//                 return product.id;
+//             } else {
+//                 console.log('Вече съществува продукт с това име!');
+//             }
+//         },
+
+//         deleteProduct: function (productID) {
+//             var prodIndex = this.findProductById(productID);
+//             if(prodIndex !== -1){
+//                 var type = TypeModule.findTypeByProductID(productID);
+//                 products.splice(prodIndex, 1);
+//                 var prodTypeIndex = type.products.findIndex(function (p) {
+//                     return p.id === productID;
+//                 });
+//                 type.products.splice(prodTypeIndex, 1);
+//                 window.localStorage.setItem('products', JSON.stringify(products));
+//             } else {
+//                 console.log('Не съществува продукт с това име!');
+//             }
+
+//             return true;
+//         },
+//         getPromoProducts: function(){
+//             return products.filter(function (p) {
+//                 return p.hasPromo === true;
+//             });
+//         },
+
+//         editProduct: function (prodID, image, name, price, description, brand, typeID, quantity, minAge, maxAge) {
+//             var prodIndex = this.findProductById(prodID);
+//             if(prodIndex !== -1){
+//                 var prod = products.slice(prodIndex)[0];
+//                 if(image !== undefined && image !== null && image !== ''){
+//                     prod.image = image;
+//                 }
+//                 if(name !== undefined && name !== null && name !== ''){
+//                     prod.name = name;
+//                 }
+//                 if(price !== undefined && price !== null && price !== ''){
+//                     prod.price = parseFloat(price).toFixed(2);
+//                 }
+//                 if(description !== undefined && description !== null && description !== ''){
+//                     prod.description = description;
+//                 }
+//                 if(brand !== undefined && brand !== null && brand !== ''){
+//                     prod.brand = brand;
+//                 }
+//                 if(typeID !== undefined && typeID !== null && typeID !== ''){
+//                     prod.type = parseInt(typeID);
+//                 }
+//                 if(quantity !== undefined && quantity !== null && quantity !== ''){
+//                     prod.quantity = parseInt(quantity);
+//                 }
+//                 if(minAge !== undefined && minAge !== null && minAge !== ''){
+//                     prod.minAge = parseInt(minAge);
+//                 }
+//                 if(maxAge !== undefined && maxAge !== null && maxAge !== ''){
+//                     prod.maxAge = parseInt(maxAge);
+//                 }
+//                 products[prodIndex] = prod;
+//                 window.localStorage.setItem('products', JSON.stringify(products));
+//                 //take items from localStorage
+//                 var typesLocal = JSON.parse(window.localStorage.getItem('types'));
+//                 var typeIndex = typesLocal.findIndex(function (type) {
+//                     return type.id === parseInt(typeID);
+//                 });
+//                 //search productIndex in current type
+//                 var prodTypeIndex = typesLocal[typeIndex].products.findIndex(function (prod) {
+//                     return prod.id === productID;
+//                 });
+//                 //if prodIndex !== -1
+//                 if(prodTypeIndex !== -1){
+//                     //- replace product with new parameters
+//                     typesLocal[typeIndex].products[prodTypeIndex] = prod;
+//                 } else {
+//                     //push product in current type
+//                     typesLocal[typeIndex].products.push(prod);
+//                 }
+//                 window.localStorage.setItem('types', JSON.stringify(typesLocal));
+//             } else {
+//                 this.addProduct(image, name, price, description, brand, typeID, quantity, minAge, maxAge);
+//                 console.log('Не съществува продукт с това име!');
+//             }
+
+//             return true;
+//         }
+//     }
+// })();
 
 // var product1 = ProductModule.addProduct('../images/products/babiesToys/igrachki/img1.jpg','Смеещо се плюшено чудовище',29,'Плюшена играчка-чудовище с елементи, направени от различни материи. При натиск на коремчето издава различни нежни звуци.','Fisher Price', 1, 10, 0, 3);
 // var product2 = ProductModule.addProduct('../images/products/babiesToys/igrachki/img3.jpg','Играчка Костенурка за дърпане',26.8,'Тази забавна костенурка предоставя два начина на игра. Детето може да седи и да удря по черупката на костенурката, за да я накара да се върти или да изведе костенурката на разходка! Очарователно клатушкане на главата награждава детето при дърпането на костенурката, научавайки детето на връзката причина-следствие, а също го окуражава и да ходи. Два начина за игра "порасни с мен": Седни и играй или Стани и се разходи.Въртящата се черупка запознава детето с цифрите, формите и цветовете.Клатушкане на главата, докато се движи.Действията на детето причиняват появата на забавни неща, научавайки детето на причината и следствието.Окуражава развитието на грубите моторни умения, равновесието и координацията.Играта в седнало положение или дърпането костенурката по време на разходка също помага на детето да развие равновесието и координацията си.','Fisher Price', 1, 10, 0, 3);

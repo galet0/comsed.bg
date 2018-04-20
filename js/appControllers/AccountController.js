@@ -309,57 +309,57 @@ function moveProducts(){
         })    
 */
 
-        // //JSON 
-    // function sendRequest(url) {
-    //     return new Promise(function(resolve, reject) {
-    //         var xhr;
-    //         try {
-    //             xhr = new XMLHttpRequest();
-    //         } catch (err) {
-    //             try {
-    //                 // code for old IE browsers
-    //                 xhr = new ActiveXObject("Microsoft.XMLHTTP");
-    //             } catch (err) {
-    //                 error(new Error('no ajax sorry'));
-    //             }
-    //         }
-    //
-    //         if (xhr) {
-    //             xhr.addEventListener('readystatechange', function(event) {
-    //                 //console.log('readystatechange', xhr.readyState, xhr.status);
-    //                 if (xhr.readyState === 4) {
-    //                     if (xhr.status === 200) {
-    //                         resolve(JSON.parse(xhr.responseText));
-    //                     } else {
-    //                         reject(new Error(xhr.status));
-    //                     }
-    //                 }
-    //             });
-    //             xhr.open('GET', url, true);
-    //             xhr.send(null);
-    //        }
-    //     });
-    // }
-    //
-    //      sendRequest('../json/products.json')
-    //          .then(function(response) {
-    //              if(response.length){
-    //                  window.localStorage.setItem('products',JSON.stringify(response));
-    //              }
-    //              return response;
-    //          });
-    //      sendRequest('../json/types.json')
-    //          .then(function(response) {
-    //              if(response.length){
-    //                  window.localStorage.setItem('types',JSON.stringify(response));
-    //              }
-    //              return response;
-    //          });
-    //      sendRequest('../json/categories.json')
-    //          .then(function(response) {
-    //              if(response.length){
-    //                  window.localStorage.setItem('categories',JSON.stringify(response));
-    //              }
-    //              return response;
-    //          });
-    //
+// //JSON
+//     function sendRequest(url) {
+//         return new Promise(function(resolve, reject) {
+//             var xhr;
+//             try {
+//                 xhr = new XMLHttpRequest();
+//             } catch (err) {
+//                 try {
+//                     // code for old IE browsers
+//                     xhr = new ActiveXObject("Microsoft.XMLHTTP");
+//                 } catch (err) {
+//                     error(new Error('no ajax sorry'));
+//                 }
+//             }
+    
+//             if (xhr) {
+//                 xhr.addEventListener('readystatechange', function(event) {
+//                     //console.log('readystatechange', xhr.readyState, xhr.status);
+//                     if (xhr.readyState === 4) {
+//                         if (xhr.status === 200) {
+//                             resolve(JSON.parse(xhr.responseText));
+//                         } else {
+//                             reject(new Error(xhr.status));
+//                         }
+//                     }
+//                 });
+//                 xhr.open('GET', url, true);
+//                 xhr.send(null);
+//            }
+//         });
+//     }
+    
+//         //  sendRequest('../json/products.json')
+//         //      .then(function(response) {
+//         //          if(response.length){
+//         //              window.localStorage.setItem('products',JSON.stringify(response));
+//         //          }
+//         //          return response;
+//         //      });
+//          sendRequest('../json/types.json')
+//              .then(function(response) {
+//                  if(response.length){
+//                      window.localStorage.setItem('types',JSON.stringify(response));
+//                  }
+//                  return response;
+//              });
+//          sendRequest('../json/categories.json')
+//              .then(function(response) {
+//                  if(response.length){
+//                      window.localStorage.setItem('categories',JSON.stringify(response));
+//                  }
+//                  return response;
+//              });
+    

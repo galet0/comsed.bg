@@ -181,8 +181,11 @@
         // show all products in the cattegory   
         if (this.name === 'category') {
             var types = TypeModule.getTypesByCategoryId(parseInt(this.id));
+            console.log('types:', types);
+            console.log('products:', products);
             for (var i = 0; i < types.length; i++) {
-                showProd = showProd.concat(products.filter(product => product.typeID === types[i].id));
+                console.log('type:' + types[i].id);
+                showProd = showProd.concat(products.filter(product => product.type === types[i].id));
                 if(showProd.length){
                     categoryType = TypeModule.findByTypeID(showProd[0].typeID);
                 } 
@@ -195,7 +198,7 @@
                 var getType = TypeModule.findByTypeID(showProd[0].typeID);
                 categoryType = TypeModule.findByTypeID(getType.products[0].typeID);
             }
-        }        
+        }
         if (showProd.length) {
             var selectItem = '<select id="select"><option label="Изберете"><option value="date">Дата</option><option value="priceUp">Цена възх.</option><option value="priceDown">Цена низх.</option></select>'
             var div = document.createElement('div'); 
